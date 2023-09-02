@@ -27,7 +27,7 @@ import {Icon} from "astro-icon";
     <Icon name="wave" class="w-5 h-5"/>
 </button>
 
-<div class="hidden h-screen flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black absolute w-full z-50 inset-0"
+<div class="hidden h-screen flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black fixed top-0 left-0 w-full z-50 inset-0"
      id="menu">
 
     <Icon name="ellipse" class="absolute top-0 opacity-0 animate-fade"/>
@@ -77,6 +77,10 @@ import {Icon} from "astro-icon";
         100% {
             opacity: 1;
         }
+    }
+
+    body {
+        background: black;
     }
 
 </style>
