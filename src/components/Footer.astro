@@ -1,0 +1,25 @@
+---
+import {Icon} from "astro-icon";
+import {twMerge} from 'tailwind-merge'
+
+interface Props {
+    className: string;
+}
+
+const {className} = Astro.props;
+---
+<footer class={twMerge('flex flex-row items-center justify-start space-x-5 p-8', className)}>
+    <a href="https://thegaas.co" target="_blank" rel="noopener noreferrer"
+       class="text-[16px] leading-[24px] flex flex-row items-center space-x-1">
+        Made by GAAS
+        <Icon name="globe" class="w-5 h-5"/>
+    </a>
+    <a href="/pos" target="_blank" rel="noopener noreferrer"
+       class="text-[16px] leading-[24px] flex flex-row items-center space-x-1">
+        Privacy Policy
+    </a>
+    <a href="/tos" target="_blank" rel="noopener noreferrer"
+       class="text-[16px] leading-[24px] flex flex-row items-center space-x-1">
+        Terms of Service
+    </a>
+</footer>
