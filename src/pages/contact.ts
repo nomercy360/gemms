@@ -1,13 +1,9 @@
 import type {APIRoute} from "astro";
-import {getRuntime} from "@astrojs/cloudflare/runtime";
 
-export const POST: APIRoute = async ({request}) => {
+export const POST: APIRoute = async ({request, locals}) => {
+    const apiKey = import.meta.env.RESEND_API_KEY
 
-    const runtime = getRuntime(request);
-
-    const {RESEND_API_KEY} = (runtime.env as any);
-
-    console.log('API_KEY', RESEND_API_KEY)
+    console.log('API_KEY', apiKey)
 
     const data = await request.json();
 
@@ -20,7 +16,7 @@ export const POST: APIRoute = async ({request}) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${RESEND_API_KEY}`,
+            'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
             from: 'Hello <hello@gemss.xyz>',
