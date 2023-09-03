@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import {Icon} from 'astro-icon';
+import Button from "../../components/Button.astro";
+import Footer from "../../components/Footer.astro";
+import MobileMenu from "../../components/MobileMenu.astro";
+---
+
+<Layout title="Welcome to Astro.">
+    <main class="bg-black w-full">
+        <nav class="flex flex-row items-center md:justify-between justify-center w-full md:px-8 md:py-8 py-8 px-4">
+            <a class="flex flex-row items-center space-x-2.5" href="/">
+                <Icon name="gem" class="w-5 h-5"/>
+                <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
+                    GEMSS
+                </h3>
+            </a>
+            <button class="hidden btn-gradient whitespace-nowrap pl-4 pr-3 py-1.5 md:flex flex-row items-center gap-2 text-white stroke-white rounded-[60px]">
+                Say hi
+                <Icon name="wave" class="w-5 h-5"/>
+            </button>
+        </nav>
+        <MobileMenu/>
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
+            <div></div>
+            <div class="md:max-w-lg md:text-start text-center md:fixed static top-32 left-8 flex flex-col md:items-start items-center">
+                <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-semibold leading-[16px] tracking-[1px] uppercase">
+                    Pitch Decks Design Service
+                </p>
+                <h1 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3">
+                    Persuasive pitch deck that investors believe in
+                </h1>
+                <p class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4">
+                    We create pitch decks that cut to the chase, with a keen focus on data, math, marketing, and
+                    strategy. Our decks are made by investors, for investors, using the language of numbers that we all
+                    understand.
+                </p>
+                <button class="border border-white/20 text-white px-4 md:h-[36px] h-[28px] flex flex-row items-center text-[12px] leading-[20px] rounded-[60px] md:mt-8 mt-5">
+                    Check Pricing
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:mt-0 mt-9">
+                <img src="/card.png" class="md:h-[400px] md:aspect-none aspect-[16/11] w-full md:col-span-2"
+                     alt="card"/>
+                <div class="md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 md:col-span-2 md:px-6 px-3 py-4">
+                    <div class="md:flex flex-col grid grid-cols-2 gap-2">
+                        <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
+                            In-depth market and product discovery
+                        </p>
+                        <p class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]">
+                            We are conducting a deep dive into the product, customers, market trends, and competitors,
+                            aiming to answer the questions that are on the minds of investors.
+                        </p>
+                    </div>
+                    <div class="flex md:flex-col flex-row md:flex-nowrap flex-wrap md:items-end justify-start md:gap-2 gap-0.5">
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Product economy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Long-term strategy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Market economy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Business Model</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Blurb</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Onepager</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">VC Pipeline</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between h-[400px] bg-white/10">
+                    <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8">
+                        <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
+                            Straight-forward and fact-checked data, math, and models
+                        </p>
+                        <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
+                            As economists and financial managers, we work with mathematics, gather data, and develop
+                            models ourselves.
+                        </p>
+                    </div>
+                    <img src="/exel.png" class="aspect-video pl-8">
+                </div>
+                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
+                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
+                        Made by actual investors and entrepreneurs
+                    </p>
+                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
+                        Our pitch decks not only look and feel good,
+                        but they are also designed in a way that is understandable for investors.
+                    </p>
+                </div>
+                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
+                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
+                        Straight-forward messages, Makes you memorable
+                    </p>
+                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
+                        Done 50+ pith decks we understood that the most important thing in the pitch deck is a FOMO (A
+                        feeling of missed opportunity). We know the right way to get such feeling.
+                    </p>
+                </div>
+                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
+                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
+                        Professional illustrations and interactive animations
+                    </p>
+                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
+                        Done 50+ pith decks we understood that the most important thing in the pitch deck is a feeling
+                        of missed opportunity
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <Footer/>
+    </main>
+</Layout>
+
+<style>
+    .btn-gradient {
+        border: 0.5px solid rgba(255, 255, 255, 0.20);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 50%), rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(10px);
+    }
+
+    .pink-card {
+        background: radial-gradient(60.55% 78.3% at 5.96% 28.17%, rgba(255, 153, 0, 0.20) 0%, rgba(202, 47, 227, 0.04) 100%), #F6F6F6;
+    }
+</style>

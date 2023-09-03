@@ -23,7 +23,7 @@ import MobileMenu from "../components/MobileMenu.astro";
             </button>
         </nav>
         <MobileMenu/>
-        <div class="flex md:flex-row flex-col justify-between items-center mt-9 md:p-8 p-4">
+        <div class="flex md:flex-row flex-col justify-between items-center md:p-8 p-4">
             <div class="md:max-w-lg md:text-start text-center">
                 <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-semibold leading-[16px] tracking-[1px] uppercase">
                     Startup agency
@@ -44,7 +44,8 @@ import MobileMenu from "../components/MobileMenu.astro";
                     </button>
                 </div>
             </div>
-            <img class="order-first md:order-none h-[220px] md:max-w-xl w-full md:mb-0 mb-10" src="/card.png" alt=""></img>
+            <img class="order-first md:order-none h-[220px] md:max-w-xl w-full md:mb-0 mb-10" src="/card.png"
+                 alt=""></img>
         </div>
 
         <section id="cards" class="mt-20 mb-10 md:p-8 p-4">
@@ -66,6 +67,7 @@ import MobileMenu from "../components/MobileMenu.astro";
                         description="No-bullshit, data-first, fact-checked and beautiful"
                         price="from $2,500"
                         priceDescription="Price depends on services"
+                        href="/pitch-deck"
                 />
                 <Card
                         title="Content that is actually interesting for audience"
@@ -76,32 +78,77 @@ import MobileMenu from "../components/MobileMenu.astro";
             </div>
         </section>
         <section id="subscription">
-            <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex flex-col">
-                <h2 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black max-w-lg">
-                    Subscription-based product design and development
-                </h2>
-                <p class="md:hidden block text-[15px] leading-[21px] text-[#6F6F6F]">
-                    Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers,
-                    with a huge experience in their field. We’ve developed five quick to profit services, that will
-                    rapidly change your your business.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:mt-10 mt-8">
-                    <SubscriptionCard
-                            title="Product and design subscription"
-                            description="Research, conceptualisation, and design of anything by designers with more than 15 years of expirience"
-                            price="$6450 / mo"
-                            priceDescription="Pay daily or weekly"
-                    />
-                    <SubscriptionCard
-                            title="Full-stack development subscription"
-                            description="Incredibly good back-end, front-end, and blockchain for web, mobile, and telegram apps"
-                            price="$8450 / mo"
-                            priceDescription="Pay daily or weekly"
-                    />
+            <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex md:flex-row flex-col justify-between">
+                <div class="flex flex-col md:max-w-lg">
+                    <div class="flex flex-row items-center justify-start">
+                        <img src="/peer.png" class="h-12 w-12 rounded-full" alt="peer"/>
+                        <img src="/peer.png" class="h-12 w-12 rounded-full -ml-3" alt="peer"/>
+                        <img src="/peer.png" class="h-12 w-12 rounded-full -ml-3 z-10" alt="peer"/>
+                        <span class="bg-black w-12 h-12 rounded-full text-[15px] leading-[20px] flex items-center justify-center text-white -ml-3 border-[3px] border-white">
+                            +5
+                        </span>
+                    </div>
+                    <h2 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4">
+                        Subscription-based product design and development
+                    </h2>
+                    <p class="md:text-[20px] text-[15px] leading-[21px] md:leading-[27px] text-[#6F6F6F] mt-4">
+                        Research, conceptualisation, design, and developing for web, mobile, blockchain, and telegram
+                        apps.
+                        By designers, engineers, and product managers with more than 15 years of experience
+                    </p>
+                    <div class="flex flex-col justify-between p-4 bg-black/5 md:mt-8 mt-7">
+                        <div class="flex flex-row justify-between">
+                            <ul class="text-black md:text-[15px] text-[15px] leading-[20px] md:leading-[21px] space-y-2">
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="glass" class="w-5 h-5"/>
+                                    <span class="text-[#E34343]">Two spots left</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>Unlimited Requests</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>2-3 day turnaround</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>Designers, managers, and engineers</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>Managed via Telegram or Linear</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>Pause or cancel anytime</span>
+                                </li>
+                                <li class="flex flex-row items-center gap-2">
+                                    <Icon name="asterisk" class="w-5 h-5"/>
+                                    <span>Invite your team</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-col items-end space-y-1">
+                                <span class="text-[20px] leading-[24px]">$8450 / mo</span>
+                                <span class="text-[12px] leading-[16px]">Pay daily or weekly</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-row items-center justify-between rounded-[52px] bg-black/10 px-2 py-1.5 pl-4 md:mt-10 mt-8">
+                            <input placeholder="E-mail, Telegram, Signal, etc."
+                                   class="bg-transparent placeholder:text-[#4E4E4E] w-full text-black text-[15px] leading-[20px] focus:outline-none"/>
+                            <button class="rounded-[50px] bg-black text-white px-3 h-[36px] backdrop-blur-md whitespace-nowrap">
+                                Let’s Talk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-[600px] md:h-[400px] h-[220px] w-full pink-card relative md:mt-0 mt-5">
+                    <img class="md:w-[480px] md:h-[380px] w-[262px] h-[206px] object-cover absolute bottom-0 left-0"
+                         src="/show.png" alt=""></img>
                 </div>
             </div>
         </section>
-        <Footer className="bg-white text-black stroke-black"/>
+        <Footer/>
     </main>
 </Layout>
 
@@ -110,5 +157,9 @@ import MobileMenu from "../components/MobileMenu.astro";
         border: 0.5px solid rgba(255, 255, 255, 0.20);
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 50%), rgba(255, 255, 255, 0.10);
         backdrop-filter: blur(10px);
+    }
+
+    .pink-card {
+        background: radial-gradient(60.55% 78.3% at 5.96% 28.17%, rgba(255, 153, 0, 0.20) 0%, rgba(202, 47, 227, 0.04) 100%), #F6F6F6;
     }
 </style>
