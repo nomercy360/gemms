@@ -6,6 +6,7 @@ import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 import Badge from "../components/Badge.astro";
+import ContactField from "../components/ContactField";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -36,13 +37,7 @@ import Badge from "../components/Badge.astro";
                     with a huge experience in their field. We’ve developed five quick to profit services, that will
                     rapidly change your your business.
                 </p>
-                <div class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] px-4 py-3 mt-8">
-                    <input placeholder="E-mail, Telegram, Signal, etc."
-                           class="bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none"/>
-                    <button class="rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md">
-                        Contact
-                    </button>
-                </div>
+                <ContactField client:visible />
             </div>
             <div class="order-first md:order-none md:max-w-xl w-full md:mb-0 mb-10 relative h-[400px] lg:mr-20 md:mr-10 mr-0">
                 <Badge text="Branding" className="absolute left-0 top-[100px]"/>
