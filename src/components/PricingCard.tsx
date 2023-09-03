@@ -28,7 +28,7 @@ const PricingCard = ({className}: { className?: string }) => {
     }
 
     return (
-        <div class={twMerge('flex flex-col items-start justify-start px-4 py-5 bg-white/10', className)}>
+        <div id="calculator" class={twMerge('flex flex-col items-start justify-start px-4 py-5 bg-white/10', className)}>
             <p class='text-white md:text-[40px] text-[20px] md:leading-[40px] leading-[24px]'>≈{formatPrice(total())} for
                 a deck</p>
             <p class='text-[#6F6F6F] text-[12px] leading-[16px] mt-2'>The price might change after the interview</p>

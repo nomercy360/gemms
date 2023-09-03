@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import {Icon} from 'astro-icon';
 import Button from "../components/Button.astro";
-import SubscriptionCard from "../components/SubscriptionCard.astro";
 import Footer from "../components/Footer.astro";
 import MobileMenu from "../components/MobileMenu.astro";
+import Badge from "../components/Badge.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,7 +23,7 @@ import MobileMenu from "../components/MobileMenu.astro";
             </button>
         </nav>
         <MobileMenu/>
-        <div class="flex md:flex-row flex-col justify-between items-center md:p-8 p-4">
+        <div class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4">
             <div class="md:max-w-lg md:text-start text-center">
                 <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-semibold leading-[16px] tracking-[1px] uppercase">
                     Startup agency
@@ -44,8 +44,14 @@ import MobileMenu from "../components/MobileMenu.astro";
                     </button>
                 </div>
             </div>
-            <img class="order-first md:order-none h-[220px] md:max-w-xl w-full md:mb-0 mb-10" src="/card.png"
-                 alt=""></img>
+            <div class="order-first md:order-none md:max-w-xl w-full md:mb-0 mb-10 relative h-[400px] lg:mr-20 md:mr-10 mr-0">
+                <Badge text="Branding" className="absolute left-0 top-[100px]"/>
+                <Badge text="Advertising" className="absolute left-1/2 top-0"/>
+                <Badge text="Content" className="absolute right-0 top-[100px]"/>
+                <Badge text="Product" className="absolute left-[40%] top-[180px]"/>
+                <Badge text="Pitch Decks" className="absolute left-[10%] bottom-[60px]"/>
+                <Badge text="Development" className="absolute right-[10%] bottom-0"/>
+            </div>
         </div>
 
         <section id="cards" class="mt-20 mb-10 md:p-8 p-4">
@@ -78,7 +84,7 @@ import MobileMenu from "../components/MobileMenu.astro";
             </div>
         </section>
         <section id="subscription">
-            <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex md:flex-row flex-col justify-between">
+            <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex md:flex-row md:gap-4 gap-5 flex-col justify-between">
                 <div class="flex flex-col md:max-w-lg">
                     <div class="flex flex-row items-center justify-start">
                         <img src="/peer.png" class="h-12 w-12 rounded-full" alt="peer"/>
@@ -142,8 +148,8 @@ import MobileMenu from "../components/MobileMenu.astro";
                         </div>
                     </div>
                 </div>
-                <div class="md:w-[600px] md:h-[400px] h-[220px] w-full pink-card relative md:mt-0 mt-5">
-                    <img class="md:w-[480px] md:h-[380px] w-[262px] h-[206px] object-cover absolute bottom-0 left-0"
+                <div class="w-full md:h-[400px] pink-card relative md:mt-0 max-w-[600px] flex flex-col items-start justify-end">
+                    <img class="max-h-[380px] aspect-[24/19] object-cover"
                          src="/show.png" alt=""></img>
                 </div>
             </div>
