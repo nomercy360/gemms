@@ -4,6 +4,7 @@ import Card from '../../components/Card.astro';
 import {Icon} from 'astro-icon';
 import Button from "../../components/Button.astro";
 import Footer from "../../components/Footer.astro";
+import PricingCard from "../../components/PricingCard";
 import MobileMenu from "../../components/MobileMenu.astro";
 ---
 
@@ -43,7 +44,7 @@ import MobileMenu from "../../components/MobileMenu.astro";
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:mt-0 mt-9">
                 <img src="/card.png" class="md:h-[400px] md:aspect-none aspect-[16/11] w-full md:col-span-2"
                      alt="card"/>
-                <div class="md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 md:col-span-2 md:px-6 px-3 py-4">
+                <div class="overflow-hidden md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 md:col-span-2 md:px-6 px-3 py-4">
                     <div class="md:flex flex-col grid grid-cols-2 gap-2">
                         <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
                             In-depth market and product discovery
@@ -104,8 +105,69 @@ import MobileMenu from "../../components/MobileMenu.astro";
                         of missed opportunity
                     </p>
                 </div>
+                <div class="overflow-hidden md:h-[400px] h-[300px] bg-white/10 flex flex-col justify-between gap-6 md:col-span-2 md:px-6 px-3 py-4 relative">
+                    <div class="md:w-1/2 w-full grid grid-cols-2 md:flex flex-col">
+                        <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
+                            Over 50+ projects for startups from allover the world
+                        </p>
+                        <p class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]">
+                            We worked with companies, and investors from APAC, EMEA, US, Europe, Canada, Russia, and
+                            Ukraine.
+                        </p>
+                    </div>
+                    <div class="flex md:flex-col flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0">
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Product economy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Long-term strategy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Market economy</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Business Model</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Blurb</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Onepager</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">VC Pipeline</span>
+                    </div>
+                    <div class="grid grid-cols-3 md:gap-2 gap-3 max-w-md">
+                        <div>
+                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">10X</p>
+                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
+                                Average yearly growth of clients
+                            </p>
+                        </div>
+                        <div>
+                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">16</p>
+                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
+                                Countries of the world
+                            </p>
+                        </div>
+                        <div>
+                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">16</p>
+                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
+                                Countries of the world
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between items-start py-6 px-4 md:h-[400px] h-[240px] bg-white/10">
+                    <img src="/guy.png" class="md:w-15 md:h-15 w-10 h-10" alt="guy">
+                    <div>
+                        <div class="flex flex-row items-center space-x-2">
+                            <span class="bg-white rounded-full w-1 h-1"></span>
+                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
+                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
+                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
+                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
+                        </div>
+                        <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white mt-3">
+                            We develop catchy and recognisable brands and logotypes, that people understands, love, and
+                            share. It helps our clients to gain trust of their customers.
+                        </p>
+                        <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F] mt-2">
+                            Sergey Fedorov, Founder of make.solar
+                        </p>
+                    </div>
+                </div>
+                <PricingCard client:visible className="md:col-span-2"/>
             </div>
-
         </div>
         <Footer/>
     </main>
