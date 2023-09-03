@@ -22,7 +22,7 @@ const ContactField = () => {
     }
 
     return (
-        <form class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] px-4 py-3 mt-8"
+        <form class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-2.5 pr-2.5 pl-4 mt-8"
               onSubmit={(e) => {
                   e.preventDefault();
                   sendEmail();
