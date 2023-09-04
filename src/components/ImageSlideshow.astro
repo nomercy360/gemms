@@ -8,8 +8,9 @@ interface Props {
 const {slidesId, className} = Astro.props;
 ---
 
-<slide-show data-id={slidesId} class={twMerge('h-full', className)}>
-    <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-1.png" alt=""></div>
+<slide-show data-id={slidesId}
+            class={twMerge('h-full lg:min-h-[400px] min-[400px]:min-h-[280px] min-h-[220px] relative', className)}>
+    <div class=`slide slide-items-${slidesId} fade active`><img src="/pitch-deck-1.png" alt=""></div>
     <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-2.png" alt=""></div>
     <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-3.png" alt=""></div>
     <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-4.png" alt=""></div>
@@ -23,9 +24,7 @@ const {slidesId, className} = Astro.props;
         constructor() {
             super();
 
-            // Read the message from the data attribute.
             const message = this.dataset.id;
-
             let slideIndex = 0;
 
             if (message) {
@@ -33,29 +32,26 @@ const {slidesId, className} = Astro.props;
             }
 
             function showSlides() {
-                let i;
                 let slides = document.getElementsByClassName(`slide-items-${message}`);
 
-                // Hide all slides
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+                // Remove active class from all slides
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
                 }
 
                 slideIndex++;
 
-                // If we've gone past the end, loop back to the beginning
                 if (slideIndex > slides.length) {
                     slideIndex = 1;
                 }
 
-                (slides[slideIndex - 1] as HTMLElement).style.display = "flex";
+                slides[slideIndex - 1].classList.add('active'); // Add active class to current slide
 
-                // Change slide every 2 seconds
-                setTimeout(showSlides, 2000);
+                setTimeout(showSlides, 6000); // Adjust time to 4 seconds (2s for fade out and 2s for fade in)
             }
-
         }
     }
+
 
     customElements.define('slide-show', PricingCard);
 </script>
@@ -63,37 +59,44 @@ const {slidesId, className} = Astro.props;
 
 <style>
     .slide {
-        display: none;
+        opacity: 0;
+        display: flex;
         flex-direction: column;
+        visibility: hidden;
+        transition: opacity 3s, visibility 3s; /* Add visibility to the transition */
         align-items: end;
         justify-content: end;
         width: 100%;
         height: 100%;
         background: #e5e7eb;
+        position: absolute; /* Make slides absolute to overlap */
+        top: 0;
+        left: 0;
+        z-index: 1; /* Default z-index */
     }
 
-    .slide img {
-        height: 100%;
-        aspect-ratio: 3/2;
-    }
-
-    @media (max-width: 640px) {
-        .slide img {
-            height: unset;
-        }
+    .slide.active {
+        z-index: 2;
+        opacity: 1;
+        visibility: visible;
     }
 
     .fade {
         animation-name: fade;
-        animation-duration: 1.5s;
+        animation-duration: 2s;
     }
 
     @keyframes fade {
         from {
-            opacity: 0.4;
+            opacity: 0;
         }
         to {
             opacity: 1;
         }
+    }
+
+    .slide img {
+        width: 100%;
+        max-height: 100%;
     }
 </style>
