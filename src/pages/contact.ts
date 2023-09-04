@@ -69,6 +69,9 @@ const EmailTemplate = () => {
             padding: 0;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
+            min-height: 100vh !important;
+            height: 100vh !important;
+            width: 100% !important;
         }
 
         .body {
@@ -109,7 +112,7 @@ const EmailTemplate = () => {
     </style>
 </head>
 <body>
-<div style="background-color: #000000; padding: 20px; height: 100vh !important; width: 100% !important;">
+<div style="background-color: #000000; padding: 20px;">
     <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td valign="top">
