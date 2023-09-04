@@ -13,7 +13,7 @@ const {price, priceDescription, title, description, id} = Astro.props;
 
 <a class="flex flex-col h-full bg-white/10" href={`/${id}`}>
     <ImageSlideshow slidesId={id} className="max-h-[400px]"/>
-    <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 gap-2 mb-auto md:h-[190px] h-[220px]">
+    <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 gap-2 md:min-h-[190px] min-h-[220px]">
         <div class="flex flex-col md:space-y-2 space-y-1 md:w-[240px] w-full">
             <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
             <p class="text-[#6F6F6F] md:text-[15px] text-[12px] md:leading-[20px] leading-[18px]">{description}</p>
