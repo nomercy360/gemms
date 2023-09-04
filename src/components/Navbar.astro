@@ -3,12 +3,10 @@ import {Icon} from "astro-icon/components";
 ---
 
 <script>
-    // 1. Select the button that triggers the menu and the menu itself
     const toggleMenuButton = document.getElementById('toggle-menu-button');
     const menu = document.getElementById('menu');
     const closeButton = document.getElementById('close-button');
 
-    // 2. Add event listener to the button
     toggleMenuButton.addEventListener('click', () => {
             menu.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -18,7 +16,6 @@ import {Icon} from "astro-icon/components";
         }
     );
 
-    // 4. Add another event listener to the close button
     closeButton.addEventListener('click', () => {
         menu.classList.add('hidden');
         document.body.style.overflow = 'auto';

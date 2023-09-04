@@ -1,28 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import {Icon} from "astro-icon/components";
-import Button from "../../components/Button.astro";
 import Footer from "../../components/Footer.astro";
 import PricingCard from "../../components/PricingCard";
-import MobileMenu from "../../components/Navbar.astro";
 import ShowCard from "../../components/ShowCard.astro";
+import Navbar from "../../components/Navbar.astro";
 ---
 
 <Layout title="GEMSS: Persuasive Pitch Deck Design Services">
     <main class="bg-black w-full">
-        <nav class="flex flex-row items-center md:justify-between justify-center w-full md:px-8 md:py-8 py-8 px-4">
-            <a class="flex flex-row items-center space-x-2.5" href="/">
-                <img src="/gem.png" class="w-5 h-5" alt="gem">
-                <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
-                    GEMSS
-                </h3>
-            </a>
-            <button class="hidden btn-gradient whitespace-nowrap pl-4 pr-3 py-1.5 md:flex flex-row items-center gap-2 text-white stroke-white rounded-[60px]">
-                Say hi
-                <Icon name="wave" class="w-5 h-5"/>
-            </button>
-        </nav>
-        <MobileMenu/>
+        <Navbar/>
         <img src="/card.png" class="block md:hidden aspect-[16/11] w-full col-span-2 px-4"
              alt="card"/>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
@@ -149,7 +136,7 @@ import ShowCard from "../../components/ShowCard.astro";
                 <PricingCard client:visible className="col-span-2"/>
             </div>
         </div>
-        <Footer/>
+        <Footer mode="dark"/>
     </main>
 </Layout>
 

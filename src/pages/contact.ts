@@ -80,17 +80,25 @@ const EmailTemplate = () => {
             box-sizing: border-box;
         }
 
-        p {
+        p, a {
             font-size: 28px;
-            line-height: 26px;
+            line-height: 36px;
             color: #ffffff;
             font-weight: normal;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             max-width: 400px;
+            padding: 0;
+            margin: 0;
         }
 
+        a {
+            text-decoration: underline;
+            text-underline: white;
+        }
+
+
         @media only screen and (max-width: 480px) {
-            p {
+            p, a {
                 font-size: 20px !important; /* or whatever size you want */
                 line-height: 28px !important; /* or whatever size you want */
                 max-width: 280px !important;
@@ -109,11 +117,10 @@ const EmailTemplate = () => {
                 <p style="color: #ffffff; margin-top: 25px; max-width: 400px">
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
-                    contact us via <a href="https://t.me/nickaxel"
-                                      style="text-underline: white; color: white">Telegram</a>,
-                    <a href="https://twitter.com/disraptco" style="text-underline: white; color: white">Twitter,</a>
-                    <a href="https://t.me/nickaxel" style="text-underline: white; color: white">Signal</a>, or
-                    <a href="https://instagram.com/gemsscollective/" style="text-underline: white; color: white">Instagram.</a>
+                    contact us via <a href="https://t.me/nickaxel">Telegram</a>,
+                    <a href="https://twitter.com/disraptco">Twitter,</a>
+                    <a href="https://t.me/nickaxel">Signal</a>, or
+                    <a href="https://instagram.com/gemsscollective/">Instagram.</a>
                 </p>
             </td>
         </tr>
