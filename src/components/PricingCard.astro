@@ -1,4 +1,5 @@
 ---
+import ImageSlideshow from "./ImageSlideshow.astro";
 interface Props {
     title: string;
     description: string;
@@ -10,102 +11,16 @@ interface Props {
 const {price, priceDescription, title, description, id} = Astro.props;
 ---
 
-<pricing-card data-id={id}>
-    <a class="flex flex-col h-full bg-white/10" href={`/${id}`}>
-        <div class="slideshow-container">
-            <div class=`slide slide-items-${id} fade`><img src="/pitch-deck-1.png" alt=""></div>
-            <div class=`slide slide-items-${id} fade`><img src="/pitch-deck-2.png" alt=""></div>
-            <div class=`slide slide-items-${id} fade`><img src="/pitch-deck-3.png" alt=""></div>
-            <div class=`slide slide-items-${id} fade`><img src="/pitch-deck-4.png" alt=""></div>
-            <div class=`slide slide-items-${id} fade`><img src="/pitch-deck-5.png" alt=""></div>
+<a class="flex flex-col h-full bg-white/10" href={`/${id}`}>
+    <ImageSlideshow slidesId={id} className="max-h-[400px]"/>
+    <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 gap-2 mb-auto md:h-[190px] h-[220px]">
+        <div class="flex flex-col md:space-y-2 space-y-1 md:w-[240px] w-full">
+            <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
+            <p class="text-[#6F6F6F] md:text-[15px] text-[12px] md:leading-[20px] leading-[18px]">{description}</p>
         </div>
-        <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 mb-auto md:h-[190px] h-[220px]">
-            <div class="flex flex-col md:space-y-2 space-y-1 md:w-[240px] w-full">
-                <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
-                <p class="text-[#6F6F6F] md:text-[15px] text-[12px] md:leading-[20px] leading-[18px]">{description}</p>
-            </div>
-            <div class="flex flex-col md:space-y-2 space-y-1">
-                <p class="text-white text-[20px] leading-[24px]">{price}</p>
-                <p class="text-white text-[12px] leading-[16px]">{priceDescription}</p>
-            </div>
+        <div class="flex flex-col md:space-y-2 space-y-1">
+            <p class="text-white text-[20px] leading-[24px]">{price}</p>
+            <p class="text-white text-[12px] leading-[16px]">{priceDescription}</p>
         </div>
-    </a>
-</pricing-card>
-
-
-<script>
-
-    class PricingCard extends HTMLElement {
-        constructor() {
-            super();
-
-            // Read the message from the data attribute.
-            const message = this.dataset.id;
-
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName(`slide-items-${message}`);
-
-                // Hide all slides
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-
-                slideIndex++;
-
-                // If we've gone past the end, loop back to the beginning
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-
-                slides[slideIndex - 1].style.display = "block";
-
-                // Change slide every 2 seconds
-                setTimeout(showSlides, 2000);
-            }
-
-        }
-    }
-
-    customElements.define('pricing-card', PricingCard);
-</script>
-
-
-<style>
-    .slideshow-container {
-        position: relative;
-        width: 100%;
-        height: 400px;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-        .slideshow-container {
-            height: 220px;
-        }
-    }
-
-    .slide {
-        display: none;
-        width: 100%;
-        height: 400px;
-    }
-
-    .fade {
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0.4;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-</style>
+    </div>
+</a>

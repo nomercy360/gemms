@@ -5,13 +5,13 @@ import Footer from "../../components/Footer.astro";
 import PricingCard from "../../components/PricingCard";
 import ShowCard from "../../components/ShowCard.astro";
 import Navbar from "../../components/Navbar.astro";
+import ImageSlideshow from "../../components/ImageSlideshow.astro";
 ---
 
 <Layout title="GEMSS: Persuasive Pitch Deck Design Services">
     <main class="bg-black w-full">
         <Navbar/>
-        <img src="/card.png" class="block md:hidden aspect-[16/11] w-full col-span-2 px-4"
-             alt="card"/>
+        <ImageSlideshow slidesId="pitch-deck-1" className="block md:hidden aspect-[16/11] w-full col-span-2 px-4"/>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
             <div></div>
             <div class="lg:max-w-lg md:max-w-xs md:text-start text-center md:fixed static top-32 left-8 flex flex-col md:items-start items-center">
@@ -32,8 +32,8 @@ import Navbar from "../../components/Navbar.astro";
                 </a>
             </div>
             <div class="grid grid-cols-2 md:gap-4 gap-1 w-full md:mt-0 mt-9">
-                <img src="/card.png" class="md:block hidden h-[400px] md:aspect-none aspect-[16/11] w-full col-span-2"
-                     alt="card"/>
+                <ImageSlideshow slidesId="pitch-deck-2"
+                                className="md:block hidden h-[400px] w-full col-span-2"/>
                 <div class="overflow-hidden md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 col-span-2 md:px-6 px-3 py-4">
                     <div class="md:flex flex-col grid grid-cols-2 gap-2">
                         <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
