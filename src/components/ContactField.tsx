@@ -1,33 +1,16 @@
-import {createSignal, Match, Switch} from "solid-js";
+import {createSignal, Match, onCleanup, Switch} from "solid-js";
+import useContact from "../hooks/useContact.ts";
 
-const ContactField = () => {
-    const [email, setEmail] = createSignal('');
-    const [sent, setSent] = createSignal(false);
-
-    const sendEmail = async () => {
-        const response = await fetch('/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email: email()})
-        });
-
-        if (response.status !== 200) {
-            console.error(response);
-            return;
-        } else {
-            setSent(true);
-        }
-    }
+const ContactField = ({buttonText}: { buttonText: string }) => {
+    const {email, setEmail, sent, sendEmail} = useContact();
 
     return (
-        <form class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-2.5 pr-2.5 pl-4 mt-8"
+        <form class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-2.5 pr-2.5 pl-4 mt-8 w-full"
               onSubmit={(e) => {
                   e.preventDefault();
                   sendEmail();
               }}>
-            <input placeholder="E-mail, Telegram, Signal, etc."
+            <input placeholder='Your telegram or email'
                    onInput={(e) => setEmail(e.currentTarget.value)}
                    class="bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none"/>
             <Switch>
@@ -42,7 +25,7 @@ const ContactField = () => {
                     <button class="rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md"
                             onClick={sendEmail}
                             type="submit">
-                        Contact
+                        {buttonText}
                     </button>
                 </Match>
             </Switch>

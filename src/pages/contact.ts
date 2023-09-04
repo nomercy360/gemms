@@ -3,8 +3,6 @@ import type {APIRoute} from "astro";
 export const POST: APIRoute = async ({request, locals}) => {
     const apiKey = import.meta.env.RESEND_API_KEY
 
-    console.log('API_KEY', apiKey)
-
     const data = await request.json();
 
     if (!validateEmail(data.email)) {
@@ -59,7 +57,7 @@ const EmailTemplate = () => {
         }
 
         body {
-            background-color: #000000;
+            background-color: #000000 !important;
             font-family: sans-serif;
             -webkit-font-smoothing: antialiased;
             font-size: 14px;

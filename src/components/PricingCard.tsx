@@ -1,5 +1,6 @@
 import {createSignal, For, Show} from "solid-js";
 import {twMerge} from "tailwind-merge";
+import ContactField from "./ContactField";
 
 
 const initial = [
@@ -28,7 +29,8 @@ const PricingCard = ({className}: { className?: string }) => {
     }
 
     return (
-        <div id="calculator" class={twMerge('flex flex-col items-start justify-start px-4 py-5 bg-white/10', className)}>
+        <div id="calculator"
+             class={twMerge('flex flex-col items-start justify-start px-4 py-5 bg-white/10', className)}>
             <p class='text-white md:text-[40px] text-[20px] md:leading-[40px] leading-[24px]'>≈{formatPrice(total())} for
                 a deck</p>
             <p class='text-[#6F6F6F] text-[12px] leading-[16px] mt-2'>The price might change after the interview</p>
@@ -69,14 +71,7 @@ const PricingCard = ({className}: { className?: string }) => {
             <p class='text-[#6F6F6F] md:text-[16px] md:leading-[24px] text-[12px] leading-[20px]'>
                 Money-back guarantee. Wire transfer, crypto, or PayPal are accepted.
             </p>
-            <div class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] px-4 py-3 mt-8 w-full">
-                <input placeholder="E-mail, Telegram, Signal, etc."
-                       class="bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none"/>
-                <button class="rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md whitespace-nowrap">
-                    Pre-order
-                </button>
-            </div>
-
+            <ContactField buttonText='Preorder'/>
         </div>
     )
 

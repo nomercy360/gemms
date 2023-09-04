@@ -5,9 +5,10 @@ import Button from "../../components/Button.astro";
 import Footer from "../../components/Footer.astro";
 import PricingCard from "../../components/PricingCard";
 import MobileMenu from "../../components/MobileMenu.astro";
+import ShowCard from "../../components/ShowCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="GEMSS: Persuasive Pitch Deck Design Services">
     <main class="bg-black w-full">
         <nav class="flex flex-row items-center md:justify-between justify-center w-full md:px-8 md:py-8 py-8 px-4">
             <a class="flex flex-row items-center space-x-2.5" href="/">
@@ -22,9 +23,11 @@ import MobileMenu from "../../components/MobileMenu.astro";
             </button>
         </nav>
         <MobileMenu/>
+        <img src="/card.png" class="block md:hidden aspect-[16/11] w-full col-span-2 px-4"
+             alt="card"/>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
             <div></div>
-            <div class="md:max-w-lg md:text-start text-center md:fixed static top-32 left-8 flex flex-col md:items-start items-center">
+            <div class="lg:max-w-lg md:max-w-xs md:text-start text-center md:fixed static top-32 left-8 flex flex-col md:items-start items-center">
                 <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">
                     Pitch Decks Design Service
                 </p>
@@ -41,10 +44,10 @@ import MobileMenu from "../../components/MobileMenu.astro";
                     Check Pricing
                 </a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:mt-0 mt-9">
-                <img src="/card.png" class="md:h-[400px] md:aspect-none aspect-[16/11] w-full md:col-span-2"
+            <div class="grid grid-cols-2 md:gap-4 gap-1 w-full md:mt-0 mt-9">
+                <img src="/card.png" class="md:block hidden h-[400px] md:aspect-none aspect-[16/11] w-full col-span-2"
                      alt="card"/>
-                <div class="overflow-hidden md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 md:col-span-2 md:px-6 px-3 py-4">
+                <div class="overflow-hidden md:h-[400px] h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 col-span-2 md:px-6 px-3 py-4">
                     <div class="md:flex flex-col grid grid-cols-2 gap-2">
                         <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
                             In-depth market and product discovery
@@ -54,10 +57,10 @@ import MobileMenu from "../../components/MobileMenu.astro";
                             aiming to answer the questions that are on the minds of investors.
                         </p>
                     </div>
-                    <div class="flex md:flex-col flex-row md:flex-nowrap flex-wrap md:items-end justify-start md:gap-2 gap-0.5">
+                    <div class="flex md:flex-col md:mx-0 -mx-16 flex-row md:flex-nowrap flex-wrap md:items-end justify-start md:gap-2 gap-0.5">
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Product economy</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
+                        <span class="bg-white/40 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Long-term strategy</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Market economy</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Business Model</span>
@@ -66,47 +69,24 @@ import MobileMenu from "../../components/MobileMenu.astro";
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">VC Pipeline</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-between h-[400px] bg-white/10">
-                    <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8">
-                        <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
-                            Straight-forward and fact-checked data, math, and models
-                        </p>
-                        <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
-                            As economists and financial managers, we work with mathematics, gather data, and develop
-                            models ourselves.
-                        </p>
-                    </div>
-                    <img src="/exel.png" class="aspect-video pl-8">
-                </div>
-                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
-                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
-                        Made by actual investors and entrepreneurs
-                    </p>
-                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
-                        Our pitch decks not only look and feel good,
-                        but they are also designed in a way that is understandable for investors.
-                    </p>
-                </div>
-                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
-                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
-                        Straight-forward messages, Makes you memorable
-                    </p>
-                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
-                        Done 50+ pith decks we understood that the most important thing in the pitch deck is a FOMO (A
-                        feeling of missed opportunity). We know the right way to get such feeling.
-                    </p>
-                </div>
-                <div class="md:flex flex-col grid grid-cols-2 gap-2 pt-5 pl-4 pr-8 md:h-[400px] h-[280px] bg-white/10">
-                    <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
-                        Professional illustrations and interactive animations
-                    </p>
-                    <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
-                        Done 50+ pith decks we understood that the most important thing in the pitch deck is a feeling
-                        of missed opportunity
-                    </p>
-                </div>
-                <div class="overflow-hidden md:h-[400px] h-[300px] bg-white/10 flex flex-col justify-between gap-6 md:col-span-2 md:px-6 px-3 py-4 relative">
-                    <div class="md:w-1/2 w-full grid grid-cols-2 md:flex flex-col">
+                <ShowCard text="Clear and straight-forward messages"
+                          description="Gathering data and turning it into a pre one of our"
+                          bottomText="2-3.5"
+                          bottomDescription="Average click trough rate"/>
+                <ShowCard text="Engaging visuals that increase CTR"
+                          description="Gathering data and turning it into a pre one of our "
+                          bottomText="2.5"
+                          bottomDescription="Average engagement rate"/>
+                <ShowCard text="Almost perfect data transmission"
+                          description="We know how to set up events in a way that"
+                          bottomText="2X"
+                          bottomDescription="More data is processed by Facebbok"/>
+                <ShowCard text="Low-cost experiments to grow even further"
+                          description="Gathering data and turning it into a pre one of our "
+                          bottomText="10X"
+                          bottomDescription="Average yearly growth of clients"/>
+                <div class="overflow-hidden md:h-[400px] h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative">
+                    <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
                         <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
                             Over 50+ projects for startups from allover the world
                         </p>
@@ -116,13 +96,13 @@ import MobileMenu from "../../components/MobileMenu.astro";
                         </p>
                     </div>
                     <div class="flex md:flex-col flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0">
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Product economy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Long-term strategy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Market economy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Business Model</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Blurb</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">E-commerce</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Architecture</span>
+                        <span class="bg-white rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Artificial Intelligence</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Retail</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Automation</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Dev Tools</span>
+                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Socials</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Onepager</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">VC Pipeline</span>
                     </div>
@@ -166,7 +146,7 @@ import MobileMenu from "../../components/MobileMenu.astro";
                         </p>
                     </div>
                 </div>
-                <PricingCard client:visible className="md:col-span-2"/>
+                <PricingCard client:visible className="col-span-2"/>
             </div>
         </div>
         <Footer/>

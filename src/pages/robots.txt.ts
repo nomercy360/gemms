@@ -4,7 +4,7 @@
 export async function GET({params, request}: { params: any, request: any }) {
     return new Response(
         `User-agent: *
-Disallow: /`,
+Allow: /`,
         {
             headers: {
                 "content-type": "text/plain;charset=UTF-8",
