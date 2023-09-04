@@ -3,18 +3,20 @@ import {twMerge} from "tailwind-merge";
 interface Props {
     className?: string;
     slidesId: string;
+    generatedId: string;
+    startDelay?: number; // in milliseconds
 }
 
-const {slidesId, className} = Astro.props;
+const {slidesId, className, generatedId, startDelay = 0} = Astro.props;
 ---
 
-<slide-show data-id={slidesId}
+<slide-show data-id={`${slidesId}-${generatedId}`} data-start-delay={startDelay}
             class={twMerge('h-full lg:min-h-[400px] min-[400px]:min-h-[280px] min-h-[220px] relative', className)}>
-    <div class=`slide slide-items-${slidesId} fade active`><img src="/pitch-deck-1.png" alt=""></div>
-    <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-2.png" alt=""></div>
-    <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-3.png" alt=""></div>
-    <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-4.png" alt=""></div>
-    <div class=`slide slide-items-${slidesId} fade`><img src="/pitch-deck-5.png" alt=""></div>
+    <div class=`slide slide-items-${slidesId}-${generatedId} fade active`><img src=`/${slidesId}-1.png` alt=""></div>
+    <div class=`slide slide-items-${slidesId}-${generatedId} fade`><img src=`/${slidesId}-2.png` alt=""></div>
+    <div class=`slide slide-items-${slidesId}-${generatedId} fade`><img src=`/${slidesId}-3.png` alt=""></div>
+    <div class=`slide slide-items-${slidesId}-${generatedId} fade`><img src=`/${slidesId}-4.png` alt=""></div>
+    <div class=`slide slide-items-${slidesId}-${generatedId} fade`><img src=`/${slidesId}-5.png` alt=""></div>
 </slide-show>
 
 
@@ -28,7 +30,10 @@ const {slidesId, className} = Astro.props;
             let slideIndex = 0;
 
             if (message) {
-                showSlides();
+                const startDelay = parseInt(this.dataset.startDelay);
+                setTimeout(() => {
+                    showSlides();
+                }, startDelay);
             }
 
             function showSlides() {

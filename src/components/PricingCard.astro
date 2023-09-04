@@ -6,13 +6,14 @@ interface Props {
     priceDescription: string;
     price: string;
     id: string;
+    startDelay?: number;
 }
 
-const {price, priceDescription, title, description, id} = Astro.props;
+const {price, priceDescription, title, description, id, startDelay = 0} = Astro.props;
 ---
 
 <a class="flex flex-col h-full bg-white/10" href={`/${id}`}>
-    <ImageSlideshow slidesId={id} className="max-h-[400px]"/>
+    <ImageSlideshow slidesId={id} className="aspect-[3/2]" generatedId="fff" startDelay={startDelay}/>
     <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 gap-2 md:min-h-[190px] min-h-[220px]">
         <div class="flex flex-col md:space-y-2 space-y-1 md:w-[240px] w-full">
             <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
