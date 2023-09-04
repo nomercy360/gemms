@@ -252,7 +252,7 @@ import {Icon} from "astro-icon/components";
         </a>
     </div>
     <div class="flex flex-col space-y-7">
-        <div class="flex flex-col space-y-7 animate-fade text-center items-center">
+        <div class="flex flex-col space-y-7 animate-fade-slide text-center items-center">
             <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Telegram</a>
             <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Instagram</a>
             <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">X (Twitter)</a>
@@ -297,7 +297,7 @@ import {Icon} from "astro-icon/components";
         animation: fade-scale 0.8s forwards;
     }
 
-    @keyframes fade {
+    @keyframes fade-slide {
         0% {
             opacity: 0;
             transform: translateY(20px);
@@ -308,8 +308,8 @@ import {Icon} from "astro-icon/components";
         }
     }
 
-    .animate-fade {
-        animation: fade 0.8s forwards;
+    .animate-fade-slide {
+        animation: fade-slide 0.8s forwards;
     }
 
     body {
