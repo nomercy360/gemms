@@ -3,6 +3,8 @@ import type {APIRoute} from "astro";
 export const POST: APIRoute = async ({request, locals}) => {
     const apiKey = import.meta.env.RESEND_API_KEY
 
+    const uuid = crypto.randomUUID()
+
     const data = await request.json();
 
     if (!validateEmail(data.email)) {
@@ -15,6 +17,7 @@ export const POST: APIRoute = async ({request, locals}) => {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`,
+            'X-Entity-Ref-ID': uuid,
         },
         body: JSON.stringify({
             from: 'Hello <hello@gemss.xyz>',

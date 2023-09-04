@@ -37,7 +37,7 @@ import ContactField from "../components/ContactField";
                     with a huge experience in their field. We’ve developed five quick to profit services, that will
                     rapidly change your your business.
                 </p>
-                <ContactField client:visible buttonText="Contact"/>
+                <ContactField client:visible buttonText="Contact" placeholderText="Your telegram or email"/>
             </div>
             <div class="order-first md:order-none md:max-w-xl w-full md:mb-0 mb-10 relative h-[400px] lg:mr-20 md:mr-10 mr-0">
                 <Badge text="Branding" className="absolute left-0 top-[100px]"/>
@@ -82,11 +82,11 @@ import ContactField from "../components/ContactField";
             <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex md:flex-row md:gap-4 gap-5 flex-col justify-between">
                 <div class="flex flex-col md:max-w-lg">
                     <div class="flex flex-row items-center justify-start">
-                        <img src="/peer.png" class="h-12 w-12 rounded-full" alt="peer"/>
-                        <img src="/peer.png" class="h-12 w-12 rounded-full -ml-3" alt="peer"/>
-                        <img src="/peer.png" class="h-12 w-12 rounded-full -ml-3 z-10" alt="peer"/>
+                        <img src="/ann.png" class="h-12 w-12 rounded-full" alt="Ann"/>
+                        <img src="/max.png" class="h-12 w-12 rounded-full -ml-3" alt="Max"/>
+                        <img src="/gavriil.png" class="h-12 w-12 rounded-full -ml-3 z-10" alt="Gavriil"/>
                         <span class="bg-black w-12 h-12 rounded-full text-[15px] leading-[20px] flex items-center justify-center text-white -ml-3 border-[3px] border-white">
-                            +5
+                            +10
                         </span>
                     </div>
                     <h2 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4">
@@ -134,13 +134,13 @@ import ContactField from "../components/ContactField";
                                 <span class="text-[12px] leading-[16px]">Pay daily or weekly</span>
                             </div>
                         </div>
-                        <div class="flex flex-row items-center justify-between rounded-[52px] bg-black/10 px-2 py-1.5 pl-4 md:mt-10 mt-8">
-                            <input placeholder="E-mail, Telegram, Signal, etc."
-                                   class="bg-transparent placeholder:text-[#4E4E4E] w-full text-black text-[15px] leading-[20px] focus:outline-none"/>
-                            <button class="rounded-[50px] bg-black text-white px-3 h-[36px] backdrop-blur-md whitespace-nowrap">
-                                Let’s Talk
-                            </button>
-                        </div>
+                        <ContactField client:visible
+                                      placeholderText="E-mail, Telegram, etc."
+                                      buttonText="Let’s Talk"
+                                      btnClass="bg-black text-white"
+                                      formClass="bg-black/5"
+                                      inputClass="text-black"
+                        />
                     </div>
                 </div>
                 <div class="w-full md:h-[400px] pink-card relative md:mt-0 max-w-[600px] flex flex-col items-start justify-end">

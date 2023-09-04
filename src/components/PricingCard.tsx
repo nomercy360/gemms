@@ -71,7 +71,7 @@ const PricingCard = ({className}: { className?: string }) => {
             <p class='text-[#6F6F6F] md:text-[16px] md:leading-[24px] text-[12px] leading-[20px]'>
                 Money-back guarantee. Wire transfer, crypto, or PayPal are accepted.
             </p>
-            <ContactField buttonText='Preorder'/>
+            <ContactField buttonText='Preorder' placeholderText='Your telegram or email'/>
         </div>
     )
 

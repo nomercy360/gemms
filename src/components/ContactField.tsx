@@ -1,18 +1,26 @@
 import {createSignal, Match, onCleanup, Switch} from "solid-js";
 import useContact from "../hooks/useContact.ts";
+import {twMerge} from "tailwind-merge";
 
-const ContactField = ({buttonText}: { buttonText: string }) => {
+const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnClass}: {
+    buttonText: string,
+    placeholderText: string,
+    inputClass?: string,
+    formClass?: string,
+    btnClass?: string
+}) => {
     const {email, setEmail, sent, sendEmail} = useContact();
 
     return (
-        <form class="flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-2.5 pr-2.5 pl-4 mt-8 w-full"
-              onSubmit={(e) => {
-                  e.preventDefault();
-                  sendEmail();
-              }}>
-            <input placeholder='Your telegram or email'
+        <form
+            class={twMerge('flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-1.5 pr-2 pl-4 mt-8 w-full', formClass)}
+            onSubmit={(e) => {
+                e.preventDefault();
+                sendEmail();
+            }}>
+            <input placeholder={placeholderText}
                    onInput={(e) => setEmail(e.currentTarget.value)}
-                   class="bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none"/>
+                   class={twMerge('bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none', inputClass)}/>
             <Switch>
                 <Match when={sent()}>
                     <div
@@ -22,9 +30,10 @@ const ContactField = ({buttonText}: { buttonText: string }) => {
                     </div>
                 </Match>
                 <Match when={!sent()}>
-                    <button class="rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md"
-                            onClick={sendEmail}
-                            type="submit">
+                    <button
+                        class={twMerge('whitespace-nowrap rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md', btnClass)}
+                        onClick={sendEmail}
+                        type="submit">
                         {buttonText}
                     </button>
                 </Match>
