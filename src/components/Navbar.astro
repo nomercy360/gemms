@@ -278,8 +278,14 @@ import {Icon} from "astro-icon/components";
         border: 0.5px solid rgba(255, 255, 255, 0.20);
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 50%), rgba(255, 255, 255, 0.10);
         backdrop-filter: blur(10px);
-        /* Adding a drop shadow */
         mix-blend-mode: difference;
+    }
+
+    @supports not (mix-blend-mode: difference) {
+        .btn-gradient {
+            background-color: rgba(127, 127, 127, 0.5); /* Adjust as needed */
+            mix-blend-mode: normal;
+        }
     }
 
     @keyframes fade-scale {
