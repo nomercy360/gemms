@@ -2,28 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import PricingCard from '../components/PricingCard.astro';
 import {Icon} from "astro-icon/components";
-import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
-import MobileMenu from "../components/MobileMenu.astro";
+import Navbar from "../components/Navbar.astro";
 import Badge from "../components/Badge.astro";
 import ContactField from "../components/ContactField";
 ---
 
 <Layout title="Welcome to Gemss - Speed-first Growth Services for Startups<">
     <main class="bg-black w-full">
-        <nav class="flex flex-row items-center md:justify-between justify-center w-full md:px-8 md:py-8 py-8 px-4">
-            <a class="flex flex-row items-center space-x-2.5" href="/">
-                <img src="/gem.png" class="w-5 h-5" alt="gem">
-                <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
-                    GEMSS
-                </h3>
-            </a>
-            <button class="hidden btn-gradient whitespace-nowrap pl-4 pr-3 py-1.5 md:flex flex-row items-center gap-2 text-white stroke-white rounded-[50px]">
-                Say hi
-                <Icon name="wave" class="w-5 h-5"/>
-            </button>
-        </nav>
-        <MobileMenu/>
+        <Navbar/>
         <div class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4">
             <div class="md:max-w-lg md:text-start text-center">
                 <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">

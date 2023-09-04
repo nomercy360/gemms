@@ -1,0 +1,164 @@
+---
+import {Icon} from "astro-icon/components";
+---
+
+<script>
+    // 1. Select the button that triggers the menu and the menu itself
+    const toggleMenuButtons = document.querySelectorAll('.toggle-menu-button');
+    const menu = document.getElementById('menu');
+    const closeButton = document.getElementById('close-button');
+
+    // 2. Add event listener to the button
+    toggleMenuButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                menu.querySelector('.animate-fade').classList.remove('opacity-0');
+            }, 100);
+        });
+    });
+
+    // 4. Add another event listener to the close button
+    closeButton.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+</script>
+
+
+<nav class="flex flex-row items-center md:justify-between justify-center w-full md:px-8 md:py-8 py-8 px-4">
+    <a class="flex flex-row items-center space-x-2.5" href="/">
+        <img src="/gem.png" class="w-5 h-5" alt="gem">
+        <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
+            GEMSS
+        </h3>
+    </a>
+    <button class="toggle-menu-button hidden btn-gradient whitespace-nowrap pl-4 pr-3 h-[32px] md:flex flex-row items-center gap-2 text-white stroke-white rounded-[50px] w-[102px]">
+        Say hi
+        <Icon name="wave" class="w-5 h-5"/>
+    </button>
+</nav>
+
+<button class="toggle-menu-button md:hidden btn-gradient whitespace-nowrap pl-4 pr-3 h-[48px] flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[130px] fixed bottom-10 left-1/2 transform -translate-x-1/2 md:translate-x-0 md:translate-y-0 z-50">
+    Say hi
+    <Icon name="wave" class="w-5 h-5"/>
+</button>
+
+<div class="hidden flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black top-0 left-0 w-full inset-0 h-screen"
+     id="menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="360" height="420" viewBox="0 0 360 420" fill="none"
+         class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full animate-fade">
+        <g opacity="0.14" filter="url(#filter0_f_137_3296)">
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="#E4F800"/>
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="url(#paint0_radial_137_3296)"/>
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="url(#paint1_radial_137_3296)"/>
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="url(#paint2_radial_137_3296)"/>
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="url(#paint3_radial_137_3296)" fill-opacity="0.2"/>
+            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
+                  fill="url(#paint4_radial_137_3296)"/>
+            <path d="M350.6 106.429C350.6 172.448 328.566 217.211 291.459 245.484C254.333 273.772 202.057 285.6 141.488 285.6C20.5212 285.6 -77.6 178.616 -77.6 46.5707C-77.6 -19.5317 -67.9943 -64.2928 -43.3422 -92.5391C-18.7041 -120.769 21.0529 -132.6 81.6279 -132.6C142.13 -132.6 209.385 -105.844 261.516 -62.565C313.646 -19.2868 350.6 40.4671 350.6 106.429Z"
+                  stroke="white" stroke-opacity="0.21" stroke-width="0.800001"/>
+        </g>
+        <defs>
+            <filter id="filter0_f_137_3296" x="-212" y="-267" width="697" height="687" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feGaussianBlur stdDeviation="67" result="effect1_foregroundBlur_137_3296"/>
+            </filter>
+            <radialGradient id="paint0_radial_137_3296" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(-28.1163 76.5006) rotate(-13.2399) scale(174.236 302.767)">
+                <stop stop-color="#FF2B00"/>
+                <stop offset="1" stop-color="#FF2B00" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint1_radial_137_3296" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(301.116 -13.2853) rotate(154.655) scale(209.747 283.63)">
+                <stop stop-color="#47D1FC"/>
+                <stop offset="0.223958" stop-color="#47D1FC" stop-opacity="0.776042"/>
+                <stop offset="1" stop-color="#47D1FC" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint2_radial_137_3296" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(141.488 176.263) rotate(-97.595) scale(150.968 122.807)">
+                <stop stop-color="#00B13F"/>
+                <stop offset="1" stop-color="#00B13F" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint3_radial_137_3296" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(31.7442 26.6195) rotate(68.9615) scale(138.954 142.268)">
+                <stop stop-color="white"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint4_radial_137_3296" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(141.488 26.6195) rotate(90) scale(139.667 143)">
+                <stop stop-color="white"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+    </svg>
+
+    <a class="flex flex-row items-center space-x-2.5 md:mt-5 mt-0" href="/">
+        <img src="/gem.png" class="w-5 h-5" alt="gem">
+        <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
+            GEMSS
+        </h3>
+    </a>
+    <div class="flex flex-col space-y-7">
+        <div class="flex flex-col space-y-7 opacity-0 animate-fade text-center items-center">
+            <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Telegram</a>
+            <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Instagram</a>
+            <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">X (Twitter)</a>
+            <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Email</a>
+            <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline">Signal</a>
+            <div class="text-white/50 text-[12px] leading-[24px] text-center flex flex-row items-center gap-1">
+                Made by GAAS
+                <Icon name="globe" class="w-5 h-5 inline-block stroke-white"/>
+            </div>
+        </div>
+
+        <button class="btn-gradient whitespace-nowrap pl-4 pr-3 flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] md:w-[102px] w-[130px] md:h-[32px] h-[48px] md:absolute top-1 right-8 static"
+                id="close-button">
+            Close
+            <Icon name="back" class="md:w-4 w-5 md:h-3 h-4"/>
+        </button>
+    </div>
+</div>
+
+<style>
+    .btn-gradient {
+        border: 0.5px solid rgba(255, 255, 255, 0.20);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 50%), rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(10px);
+        /* Adding a drop shadow */
+        mix-blend-mode: difference;
+    }
+
+    .animate-fade {
+        animation: fade 0.7s ease-in-out forwards;
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    body {
+        background: black;
+    }
+
+    #menu {
+        z-index: 999;
+        position: sticky;
+        max-height: 100% !important;
+        backdrop-filter: blur(10px);
+    }
+
+</style>
