@@ -5,7 +5,7 @@ import {Icon} from "astro-icon/components";
 <script>
     const toggleMenuButton = document.getElementById('toggle-menu-button');
     const menu = document.getElementById('menu');
-    const closeButton = document.getElementById('close-button');
+    const closeButtons = document.querySelectorAll('.close-button');
 
     toggleMenuButton.addEventListener('click', () => {
             menu.classList.remove('hidden');
@@ -13,10 +13,10 @@ import {Icon} from "astro-icon/components";
         }
     );
 
-    closeButton.addEventListener('click', () => {
+    closeButtons.forEach(btn => btn.addEventListener('click', () => {
         menu.classList.add('hidden');
         document.body.style.overflow = 'auto';
-    });
+    }));
 </script>
 
 
@@ -34,7 +34,7 @@ import {Icon} from "astro-icon/components";
     </button>
 </nav>
 
-<div class="hidden flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black top-0 left-0 w-full inset-0 h-screen"
+<div class="hidden flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black top-0 left-0 w-full inset-0 h-screen relative"
      id="menu">
     <svg xmlns="http://www.w3.org/2000/svg" width="391" height="392" viewBox="0 0 391 392" fill="none"
          class="absolute top-0 md:block hidden left-0 w-[420px] animate-fade-scale origin-top-left">
@@ -240,15 +240,19 @@ import {Icon} from "astro-icon/components";
         </defs>
     </svg>
 
-    <div class="w-full flex flex-row md:justify-start justify-center items-center">
-        <a class="flex flex-row items-center space-x-2.5 md:mt-1.5 mt-0" href="/">
+    <div class="w-full flex flex-row md:justify-between justify-center items-center">
+        <a class="flex flex-row items-center space-x-2.5 mt-0" href="/">
             <img src="/gem.png" class="w-5 h-5" alt="gem">
             <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
                 GEMSS
             </h3>
         </a>
+        <button class="md:flex hidden close-button bg-neutral-800 border border-neutral-600 whitespace-nowrap pl-4 pr-3 flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[102px] h-[32px]">
+            Close
+            <Icon name="back" class="w-4 h-3"/>
+        </button>
     </div>
-    <div class="flex flex-col space-y-7">
+    <div class="flex flex-col space-y-7 absolute bottom-10">
         <div class="flex flex-col space-y-7 animate-fade-slide text-center items-center">
             <a class="text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
                href="https://t.me/gemss" target="_blank">
@@ -273,10 +277,9 @@ import {Icon} from "astro-icon/components";
             </a>
         </div>
 
-        <button class="bg-neutral-800 border border-neutral-600 whitespace-nowrap pl-4 pr-3 flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] md:w-[102px] w-[130px] md:h-[32px] h-[48px] md:absolute top-1 right-8 static"
-                id="close-button">
+        <button class="md:hidden close-button bg-neutral-800 border border-neutral-600 whitespace-nowrap pl-4 pr-3 flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[130px] h-[48px]">
             Close
-            <Icon name="back" class="md:w-4 w-5 md:h-3 h-4"/>
+            <Icon name="back" class="w-5 h-4"/>
         </button>
     </div>
 </div>
@@ -321,8 +324,6 @@ import {Icon} from "astro-icon/components";
         position: sticky;
         max-height: 100% !important;
         backdrop-filter: blur(10px);
-        min-height: -webkit-fill-available;
-        min-height: 100vh;
     }
 
 </style>
