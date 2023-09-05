@@ -19,12 +19,12 @@ const pricingItems = [
 
 <Layout title="GEMSS: Advertising settings and visuals, that boost sales and revenue"
         description="We are increasing engagement and conversion of Facebook, Google, or Twitter ads, conducting researches and experiments, and developing effective value propositions and visuals.">
-    <main class="bg-black w-full">
-        <Navbar/>
+    <Navbar/>
+    <main class="bg-black w-full pt-16">
         <ImageSlideshow generatedId="1"
                         slidesId="ads"
                         maxSlides={5}
-                        className="block md:hidden aspect-[3/2] col-span-2 mx-4"/>
+                        className="block md:hidden col-span-2 mx-4"/>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
             <div></div>
             <div class="lg:max-w-lg md:max-w-xs md:text-start text-center md:fixed static top-32 left-8 flex flex-col md:items-start items-center">
@@ -47,9 +47,9 @@ const pricingItems = [
                 <ImageSlideshow generatedId="2"
                                 slidesId="ads"
                                 maxSlides={5}
-                                className="md:block hidden max-w-full aspect-[3/2] col-span-2"/>
-                <div class="overflow-hidden md:min-h-[400px] min-h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 col-span-2 md:px-6 px-3 py-4">
-                    <div class="md:flex flex-col grid grid-cols-2 gap-2">
+                                className="md:block hidden col-span-2"/>
+                <div class="overflow-hidden md:min-h-[400px] min-h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative">
+                    <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
                         <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
                             In-depth market and product discovery
                         </p>
@@ -58,7 +58,7 @@ const pricingItems = [
                             developing short and meaningful messages that customers can easily understand.
                         </p>
                     </div>
-                    <div class="flex md:flex-col md:mx-0 -mx-16 flex-row md:flex-nowrap flex-wrap md:items-end justify-start md:gap-2 gap-0.5">
+                    <div class="flex md:flex-col md:mx-0 -mx-8 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-hidden md:max-h-none">
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Market</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Personas</span>
@@ -96,7 +96,7 @@ const pricingItems = [
                             Ukraine.
                         </p>
                     </div>
-                    <div class="flex md:flex-col flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0">
+                    <div class="flex md:flex-col md:mx-0 -mx-8 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-hidden md:max-h-none">
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">E-commerce</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Architecture</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Artificial Intelligence</span>
@@ -106,26 +106,6 @@ const pricingItems = [
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Socials</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Manufactures</span>
                         <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Logistics</span>
-                    </div>
-                    <div class="grid grid-cols-3 md:gap-2 gap-3 max-w-md">
-                        <div>
-                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">10X</p>
-                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
-                                Average yearly growth of clients
-                            </p>
-                        </div>
-                        <div>
-                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">16</p>
-                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
-                                Countries of the world
-                            </p>
-                        </div>
-                        <div>
-                            <p class="md:text-[32px] text-[16px] md:leading-[40px] leading-[20px] text-white">16</p>
-                            <p class="text-[#6F6F6F] md:text-[12px] text-[12px] md:leading-[16px] leading-[16px] mt-1">
-                                Countries of the world
-                            </p>
-                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between items-start py-6 px-4 md:min-h-[400px] min-h-[240px] bg-white/10 col-span-2">
