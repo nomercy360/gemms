@@ -23,7 +23,9 @@ const pricingItems = [
         description="We create pitch decks that cut to the chase, with a keen focus on data, math, marketing, and strategy. Our decks are made by investors, for investors, using the language of numbers that we all understand.">
     <main class="bg-black w-full">
         <Navbar/>
-        <ImageSlideshow slidesId="pitch-deck" generatedId="1"
+        <ImageSlideshow generatedId="1"
+                        slidesId="pitch-deck"
+                        maxSlides={5}
                         className="block md:hidden aspect-[3/2] col-span-2 mx-4"/>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative">
             <div></div>
@@ -45,7 +47,9 @@ const pricingItems = [
                 </a>
             </div>
             <div class="grid grid-cols-2 md:gap-4 gap-1 w-full md:mt-0 mt-9">
-                <ImageSlideshow slidesId="pitch-deck" generatedId="2"
+                <ImageSlideshow generatedId="2"
+                                slidesId="pitch-deck"
+                                maxSlides={5}
                                 className="md:block hidden max-w-full aspect-[3/2] col-span-2"/>
                 <div class="overflow-hidden md:min-h-[400px] min-h-[280px] bg-white/10 md:grid flex flex-col justify-between grid-cols-2 gap-6 col-span-2 md:px-6 px-3 py-4">
                     <div class="md:flex flex-col grid grid-cols-2 gap-2">
