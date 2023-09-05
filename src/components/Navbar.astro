@@ -17,14 +17,6 @@ import {Icon} from "astro-icon/components";
         menu.classList.add('hidden');
         document.body.style.overflow = 'auto';
     });
-
-    const appHeight = () => {
-        const doc = document.documentElement
-        doc.style.setProperty(' --app-height', `${window.innerHeight}px`)
-    }
-
-    window.addEventListener('resize', appHeight)
-    appHeight()
 </script>
 
 
@@ -329,6 +321,8 @@ import {Icon} from "astro-icon/components";
         position: sticky;
         max-height: 100% !important;
         backdrop-filter: blur(10px);
+        min-height: -webkit-fill-available;
+        min-height: 100vh;
     }
 
 </style>
