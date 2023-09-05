@@ -20,6 +20,13 @@ import {Icon} from "astro-icon/components";
         menu.classList.add('hidden');
         document.body.style.overflow = 'auto';
     });
+
+    const appHeight = () => {
+        const doc = document.documentElement
+        doc.style.setProperty(' — app-height', `${window.innerHeight}px`)
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
 </script>
 
 

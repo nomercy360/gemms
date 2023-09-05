@@ -47,8 +47,15 @@ import {ViewTransitions} from 'astro:transitions';
 </body>
 </html>
 <style is:global>
+
+    :root {
+        --app-height: 100%;
+    }
+
+
     body {
         font-family: Inter, sans-serif;
+        height: var(--app-height);
     }
 
     @font-face {
