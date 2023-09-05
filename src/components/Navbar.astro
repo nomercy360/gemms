@@ -329,8 +329,13 @@ import {Icon} from "astro-icon/components";
     #menu {
         z-index: 999;
         position: sticky;
-        max-height: 100% !important;
+        height: 100%;
+        min-height: 100vh;
         backdrop-filter: blur(10px);
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
 </style>
