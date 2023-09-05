@@ -9,14 +9,14 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
     formClass?: string,
     btnClass?: string
 }) => {
-    const {email, setEmail, sent, sendEmail} = useContact();
+    const {contact, setContact, sent, sendContact} = useContact();
 
     return (
         <form
             class={twMerge('flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-1.5 pr-2 pl-4 mt-8 w-full', formClass)}
             onSubmit={(e) => {
                 e.preventDefault();
-                sendEmail();
+                sendContact();
             }}>
             <input placeholder={placeholderText}
                    type='text'
@@ -26,7 +26,7 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
                    spellcheck={false}
                    required
                    maxlength='70'
-                   onInput={(e) => setEmail(e.currentTarget.value)}
+                   onInput={(e) => setContact(e.currentTarget.value)}
                    class={twMerge('bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[15px] leading-[20px] focus:outline-none', inputClass)}/>
             <Switch>
                 <Match when={sent()}>
@@ -39,7 +39,7 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
                 <Match when={!sent()}>
                     <button
                         class={twMerge('whitespace-nowrap rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md', btnClass)}
-                        onClick={sendEmail}
+                        onClick={sendContact}
                         type="submit">
                         {buttonText}
                     </button>

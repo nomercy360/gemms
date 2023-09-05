@@ -1,16 +1,16 @@
 import {createSignal} from "solid-js";
 
 const useContact = () => {
-    const [email, setEmail] = createSignal('');
+    const [contact, setContact] = createSignal('');
     const [sent, setSent] = createSignal(false);
 
-    const sendEmail = async () => {
+    const sendContact = async () => {
         const response = await fetch('/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email: email()})
+            body: JSON.stringify({contact: contact()})
         });
 
         if (response.status !== 200) {
@@ -22,10 +22,10 @@ const useContact = () => {
     }
 
     return {
-        email,
-        setEmail,
+        contact: contact,
+        setContact: setContact,
         sent,
-        sendEmail
+        sendContact: sendContact
     };
 }
 
