@@ -3,20 +3,27 @@ import {Icon} from "astro-icon/components";
 ---
 
 <script>
-    const toggleMenuButton = document.getElementById('toggle-menu-button');
-    const menu = document.getElementById('menu');
-    const closeButtons = document.querySelectorAll('.close-button');
+    const setButtonListeners = () => {
+        const toggleMenuButton = document.getElementById('toggle-menu-button');
+        const menu = document.getElementById('menu');
+        const closeButtons = document.querySelectorAll('.close-button');
 
-    toggleMenuButton.addEventListener('click', () => {
-            menu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-    );
 
-    closeButtons.forEach(btn => btn.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }));
+        toggleMenuButton.addEventListener('click', () => {
+                menu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        );
+
+        closeButtons.forEach(btn => btn.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }));
+    }
+
+    setButtonListeners();
+
+    document.addEventListener('astro:after-swap', setButtonListeners);
 </script>
 
 
