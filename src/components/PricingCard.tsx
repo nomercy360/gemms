@@ -30,8 +30,7 @@ const PricingCard = ({initial, className}: { initial: Item[], className?: string
     return (
         <div id="calculator"
              class={twMerge('flex flex-col items-start justify-start px-4 py-5 bg-white/10', className)}>
-            <p class='text-white md:text-[40px] text-[20px] md:leading-[40px] leading-[24px]'>≈{formatPrice(total())} for
-                a deck</p>
+            <p class='text-white md:text-[40px] text-[20px] md:leading-[40px] leading-[24px] font-light'>≈{formatPrice(total())}</p>
             <p class='text-[#6F6F6F] text-[12px] leading-[16px] mt-2'>The price might change after the interview</p>
             <ul class='mt-4 space-y-3 w-full'>
                 <For each={items()}>
@@ -51,7 +50,7 @@ const PricingCard = ({initial, className}: { initial: Item[], className?: string
                                         setTotal(calculateTotal());
                                     }}>
                                 <span
-                                    class='md:w-6 md:h-6 h-5 w-5 rounded border-2 border-white flex flex-row items-center justify-center'
+                                    class='md:w-5 md:h-5 h-4 w-4 rounded border-2 border-white flex flex-row items-center justify-center'
                                     style={{'opacity': selectedIds().includes(item.id) ? 1 : 0.5}}>
                                     <Show when={selectedIds().includes(item.id)}>
                                         <CheckIcon/>

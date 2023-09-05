@@ -39,7 +39,7 @@ import {ViewTransitions} from 'astro:transitions';
 
     <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
-    <script src=`${import.meta.env.PUBLIC_STATSY_SCRIPT}.js` defer></script>
+    <script src=`https://statsy.observer/${import.meta.env.PUBLIC_STATSY_SCRIPT}.js` defer></script>
     <ViewTransitions/>
 </head>
 <body>
@@ -60,7 +60,7 @@ import {ViewTransitions} from 'astro:transitions';
         src: url('/fonts/NewSpiritTRIAL-Light.woff2') format('woff2');
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, .heading {
         font-family: 'New Spirit', serif;
         font-weight: 300;
     }

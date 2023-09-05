@@ -124,7 +124,7 @@ const EmailTemplate = () => {
                 <p style="color: #ffffff; margin-top: 25px; max-width: 400px">
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
-                    contact us via <a href="https://t.me/nickaxel">Telegram</a>,
+                    contact us via <a href="tg://nickaxel">Telegram</a>,
                     <a href="https://twitter.com/gemsscollective">Twitter</a>, or
                     <a href="https://instagram.com/gemsscollective/">Instagram.</a>
                 </p>

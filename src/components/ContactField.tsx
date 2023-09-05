@@ -19,7 +19,7 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
                 sendEmail();
             }}>
             <input placeholder={placeholderText}
-                   type='email'
+                   type='text'
                    autocomplete='off'
                    autocorrect='off'
                    autocapitalize='off'
