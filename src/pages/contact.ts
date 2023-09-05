@@ -5,36 +5,50 @@ export const POST: APIRoute = async ({request, locals}) => {
 
     const uuid = crypto.randomUUID()
 
-    const data = await request.json();
+    const data = await request.json() as { contact: string }
 
-    if (!validateEmail(data.email)) {
-        const msg = JSON.stringify({message: "Invalid email provided"})
-        return new Response(msg, {status: 400, headers: {'Content-Type': 'application/json'}})
+    if (!data.contact) {
+        return new Response(JSON.stringify({message: "Contact is required"}), {
+            status: 400,
+            headers: {'Content-Type': 'application/json'}
+        })
     }
 
-    const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-            'X-Entity-Ref-ID': uuid,
-        },
-        body: JSON.stringify({
-            from: 'Hello <hello@gemss.xyz>',
-            to: [data.email],
-            subject: 'Hello from Gemss',
-            html: EmailTemplate(),
-        }),
-    });
+    const contactType = validateEmail(data.contact) ? 'email' : 'contact'
 
-    if (response.status !== 200) {
-        const msg = JSON.stringify({message: "Something went wrong"})
-        return new Response(msg, {status: 500, headers: {'Content-Type': 'application/json'}})
+    if (contactType === 'email') {
+        const response = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`,
+                'X-Entity-Ref-ID': uuid,
+            },
+            body: JSON.stringify({
+                from: 'Hello <hello@gemss.xyz>',
+                to: [data.contact],
+                subject: 'Hello from Gemss',
+                html: EmailTemplate(),
+            }),
+        });
+
+        if (response.status !== 200) {
+            const msg = JSON.stringify({message: "Something went wrong"})
+            return new Response(msg, {status: 500, headers: {'Content-Type': 'application/json'}})
+        }
     }
 
-    const msg = JSON.stringify({message: "Email sent"})
+    const message = `*New ${contactType} received*\n\n${data.contact}`;
 
-    return new Response(msg, {status: 200, headers: {'Content-Type': 'application/json'}})
+    const chatId = import.meta.env.TELEGRAM_CHAT_ID;
+    const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
+
+    // @ts-ignore
+    const runtime = locals.runtime;
+
+    runtime.waitUntil(sendTelegramMessage({botToken, chatId, message}));
+
+    return new Response(JSON.stringify({message: "OK"}), {status: 200, headers: {'Content-Type': 'application/json'}})
 }
 
 const validateEmail = (email: string) => {
@@ -43,6 +57,28 @@ const validateEmail = (email: string) => {
         .match(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
+}
+
+export async function sendTelegramMessage({botToken, chatId, message}: {
+    botToken: string,
+    chatId: string,
+    message: string
+}) {
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "Markdown",
+        })
+    });
+
+    return await response.json();
 }
 
 
@@ -96,7 +132,9 @@ const EmailTemplate = () => {
 
         a {
             text-decoration: underline;
-            text-underline: white;
+            text-underline: white !important;
+            text-decoration-color: white !important;
+            color: #ffffff !important;
         }
 
 
@@ -109,6 +147,7 @@ const EmailTemplate = () => {
             
             body {
                 min-height: 820px !important;
+                height: 820px !important;
             }
         }
 
@@ -116,7 +155,7 @@ const EmailTemplate = () => {
     </style>
 </head>
 <body>
-<div style="background-color: #000000; padding: 20px;">
+<div style="background-color: #000000; padding: 20px; min-height: 820px !important;">
     <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td valign="top">
@@ -124,7 +163,7 @@ const EmailTemplate = () => {
                 <p style="color: #ffffff; margin-top: 25px; max-width: 400px">
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
-                    contact us via <a href="tg://nickaxel">Telegram</a>,
+                    contact us via <a href="https://t.me/nickaxel">Telegram</a>,
                     <a href="https://twitter.com/gemsscollective">Twitter</a>, or
                     <a href="https://instagram.com/gemsscollective/">Instagram.</a>
                 </p>
