@@ -10,9 +10,6 @@ import {Icon} from "astro-icon/components";
     toggleMenuButton.addEventListener('click', () => {
             menu.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                menu.querySelector('.animate-fade').classList.remove('opacity-0');
-            }, 100);
         }
     );
 
@@ -23,8 +20,9 @@ import {Icon} from "astro-icon/components";
 
     const appHeight = () => {
         const doc = document.documentElement
-        doc.style.setProperty(' — app-height', `${window.innerHeight}px`)
+        doc.style.setProperty(' --app-height', `${window.innerHeight}px`)
     }
+
     window.addEventListener('resize', appHeight)
     appHeight()
 </script>
