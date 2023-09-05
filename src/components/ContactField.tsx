@@ -39,8 +39,7 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
                 <Match when={!sent()}>
                     <button
                         class={twMerge('whitespace-nowrap rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md', btnClass)}
-                        onClick={sendContact}
-                        type="submit">
+                        type='submit'>
                         {buttonText}
                     </button>
                 </Match>

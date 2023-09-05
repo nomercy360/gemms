@@ -22,10 +22,10 @@ const useContact = () => {
     }
 
     return {
-        contact: contact,
-        setContact: setContact,
+        contact,
+        setContact,
         sent,
-        sendContact: sendContact
+        sendContact
     };
 }
 
