@@ -4,71 +4,77 @@ import PricingCard from '../components/PricingCard.astro';
 import {Icon} from "astro-icon/components";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import Badge from "../components/Badge.astro";
 import ContactField from "../components/ContactField";
+import ImageSlideshow from "../components/ImageSlideshow.astro";
+import PriceDescription from "../components/PriceDescription.astro";
 ---
 
 <Layout title="Welcome to Gemss - Speed-first Growth Services for Startups<">
     <main class="bg-black w-full">
         <Navbar/>
-        <div class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4">
-            <div class="md:max-w-lg md:text-start text-center">
-                <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">
-                    Startup agency
-                </p>
-                <h1 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3">
-                    Speed-first growth services and outsource subscription for startups
-                </h1>
-                <p class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4">
-                    Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers,
-                    with a huge experience in their field. We’ve developed five quick to profit services, that will
-                    rapidly change your your business.
-                </p>
-                <ContactField client:visible buttonText="Contact" placeholderText="Your telegram or email"/>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-8 items-start mb-10">
+            <div class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4">
+                <div class="md:max-w-lg md:text-start text-center">
+                    <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">
+                        Startup agency
+                    </p>
+                    <h1 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3">
+                        Speed-first growth services and out-staff subscription for startups
+                    </h1>
+                    <p class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4">
+                        Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and
+                        developers, with a huge experience in different fields. We’ve developed five services, that will
+                        rapidly change your your business.
+                    </p>
+                    <ContactField client:visible buttonText="Contact" placeholderText="Your telegram or email"/>
+                </div>
             </div>
-            <div class="order-first md:order-none md:max-w-xl w-full md:mb-0 mb-10 relative h-[400px] lg:mr-20 md:mr-10 mr-0">
-                <Badge text="Branding" className="absolute left-0 top-[100px]"/>
-                <Badge text="Advertising" className="absolute left-1/2 top-0"/>
-                <Badge text="Content" className="absolute right-0 top-[100px]"/>
-                <Badge text="Product" className="absolute left-[40%] top-[180px]"/>
-                <Badge text="Pitch Decks" className="absolute left-[10%] bottom-[60px]"/>
-                <Badge text="Development" className="absolute right-[10%] bottom-0"/>
-            </div>
-        </div>
 
-        <section id="cards" class="mt-20 mb-10 md:p-8 p-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <section id="cards" class="md:p-8 p-4 flex flex-col space-y-4">
+                <ImageSlideshow slidesId="preview"
+                                maxSlides={9}
+                                generatedId="1"
+                                className="aspect-[3/2]"/>
                 <PricingCard
-                        title="Fast-made brands that are actually good"
+                        title="Catchy and fast-made logotypes and brands, that customers recognise"
                         description="Recognisable brand and domain name, logo, and visuals, that people understands, love, and share"
-                        price="from $2,500"
-                        priceDescription="1 to 4 weeks till end-result"
-                        id="branding"
-                />
-                <PricingCard
-                        title="Facebook & Google Ads that boost sales"
-                        description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
-                        price="from $1,500"
-                        priceDescription="Depending on service"
-                        id="product"
-                        startDelay={1000}
-                />
+                        href="/brands"
+                        available="true"
+                >
+                    <PriceDescription
+                            price="from $900"
+                            description="from 3 days"/>
+                </PricingCard>
                 <PricingCard
                         title="Data-first pitch decks, investors will understand"
-                        description="No-bullshit, data-first, fact-checked and beautiful"
-                        price="from $2,500"
-                        priceDescription="Price depends on services"
-                        id="pitch-deck"
-                />
+                        description="No-bullshit, data-first, fact-checked and beautiful pitch-deck written in the language of numbers"
+
+                        href="/pitch-deck"
+                        available="true"
+                >
+                    <PriceDescription
+                            price="from $2,500"
+                            description="Depending on service"/>
+                </PricingCard>
                 <PricingCard
-                        title="Content that is actually interesting for audience"
-                        description="Recognisable brand and domain name, logo, and visuals, that people understands, love, and share"
-                        price="Soon"
-                        priceDescription="Service is unavailable now"
-                        id="content"
-                />
-            </div>
-        </section>
+                        title="Facebook and Google settings and visuals that boost sales"
+                        description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
+                        href="/advertisign"
+                        available="true"
+                >
+                    <PriceDescription
+                            price="from $1,500"
+                            description="Depending on service"/>
+                </PricingCard>
+                <PricingCard
+                        title="Content that engage audience and increase sales"
+                        description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
+                        href="/content"
+                >
+                    <div></div>
+                </PricingCard>
+            </section>
+        </div>
         <section id="subscription">
             <div class="bg-white md:py-10 py-8 md:px-8 px-4 flex md:flex-row md:gap-4 gap-5 flex-col justify-between">
                 <div class="flex flex-col md:max-w-lg">
@@ -81,15 +87,14 @@ import ContactField from "../components/ContactField";
                         </span>
                     </div>
                     <h2 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4">
-                        Subscription-based product design and development
+                        Subscription-based design, coding, and product development
                     </h2>
                     <p class="md:text-[20px] text-[15px] leading-[21px] md:leading-[27px] text-[#6F6F6F] mt-4">
-                        Research, conceptualisation, design, and developing for web, mobile, blockchain, and telegram
-                        apps.
-                        By designers, engineers, and product managers with more than 15 years of experience
+                        Research, conceptualisation, design, and development for web, mobile, blockchain, and Telegram
+                        apps by designers, engineers, and product managers with more than 15 years of experience.
                     </p>
                     <div class="flex flex-col justify-between p-4 bg-black/5 md:mt-8 mt-7">
-                        <div class="flex flex-row justify-between">
+                        <div class="flex md:flex-row flex-col md:justify-between justify-start md:gap-0 gap-5">
                             <ul class="text-black md:text-[15px] text-[15px] leading-[20px] md:leading-[21px] space-y-2">
                                 <li class="flex flex-row items-center gap-2">
                                     <Icon name="glass" class="w-5 h-5"/>
@@ -120,7 +125,7 @@ import ContactField from "../components/ContactField";
                                     <span>Invite your team</span>
                                 </li>
                             </ul>
-                            <div class="flex flex-col items-end space-y-1">
+                            <div class="flex flex-col md:items-end items-start space-y-1 md:order-none order-first">
                                 <span class="text-[20px] leading-[24px]">$8450 / mo</span>
                                 <span class="text-[12px] leading-[16px]">Pay daily or weekly</span>
                             </div>
@@ -145,12 +150,6 @@ import ContactField from "../components/ContactField";
 </Layout>
 
 <style>
-    .btn-gradient {
-        border: 0.5px solid rgba(255, 255, 255, 0.20);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 50%), rgba(255, 255, 255, 0.10);
-        backdrop-filter: blur(10px);
-    }
-
     .pink-card {
         background: radial-gradient(60.55% 78.3% at 5.96% 28.17%, rgba(255, 153, 0, 0.20) 0%, rgba(202, 47, 227, 0.04) 100%), #F6F6F6;
     }

@@ -1,0 +1,12 @@
+---
+interface Props {
+    description: string;
+    price: string;
+}
+
+const {price, description} = Astro.props;
+---
+<div class="flex flex-col md:space-y-2 space-y-1">
+    <p class="text-white text-[20px] leading-[24px]">{price}</p>
+    <p class="text-white text-[12px] leading-[16px]">{description}</p>
+</div>

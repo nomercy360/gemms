@@ -19,12 +19,19 @@ const ContactField = ({buttonText, placeholderText, inputClass, formClass, btnCl
                 sendEmail();
             }}>
             <input placeholder={placeholderText}
+                   type='email'
+                   autocomplete='off'
+                   autocorrect='off'
+                   autocapitalize='off'
+                   spellcheck={false}
+                   required
+                   maxlength='70'
                    onInput={(e) => setEmail(e.currentTarget.value)}
-                   class={twMerge('bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[16px] leading-[20px] focus:outline-none', inputClass)}/>
+                   class={twMerge('bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[15px] leading-[20px] focus:outline-none', inputClass)}/>
             <Switch>
                 <Match when={sent()}>
                     <div
-                        class="flex flex-row items-center justify-center gap-2 text-[#528F30] text-[16px] leading-[20px] rounded-[50px] focus:outline-none bg-[#7ED94B] px-3 h-[36px]">
+                        class="flex flex-row items-center justify-center gap-2 text-[#528F30] text-[15px] leading-[20px] rounded-[50px] focus:outline-none bg-[#7ED94B] px-3 h-[36px]">
                         Sent
                         <CheckMark/>
                     </div>

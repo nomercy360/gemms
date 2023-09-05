@@ -1,27 +1,23 @@
 ---
-import ImageSlideshow from "./ImageSlideshow.astro";
 interface Props {
     title: string;
     description: string;
-    priceDescription: string;
-    price: string;
-    id: string;
-    startDelay?: number;
+    href: string;
+    available?: boolean;
 }
 
-const {price, priceDescription, title, description, id, startDelay = 0} = Astro.props;
+const {title, description, href, available = false} = Astro.props;
 ---
 
-<a class="flex flex-col h-full bg-white/10" href={`/${id}`}>
-    <ImageSlideshow slidesId={id} className="aspect-[3/2]" generatedId="fff" startDelay={startDelay}/>
-    <div class="flex md:flex-row flex-col items-start justify-between md:px-6 px-4 md:py-5 py-4 gap-2 md:min-h-[190px] min-h-[220px]">
-        <div class="flex flex-col md:space-y-2 space-y-1 md:w-[240px] w-full">
-            <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
-            <p class="text-[#6F6F6F] md:text-[15px] text-[12px] md:leading-[20px] leading-[18px]">{description}</p>
-        </div>
-        <div class="flex flex-col md:space-y-2 space-y-1">
-            <p class="text-white text-[20px] leading-[24px]">{price}</p>
-            <p class="text-white text-[12px] leading-[16px]">{priceDescription}</p>
-        </div>
+<a class={`bg-white/10 flex md:flex-row flex-col items-start justify-start md:px-4 px-4 md:pb-6 pb-4 md:pt-5 pt-4 md:gap-16 gap-12 w-full relative ${available ? 'cursor-pointer' : ' pointer-events-none'}`}
+   href={href}>
+    <div class="flex flex-col md:gap-2 gap-1 max-w-[280px]">
+        <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[22px]">{title}</p>
+        <p class="text-[#6F6F6F] md:text-[15px] text-[12px] md:leading-[20px] leading-[18px]">{description}</p>
+        <button class={`md:static absolute bottom-4 right-4 bg-transparent h-[36px] px-4 text-[12px] text-white flex flex-row items-center w-fit leading-[20px] rounded-[60px] border mt-2 border-white/20 ${available ? '' : 'opacity-50 cursor-not-allowed'}`}
+                disabled={!available}>
+            {available ? 'Learn more' : 'Soon'}
+        </button>
     </div>
+    <slot/>
 </a>

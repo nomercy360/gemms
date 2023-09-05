@@ -106,6 +106,10 @@ const EmailTemplate = () => {
                 line-height: 28px !important; /* or whatever size you want */
                 max-width: 280px !important;
             }
+            
+            body {
+                min-height: 820px !important;
+            }
         }
 
 
@@ -121,8 +125,7 @@ const EmailTemplate = () => {
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
                     contact us via <a href="https://t.me/nickaxel">Telegram</a>,
-                    <a href="https://twitter.com/disraptco">Twitter,</a>
-                    <a href="https://t.me/nickaxel">Signal</a>, or
+                    <a href="https://twitter.com/disraptco">Twitter</a>, or
                     <a href="https://instagram.com/gemsscollective/">Instagram.</a>
                 </p>
             </td>

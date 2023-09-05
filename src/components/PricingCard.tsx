@@ -2,21 +2,20 @@ import {createSignal, For, Show} from "solid-js";
 import {twMerge} from "tailwind-merge";
 import ContactField from "./ContactField";
 
+type Item = {
+    id: number,
+    disabled: boolean,
+    name: string,
+    price: number
+}
 
-const initial = [
-    {id: 1, disabled: true, name: "Deep research", price: 240},
-    {id: 2, disabled: false, name: "Math and Modeling", price: 240},
-    {id: 3, disabled: false, name: "Data Gathering", price: 240},
-    {id: 4, disabled: false, name: "One-pager", price: 240},
-    {id: 5, disabled: false, name: "Animation", price: 240},
-    {id: 6, disabled: false, name: "Presentation", price: 240},
-];
-
-const PricingCard = ({className}: { className?: string }) => {
+const PricingCard = ({initial, className}: { initial: Item[], className?: string }) => {
 
     const [items, setItems] = createSignal(initial);
 
-    const [selectedIds, setSelectedIds] = createSignal([1, 2]);
+    const [selectedIds, setSelectedIds] = createSignal(items()
+        .filter(item => item.disabled).map(item => item.id));
+
     const calculateTotal = () => {
         return items().filter(item => selectedIds().includes(item.id)).reduce((acc, item) => acc + item.price, 0);
     }
@@ -37,7 +36,7 @@ const PricingCard = ({className}: { className?: string }) => {
             <ul class='mt-4 space-y-3 w-full'>
                 <For each={items()}>
                     {(item, index) => (
-                        <li class='flex flex-row w-full items-center justify-between'
+                        <li class='flex flex-row w-full gap-2 items-center justify-between text-start'
                             classList={{'opacity-50': item.disabled}}>
                             <button class='flex flex-row items-center space-x-2 cursor-pointer'
                                     classList={{'cursor-not-allowed': item.disabled}}
@@ -52,17 +51,20 @@ const PricingCard = ({className}: { className?: string }) => {
                                         setTotal(calculateTotal());
                                     }}>
                                 <span
-                                    class='md:w-6 md:h-6 h-5 w-5 rounded border-2 border-white flex flex-row items-center justify-center'>
+                                    class='md:w-6 md:h-6 h-5 w-5 rounded border-2 border-white flex flex-row items-center justify-center'
+                                    style={{'opacity': selectedIds().includes(item.id) ? 1 : 0.5}}>
                                     <Show when={selectedIds().includes(item.id)}>
                                         <CheckIcon/>
                                     </Show>
                                 </span>
-                                <p class='text-white md:text-[16px] md:leading-[24px] text-[12px] leading-[20px]'
+                                <p class='text-white text-start md:text-[16px] md:leading-[24px] text-[12px] leading-[20px]'
                                    style={{'opacity': selectedIds().includes(item.id) ? 1 : 0.5}}>
                                     {item.name}
                                 </p>
                             </button>
-                            <p class='text-[#6F6F6F] text-[16px] leading-[24px]'>{formatPrice(item.price)}</p>
+                            <p class='text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[24px] leading-[20px]'>
+                                {item.disabled ? 'Included' : `+${formatPrice(item.price)}`}
+                            </p>
                         </li>
                     )}
                 </For>

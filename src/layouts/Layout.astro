@@ -2,9 +2,10 @@
 import {Icon} from "astro-icon/components";
 interface Props {
     title: string;
+    description: string;
 }
 
-const {title} = Astro.props;
+const {title, description} = Astro.props;
 import {ViewTransitions} from 'astro:transitions';
 ---
 
@@ -17,20 +18,20 @@ import {ViewTransitions} from 'astro:transitions';
 
     <link rel="icon" href="/gem.png" type="image/png"/>
     <meta name="description"
-          content="Gemss is a collective of entrepreneurs offering speed-first growth services and outsource subscription for startups. Get recognizable brands, effective ads, pitch decks, and more.">
+          content={description}>
     <meta name="keywords"
           content="Gemss, Startup Agency, Growth Services, Branding, Facebook Ads, Google Ads, Pitch Decks, Subscription-based Product Design, Development">
-    <meta property="og:title" content="Welcome to Gemss - Speed-first Growth Services for Startups">
+    <meta property="og:title" content={title}>
     <meta property="og:description"
-          content="Gemss is a collective of entrepreneurs offering speed-first growth services and outsource subscription for startups.">
+          content={description}>
     <meta property="og:image" content="/og.png">
     <meta property="og:url" content="https://gemss.xyz">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Welcome to Gemss - Speed-first Growth Services for Startups">
+    <meta name="twitter:title" content={title}>
     <meta name="twitter:description"
-          content="Gemss is a collective of entrepreneurs offering speed-first growth services and outsource subscription for startups.">
+          content={description}>
     <meta name="twitter:image" content="/twitter.png">
 
     <!-- Canonical URL (to avoid duplicate content issues) -->
@@ -38,6 +39,7 @@ import {ViewTransitions} from 'astro:transitions';
 
     <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
+    <script src=`${import.meta.env.PUBLIC_STATSY_SCRIPT}` defer></script>
     <ViewTransitions/>
 </head>
 <body>
@@ -57,7 +59,7 @@ import {ViewTransitions} from 'astro:transitions';
         src: url('/fonts/NewSpiritTRIAL-Light.woff2') format('woff2');
     }
 
-    h1, h2 {
+    h1, h2, h3 {
         font-family: 'New Spirit', serif;
         font-weight: 300;
     }
