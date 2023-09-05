@@ -13,7 +13,7 @@ const slideItems = Array.from({length: maxSlides}, (_, i) => `${slidesId}-${i + 
 ---
 
 <slide-show data-id={`${slidesId}-${generatedId}`}
-            class={twMerge('h-fit aspect-[3/2] relative', className)}>
+            class={twMerge('xs:min-h-none min-h-[180px] h-fit aspect-[3/2] relative', className)}>
     {slideItems.map((slideItem, index) => (
             <div class={`slide slide-items-${slidesId}-${generatedId} fade ${index === 0 ? 'active' : ''}`}>
                 <img src={`/${slideItem}.webp`} alt={slideItem}/>

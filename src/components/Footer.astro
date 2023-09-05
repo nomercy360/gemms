@@ -8,7 +8,7 @@ interface Props {
 const {mode} = Astro.props;
 ---
 <footer class={`${mode === 'dark' ? 'text-white bg-black' : 'text-black bg-white'}`}>
-    <div class={`max-w-[1216px] mx-auto flex md:flex-row flex-col items-center justify-start md:space-x-5 space-x-0 p-8 md:pb-8 pb-24 md:space-y-0 space-y-4 ${mode === 'dark' ? 'text-white bg-black' : 'text-black bg-white'}`}>
+    <div class={`md:max-w-[1216px] md:mx-auto flex md:flex-row flex-col items-center justify-start md:space-x-5 space-x-0 p-8 md:pb-8 pb-24 md:space-y-0 space-y-4 ${mode === 'dark' ? 'text-white bg-black' : 'text-black bg-white'}`}>
         <a href="https://thegaas.co" target="_blank" rel="noopener noreferrer"
            class="text-[16px] leading-[24px] flex flex-row items-center space-x-1">
             Made by GAAS
