@@ -1,5 +1,6 @@
 ---
 import {Icon} from "astro-icon/components";
+import Radiance from "./Radiance.astro";
 ---
 
 <script>
@@ -41,279 +42,65 @@ import {Icon} from "astro-icon/components";
     </button>
 </nav>
 
-<div class="hidden flex flex-col justify-between items-center text-center pt-8 px-8 pb-10 bg-black top-0 left-0 w-full inset-0 h-screen relative"
+<div class="hidden block text-center pt-8 pb-10 bg-black top-0 left-0 w-full inset-0 h-screen relative"
      id="menu">
-    <svg xmlns="http://www.w3.org/2000/svg" width="391" height="392" viewBox="0 0 391 392" fill="none"
-         class="absolute top-0 md:block hidden left-0 w-[420px] animate-fade-scale origin-top-left">
-        <g filter="url(#filter0_f_210_1348)">
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="#E4F800"/>
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="url(#paint0_radial_210_1348)"/>
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="url(#paint1_radial_210_1348)"/>
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="url(#paint2_radial_210_1348)"/>
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="url(#paint3_radial_210_1348)" fill-opacity="0.2"/>
-            <path d="M86 54.0001C86 80.5099 68.3005 90 44 90C19.6995 90 0 68.5096 0 41.9999C0 15.4901 7.69947 6 32 6C56.3005 6 86 27.4904 86 54.0001Z"
-                  fill="url(#paint4_radial_210_1348)"/>
-            <path d="M85.6 54.0001C85.6 67.1575 81.2135 76.0276 73.8703 81.6231C66.507 87.2337 56.109 89.6 44 89.6C19.9524 89.6 0.400001 68.3222 0.400001 41.9999C0.400001 28.7591 2.32863 19.8907 7.18867 14.3218C12.0347 8.7689 19.8848 6.4 32 6.4C44.0423 6.4 57.4544 11.7299 67.8572 20.3667C78.2594 29.003 85.6 40.8997 85.6 54.0001Z"
-                  stroke="white" stroke-opacity="0.21" stroke-width="0.800001"/>
-        </g>
-        <g opacity="0.14" filter="url(#filter1_f_210_1348)">
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="#E4F800"/>
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="url(#paint5_radial_210_1348)"/>
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="url(#paint6_radial_210_1348)"/>
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="url(#paint7_radial_210_1348)"/>
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="url(#paint8_radial_210_1348)" fill-opacity="0.2"/>
-            <path d="M257 78.4293C257 210.662 168.708 258 47.4884 258C-73.7317 258 -172 150.804 -172 18.5707C-172 -113.662 -133.592 -161 -12.3721 -161C108.848 -161 257 -53.8039 257 78.4293Z"
-                  fill="url(#paint9_radial_210_1348)"/>
-            <path d="M256.6 78.4293C256.6 144.448 234.566 189.211 197.459 217.484C160.333 245.772 108.057 257.6 47.4884 257.6C-73.4788 257.6 -171.6 150.616 -171.6 18.5707C-171.6 -47.5317 -161.994 -92.2928 -137.342 -120.539C-112.704 -148.769 -72.9471 -160.6 -12.3721 -160.6C48.13 -160.6 115.385 -133.844 167.516 -90.565C219.646 -47.2868 256.6 12.4671 256.6 78.4293Z"
-                  stroke="white" stroke-opacity="0.21" stroke-width="0.800001"/>
-        </g>
-        <defs>
-            <filter id="filter0_f_210_1348" x="-84" y="-78" width="254" height="252" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur_210_1348"/>
-            </filter>
-            <filter id="filter1_f_210_1348" x="-306" y="-295" width="697" height="687" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="67" result="effect1_foregroundBlur_210_1348"/>
-            </filter>
-            <radialGradient id="paint0_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(10 48.0001) rotate(-13.2406) scale(34.9285 60.6977)">
-                <stop stop-color="#FF2B00"/>
-                <stop offset="1" stop-color="#FF2B00" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint1_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(76 30.0001) rotate(154.654) scale(42.0476 56.8609)">
-                <stop stop-color="#47D1FC"/>
-                <stop offset="0.223958" stop-color="#47D1FC" stop-opacity="0.776042"/>
-                <stop offset="1" stop-color="#47D1FC" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint2_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(44 68.0002) rotate(-97.5946) scale(30.2656 24.6187)">
-                <stop stop-color="#00B13F"/>
-                <stop offset="1" stop-color="#00B13F" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint3_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(22 38.0001) rotate(68.9625) scale(27.8568 28.5201)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint4_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(44 38.0001) rotate(90) scale(28.0001 28.6668)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint5_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(-122.116 48.5006) rotate(-13.2399) scale(174.236 302.767)">
-                <stop stop-color="#FF2B00"/>
-                <stop offset="1" stop-color="#FF2B00" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint6_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(207.116 -41.2853) rotate(154.655) scale(209.747 283.63)">
-                <stop stop-color="#47D1FC"/>
-                <stop offset="0.223958" stop-color="#47D1FC" stop-opacity="0.776042"/>
-                <stop offset="1" stop-color="#47D1FC" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint7_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(47.4884 148.263) rotate(-97.595) scale(150.968 122.807)">
-                <stop stop-color="#00B13F"/>
-                <stop offset="1" stop-color="#00B13F" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint8_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(-62.2558 -1.38047) rotate(68.9615) scale(138.954 142.268)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint9_radial_210_1348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(47.4884 -1.38047) rotate(90) scale(139.667 143)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-        </defs>
-    </svg>
-
-    <svg width="360" height="420" viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg"
-         class="absolute top-0 md:hidden block left-0 w-[420px] origin-top animate-fade-scale">
-        <g filter="url(#filter0_f_210_1347)">
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="#E4F800"/>
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="url(#paint0_radial_210_1347)"/>
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="url(#paint1_radial_210_1347)"/>
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="url(#paint2_radial_210_1347)"/>
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="url(#paint3_radial_210_1347)" fill-opacity="0.2"/>
-            <path d="M180 82.0001C180 108.51 162.301 118 138 118C113.699 118 94 96.5096 94 69.9999C94 43.4901 101.699 34 126 34C150.301 34 180 55.4904 180 82.0001Z"
-                  fill="url(#paint4_radial_210_1347)"/>
-            <path d="M179.6 82.0001C179.6 95.1575 175.214 104.028 167.87 109.623C160.507 115.234 150.109 117.6 138 117.6C113.952 117.6 94.4 96.3222 94.4 69.9999C94.4 56.7591 96.3286 47.8907 101.189 42.3218C106.035 36.7689 113.885 34.4 126 34.4C138.042 34.4 151.454 39.7299 161.857 48.3667C172.259 57.003 179.6 68.8997 179.6 82.0001Z"
-                  stroke="white" stroke-opacity="0.21" stroke-width="0.800001"/>
-        </g>
-        <g opacity="0.14" filter="url(#filter1_f_210_1347)">
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="#E4F800"/>
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="url(#paint5_radial_210_1347)"/>
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="url(#paint6_radial_210_1347)"/>
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="url(#paint7_radial_210_1347)"/>
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="url(#paint8_radial_210_1347)" fill-opacity="0.2"/>
-            <path d="M351 106.429C351 238.662 262.708 286 141.488 286C20.2683 286 -78 178.804 -78 46.5707C-78 -85.6624 -39.5922 -133 81.6279 -133C202.848 -133 351 -25.8039 351 106.429Z"
-                  fill="url(#paint9_radial_210_1347)"/>
-            <path d="M350.6 106.429C350.6 172.448 328.566 217.211 291.459 245.484C254.333 273.772 202.057 285.6 141.488 285.6C20.5212 285.6 -77.6 178.616 -77.6 46.5707C-77.6 -19.5317 -67.9943 -64.2928 -43.3422 -92.5391C-18.7041 -120.769 21.0529 -132.6 81.6279 -132.6C142.13 -132.6 209.385 -105.844 261.516 -62.565C313.646 -19.2868 350.6 40.4671 350.6 106.429Z"
-                  stroke="white" stroke-opacity="0.21" stroke-width="0.800001"/>
-        </g>
-        <defs>
-            <filter id="filter0_f_210_1347" x="10" y="-50" width="254" height="252" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur_210_1347"/>
-            </filter>
-            <filter id="filter1_f_210_1347" x="-212" y="-267" width="697" height="687" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="67" result="effect1_foregroundBlur_210_1347"/>
-            </filter>
-            <radialGradient id="paint0_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(104 76.0001) rotate(-13.2406) scale(34.9285 60.6977)">
-                <stop stop-color="#FF2B00"/>
-                <stop offset="1" stop-color="#FF2B00" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint1_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(170 58.0001) rotate(154.654) scale(42.0476 56.8609)">
-                <stop stop-color="#47D1FC"/>
-                <stop offset="0.223958" stop-color="#47D1FC" stop-opacity="0.776042"/>
-                <stop offset="1" stop-color="#47D1FC" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint2_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(138 96.0002) rotate(-97.5946) scale(30.2656 24.6187)">
-                <stop stop-color="#00B13F"/>
-                <stop offset="1" stop-color="#00B13F" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint3_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(116 66.0001) rotate(68.9625) scale(27.8568 28.5201)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint4_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(138 66.0001) rotate(90) scale(28.0001 28.6668)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint5_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(-28.1163 76.5006) rotate(-13.2399) scale(174.236 302.767)">
-                <stop stop-color="#FF2B00"/>
-                <stop offset="1" stop-color="#FF2B00" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint6_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(301.116 -13.2853) rotate(154.655) scale(209.747 283.63)">
-                <stop stop-color="#47D1FC"/>
-                <stop offset="0.223958" stop-color="#47D1FC" stop-opacity="0.776042"/>
-                <stop offset="1" stop-color="#47D1FC" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint7_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(141.488 176.263) rotate(-97.595) scale(150.968 122.807)">
-                <stop stop-color="#00B13F"/>
-                <stop offset="1" stop-color="#00B13F" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint8_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(31.7442 26.6195) rotate(68.9615) scale(138.954 142.268)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint9_radial_210_1347" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(141.488 26.6195) rotate(90) scale(139.667 143)">
-                <stop stop-color="white"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-            </radialGradient>
-        </defs>
-    </svg>
-
-    <div class="w-full flex flex-row md:justify-between justify-center items-center">
-        <a class="flex flex-row items-center space-x-2.5 mt-0 z-10" href="/">
-            <img src="/gem.png" class="w-5 h-5" alt="gem">
-            <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
-                GEMSS
-            </h3>
-        </a>
-        <button class="md:flex hidden close-button bg-neutral-800 border border-neutral-600 whitespace-nowrap pl-4 pr-3 flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[102px] h-[32px]">
-            Close
-            <Icon name="back" class="w-4 h-3"/>
-        </button>
-    </div>
-    <div class="flex flex-col space-y-7 fixed md:bottom-1/2 md:transform md:translate-y-1/2 bottom-10">
-        <div class="flex flex-col space-y-7 animate-fade-slide text-center items-center">
-            <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
-               href="https://t.me/nickaxel" target="_blank">
-                Telegram
+    <div class="max-w-[1216px] w-full relative flex flex-col justify-between items-center mx-auto">
+        <Radiance/>
+        <div class="w-full flex flex-row md:justify-between justify-center items-center px-8 ">
+            <a class="flex flex-row items-center space-x-2.5 mt-0 z-10" href="/">
+                <img src="/gem.png" class="w-5 h-5" alt="gem">
+                <h3 class="text-[16px] leading-[16px] tracking-[1px] text-[#FFFDF5] uppercase">
+                    GEMSS
+                </h3>
             </a>
-            <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
-               href="https://instagram.com/gemsscollective" target="_blank">
-                Instagram
-            </a>
-            <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
-               href="https://twitter.com/gemsscollective" target="_blank">
-                X (Twitter)
-            </a>
-            <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
-               href="mailto:thegaas.co" target="_blank">
-                Email
-            </a>
-            <a class="text-white/50 text-[12px] leading-[24px] text-center flex flex-row items-center gap-1 hover:underline"
-               href="https://thegaas.co" target="_blank">
-                Made by GAAS
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <mask id="mask0_134_1705" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20"
-                          height="20">
-                        <rect width="20" height="20" fill="#D9D9D9"/>
-                    </mask>
-                    <g mask="url(#mask0_134_1705)">
-                        <path d="M9.99933 17.5831C8.95552 17.5831 7.97289 17.3855 7.05143 16.9902C6.12996 16.5949 5.32467 16.0527 4.63556 15.3636C3.94646 14.6745 3.40427 13.8692 3.00897 12.9477C2.61367 12.0263 2.41602 11.0436 2.41602 9.99982C2.41602 8.94747 2.61367 7.9627 3.00897 7.0455C3.40427 6.12831 3.94646 5.32516 4.63556 4.63605C5.32467 3.94695 6.12996 3.40475 7.05143 3.00946C7.97289 2.61416 8.95552 2.4165 9.99933 2.4165C11.0517 2.4165 12.0364 2.61416 12.9536 3.00946C13.8708 3.40475 14.674 3.94695 15.3631 4.63605C16.0522 5.32516 16.5944 6.12831 16.9897 7.0455C17.385 7.9627 17.5826 8.94747 17.5826 9.99982C17.5826 11.0436 17.385 12.0263 16.9897 12.9477C16.5944 13.8692 16.0522 14.6745 15.3631 15.3636C14.674 16.0527 13.8708 16.5949 12.9536 16.9902C12.0364 17.3855 11.0517 17.5831 9.99933 17.5831ZM9.99933 16.4614C10.2996 16.1611 10.5811 15.6721 10.8439 14.9942C11.1067 14.3163 11.3086 13.5607 11.4497 12.7274H8.549C8.7007 13.5821 8.9053 14.3484 9.16279 15.0263C9.42026 15.7041 9.69911 16.1825 9.99933 16.4614ZM8.65641 16.3572C8.39252 15.9405 8.15427 15.4159 7.94166 14.7835C7.72905 14.151 7.56612 13.4656 7.45287 12.7274H4.10508C4.54526 13.69 5.16679 14.4899 5.96968 15.1272C6.77258 15.7645 7.66816 16.1745 8.65641 16.3572ZM11.3422 16.3572C12.3305 16.1745 13.2261 15.7645 14.029 15.1272C14.8319 14.4899 15.4534 13.69 15.8936 12.7274H12.5458C12.4058 13.471 12.2295 14.159 12.0169 14.7915C11.8043 15.424 11.5794 15.9459 11.3422 16.3572ZM3.72689 11.6441H7.34549C7.30704 11.3481 7.283 11.0583 7.27339 10.7747C7.26378 10.491 7.25897 10.2188 7.25897 9.95815C7.25897 9.69747 7.26378 9.43224 7.27339 9.16246C7.283 8.8927 7.30704 8.62373 7.34549 8.35557H3.72689C3.64677 8.6248 3.58881 8.89831 3.55302 9.17609C3.51722 9.45387 3.49933 9.72844 3.49933 9.99982C3.49933 10.2712 3.51722 10.5458 3.55302 10.8235C3.58881 11.1013 3.64677 11.3748 3.72689 11.6441ZM8.44964 11.6441H11.549C11.5875 11.3342 11.6115 11.0471 11.6211 10.7827C11.6308 10.5183 11.6356 10.2573 11.6356 9.99982C11.6356 9.74233 11.6308 9.47791 11.6211 9.20655C11.6115 8.93517 11.5875 8.65151 11.549 8.35557H8.44964C8.41118 8.65151 8.38714 8.93517 8.37752 9.20655C8.3679 9.47791 8.3631 9.74233 8.3631 9.99982C8.3631 10.2573 8.3679 10.5217 8.37752 10.7931C8.38714 11.0645 8.41118 11.3481 8.44964 11.6441ZM12.6532 11.6441H16.2718C16.3519 11.3748 16.4098 11.1013 16.4456 10.8235C16.4814 10.5458 16.4993 10.2712 16.4993 9.99982C16.4993 9.72844 16.4814 9.45039 16.4456 9.16567C16.4098 8.88095 16.3519 8.61091 16.2718 8.35557H12.6532C12.6916 8.65151 12.7157 8.94131 12.7253 9.22496C12.7349 9.50863 12.7397 9.7808 12.7397 10.0415C12.7397 10.3022 12.7349 10.5674 12.7253 10.8372C12.7157 11.1069 12.6916 11.3759 12.6532 11.6441ZM12.5458 7.27228H15.8936C15.4481 6.29897 14.8305 5.49901 14.041 4.8724C13.2515 4.2458 12.3519 3.83314 11.3422 3.63442C11.6061 4.0778 11.8417 4.61172 12.049 5.23619C12.2563 5.86066 12.4219 6.53936 12.5458 7.27228ZM8.549 7.27228H11.4497C11.298 6.42291 11.0893 5.65261 10.8238 4.96136C10.5584 4.27012 10.2835 3.79576 9.99933 3.53828C9.71513 3.79576 9.44029 4.27012 9.17481 4.96136C8.90931 5.65261 8.7007 6.42291 8.549 7.27228ZM4.10508 7.27228H7.45287C7.5768 6.53936 7.7424 5.86066 7.94968 5.23619C8.15695 4.61172 8.39252 4.0778 8.65641 3.63442C7.64145 3.83314 6.74054 4.24714 5.95366 4.87642C5.1668 5.5057 4.55061 6.30432 4.10508 7.27228Z"
-                              fill="white" fill-opacity="0.52"/>
-                    </g>
-                </svg>
-            </a>
+            <button class="md:flex hidden close-button bg-neutral-800 border border-neutral-600 whitespace-nowrap pl-4 pr-3 flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[102px] h-[32px]">
+                Close
+                <Icon name="back" class="w-4 h-3"/>
+            </button>
         </div>
+        <div class="flex flex-col space-y-7 fixed md:bottom-1/2 md:transform md:translate-y-1/2 bottom-10">
+            <div class="flex flex-col space-y-7 animate-fade-slide text-center items-center">
+                <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
+                   href="https://t.me/nickaxel" target="_blank">
+                    Telegram
+                </a>
+                <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
+                   href="https://instagram.com/gemsscollective" target="_blank">
+                    Instagram
+                </a>
+                <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
+                   href="https://twitter.com/gemsscollective" target="_blank">
+                    X (Twitter)
+                </a>
+                <a class="heading md:text-[44px] md:leading-[48px] text-[28px] leading-[32px] text-white cursor-pointer hover:underline"
+                   href="mailto:thegaas.co" target="_blank">
+                    Email
+                </a>
+                <a class="text-white/50 text-[12px] leading-[24px] text-center flex flex-row items-center gap-1 hover:underline"
+                   href="https://thegaas.co" target="_blank">
+                    Made by GAAS
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_134_1705" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20"
+                              height="20">
+                            <rect width="20" height="20" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_134_1705)">
+                            <path d="M9.99933 17.5831C8.95552 17.5831 7.97289 17.3855 7.05143 16.9902C6.12996 16.5949 5.32467 16.0527 4.63556 15.3636C3.94646 14.6745 3.40427 13.8692 3.00897 12.9477C2.61367 12.0263 2.41602 11.0436 2.41602 9.99982C2.41602 8.94747 2.61367 7.9627 3.00897 7.0455C3.40427 6.12831 3.94646 5.32516 4.63556 4.63605C5.32467 3.94695 6.12996 3.40475 7.05143 3.00946C7.97289 2.61416 8.95552 2.4165 9.99933 2.4165C11.0517 2.4165 12.0364 2.61416 12.9536 3.00946C13.8708 3.40475 14.674 3.94695 15.3631 4.63605C16.0522 5.32516 16.5944 6.12831 16.9897 7.0455C17.385 7.9627 17.5826 8.94747 17.5826 9.99982C17.5826 11.0436 17.385 12.0263 16.9897 12.9477C16.5944 13.8692 16.0522 14.6745 15.3631 15.3636C14.674 16.0527 13.8708 16.5949 12.9536 16.9902C12.0364 17.3855 11.0517 17.5831 9.99933 17.5831ZM9.99933 16.4614C10.2996 16.1611 10.5811 15.6721 10.8439 14.9942C11.1067 14.3163 11.3086 13.5607 11.4497 12.7274H8.549C8.7007 13.5821 8.9053 14.3484 9.16279 15.0263C9.42026 15.7041 9.69911 16.1825 9.99933 16.4614ZM8.65641 16.3572C8.39252 15.9405 8.15427 15.4159 7.94166 14.7835C7.72905 14.151 7.56612 13.4656 7.45287 12.7274H4.10508C4.54526 13.69 5.16679 14.4899 5.96968 15.1272C6.77258 15.7645 7.66816 16.1745 8.65641 16.3572ZM11.3422 16.3572C12.3305 16.1745 13.2261 15.7645 14.029 15.1272C14.8319 14.4899 15.4534 13.69 15.8936 12.7274H12.5458C12.4058 13.471 12.2295 14.159 12.0169 14.7915C11.8043 15.424 11.5794 15.9459 11.3422 16.3572ZM3.72689 11.6441H7.34549C7.30704 11.3481 7.283 11.0583 7.27339 10.7747C7.26378 10.491 7.25897 10.2188 7.25897 9.95815C7.25897 9.69747 7.26378 9.43224 7.27339 9.16246C7.283 8.8927 7.30704 8.62373 7.34549 8.35557H3.72689C3.64677 8.6248 3.58881 8.89831 3.55302 9.17609C3.51722 9.45387 3.49933 9.72844 3.49933 9.99982C3.49933 10.2712 3.51722 10.5458 3.55302 10.8235C3.58881 11.1013 3.64677 11.3748 3.72689 11.6441ZM8.44964 11.6441H11.549C11.5875 11.3342 11.6115 11.0471 11.6211 10.7827C11.6308 10.5183 11.6356 10.2573 11.6356 9.99982C11.6356 9.74233 11.6308 9.47791 11.6211 9.20655C11.6115 8.93517 11.5875 8.65151 11.549 8.35557H8.44964C8.41118 8.65151 8.38714 8.93517 8.37752 9.20655C8.3679 9.47791 8.3631 9.74233 8.3631 9.99982C8.3631 10.2573 8.3679 10.5217 8.37752 10.7931C8.38714 11.0645 8.41118 11.3481 8.44964 11.6441ZM12.6532 11.6441H16.2718C16.3519 11.3748 16.4098 11.1013 16.4456 10.8235C16.4814 10.5458 16.4993 10.2712 16.4993 9.99982C16.4993 9.72844 16.4814 9.45039 16.4456 9.16567C16.4098 8.88095 16.3519 8.61091 16.2718 8.35557H12.6532C12.6916 8.65151 12.7157 8.94131 12.7253 9.22496C12.7349 9.50863 12.7397 9.7808 12.7397 10.0415C12.7397 10.3022 12.7349 10.5674 12.7253 10.8372C12.7157 11.1069 12.6916 11.3759 12.6532 11.6441ZM12.5458 7.27228H15.8936C15.4481 6.29897 14.8305 5.49901 14.041 4.8724C13.2515 4.2458 12.3519 3.83314 11.3422 3.63442C11.6061 4.0778 11.8417 4.61172 12.049 5.23619C12.2563 5.86066 12.4219 6.53936 12.5458 7.27228ZM8.549 7.27228H11.4497C11.298 6.42291 11.0893 5.65261 10.8238 4.96136C10.5584 4.27012 10.2835 3.79576 9.99933 3.53828C9.71513 3.79576 9.44029 4.27012 9.17481 4.96136C8.90931 5.65261 8.7007 6.42291 8.549 7.27228ZM4.10508 7.27228H7.45287C7.5768 6.53936 7.7424 5.86066 7.94968 5.23619C8.15695 4.61172 8.39252 4.0778 8.65641 3.63442C7.64145 3.83314 6.74054 4.24714 5.95366 4.87642C5.1668 5.5057 4.55061 6.30432 4.10508 7.27228Z"
+                                  fill="white" fill-opacity="0.52"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
 
-        <button class="md:hidden close-button whitespace-nowrap pl-4 pr-3 flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[130px] h-[48px]">
-            Close
-            <Icon name="back" class="w-5 h-4"/>
-        </button>
+            <button class="md:hidden close-button whitespace-nowrap pl-4 pr-3 flex flex-row items-center justify-center gap-2 text-white stroke-white rounded-[50px] w-[130px] h-[48px]">
+                Close
+                <Icon name="back" class="w-5 h-4"/>
+            </button>
+        </div>
     </div>
 </div>
 
 <style>
-    @keyframes fade-scale {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .animate-fade-scale {
-        animation: fade-scale 1s forwards;
-    }
-
     @keyframes fade-slide {
         0% {
             opacity: 0;
