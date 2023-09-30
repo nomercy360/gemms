@@ -1,0 +1,10 @@
+{
+  "stylelint.validate": [
+    // ↓ Add "astro" language.
+    "astro",
+  ],
+  "editor.formatOnSave": true,
+  "stylelint.enable": true,
+  "stylelint.snippet": ["css", "less", "postcss", "scss", "astro"],
+  "stylelint.validate": ["css", "less", "postcss", "astro", "scss"],
+}

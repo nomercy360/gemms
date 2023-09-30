@@ -1,71 +1,86 @@
 ---
-import {Icon} from "astro-icon/components";
 interface Props {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
+  theme?: 'dark' | 'light';
 }
 
-const {title, description} = Astro.props;
-import {ViewTransitions} from 'astro:transitions';
+const { title, description, theme = 'dark' } = Astro.props;
+import { ViewTransitions } from 'astro:transitions';
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="icon" href="/gem.png" type="image/png"/>
-    <meta name="description"
-          content={description}>
-    <meta name="keywords"
-          content="Gemss, Startup Agency, Growth Services, Branding, Facebook Ads, Google Ads, Pitch Decks, Subscription-based Product Design, Development">
-    <meta property="og:title" content={title}>
-    <meta property="og:description"
-          content={description}>
-    <meta property="og:image" content="https://gemss.xyz/og.png">
-    <meta property="og:url" content="https://gemss.xyz">
-    <meta property="og:type" content="website">
+    <link rel="icon" href="/gem.png" type="image/png" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Gemss, Startup Agency, Growth Services, Branding, Facebook Ads, Google Ads, Pitch Decks, Subscription-based Product Design, Development"
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://gemss.xyz/og.png" />
+    <meta property="og:url" content="https://gemss.xyz" />
+    <meta property="og:type" content="website" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={title}>
-    <meta name="twitter:description"
-          content={description}>
-    <meta name="twitter:image" content="https://gemss.xyz/twitter.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://gemss.xyz/twitter.png" />
 
     <!-- Canonical URL (to avoid duplicate content issues) -->
-    <link rel="canonical" href="https://gemss.xyz">
+    <link rel="canonical" href="https://gemss.xyz" />
 
-    <meta name="generator" content={Astro.generator}/>
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script src=`https://statsy.observer/${import.meta.env.PUBLIC_STATSY_SCRIPT}.js` defer></script>
-    <ViewTransitions/>
-</head>
-<body>
-<slot/>
-</body>
-</html>
-<style is:global>
-    body {
+    <script
+      src=`https://statsy.observer/${import.meta.env.PUBLIC_STATSY_SCRIPT}.js`
+      defer></script>
+    <ViewTransitions />
+  </head>
+  <body class={theme === 'dark' ? 'bg-gemms-dark' : 'bg-white'}>
+    <slot />
+    <style is:global>
+      body {
         font-family: Inter, sans-serif;
         position: relative;
-    }
+      }
 
-    @font-face {
+      @font-face {
         font-display: swap;
         font-family: 'New Spirit';
         font-style: normal;
         font-weight: 300;
         src: url('/fonts/NewSpiritTRIAL-Light.woff2') format('woff2');
-    }
+      }
 
-    h1, h2, h3, .heading {
+      h1,
+      h2,
+      h3,
+      .heading {
         font-family: 'New Spirit', serif;
         font-weight: 300;
-    }
+      }
 
-    * {
+      * {
         touch-action: manipulation;
-    }
-</style>
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </body>
+</html>

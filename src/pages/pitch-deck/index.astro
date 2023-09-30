@@ -1,139 +1,258 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import {Icon} from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 import Footer from "../../components/Footer.astro";
 import PricingCard from "../../components/PricingCard";
 import Navbar from "../../components/Navbar.astro";
 import ImageSlideshow from "../../components/ImageSlideshow.astro";
 import Card from "../../components/Card.astro";
 
-
 const pricingItems = [
-    {id: 1, disabled: true, name: "Market and competitors research", price: 1000},
-    {id: 2, disabled: true, name: "Fact-check", price: 1000},
-    {id: 3, disabled: true, name: "Design, text and illustrations", price: 1000},
-    {id: 4, disabled: false, name: "Data Gathering", price: 1000},
-    {id: 5, disabled: false, name: "Math and modeling", price: 750},
-    {id: 6, disabled: false, name: "One-pager", price: 1000},
-    {id: 7, disabled: false, name: "Animation", price: 500},
+  {
+    id: 1,
+    disabled: true,
+    name: "Market and competitors research",
+    price: 1000,
+  },
+  { id: 2, disabled: true, name: "Fact-check", price: 1000 },
+  {
+    id: 3,
+    disabled: true,
+    name: "Design, text and illustrations",
+    price: 1000,
+  },
+  { id: 4, disabled: false, name: "Data Gathering", price: 1000 },
+  { id: 5, disabled: false, name: "Math and modeling", price: 750 },
+  { id: 6, disabled: false, name: "One-pager", price: 1000 },
+  { id: 7, disabled: false, name: "Animation", price: 500 },
 ];
 ---
 
-<Layout title="GEMSS: Persuasive Pitch Deck Design Services"
-        description="We create pitch decks that cut to the chase, with a keen focus on data, math, marketing, and strategy. Our decks are made by investors, for investors, using the language of numbers that we all understand.">
-    <Navbar/>
-    <main class="bg-black w-full pt-16">
-        <ImageSlideshow generatedId="1"
-                        slidesId="pitch-deck"
-                        maxSlides={5}
-                        className="block md:hidden col-span-2 mx-4"/>
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative md:max-w-[1216px] md:mx-auto">
-            <div></div>
-            <div class="lg:max-w-lg md:max-w-xs md:text-start text-center md:fixed static top-24 flex flex-col md:items-start items-center">
-                <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">
-                    Pitch Decks Design Service
-                </p>
-                <h1 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3">
-                    Persuasive, data-based pitch decks that investors believe in
-                </h1>
-                <p class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4">
-                    We create pitch decks that cut to the chase, with a keen focus on data, math, marketing, and
-                    strategy. Our decks are made by investors, for investors, using the language of numbers that we all
-                    understand.
-                </p>
-                <a href="#calculator"
-                   class="border border-white/20 text-white px-4 md:h-[36px] h-[28px] flex flex-row items-center text-[12px] leading-[20px] rounded-[60px] md:mt-8 mt-5">
-                    Check Pricing
-                </a>
-            </div>
-            <div class="grid grid-cols-2 md:gap-4 gap-1 w-full md:mt-0 mt-9">
-                <ImageSlideshow generatedId="2"
-                                slidesId="pitch-deck"
-                                maxSlides={5}
-                                className="md:block hidden col-span-2"/>
-                <div class="overflow-hidden md:min-h-[400px] min-h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative">
-                    <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
-                        <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
-                            In-depth market and product discovery
-                        </p>
-                        <p class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]">
-                            We are conducting a deep dive into the product, customers, market trends, and competitors,
-                            aiming to answer the questions that are on the minds of investors.
-                        </p>
-                    </div>
-                    <div class="flex md:flex-col md:mx-0 -mx-16 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-x-auto overflow-hidden md:max-h-none">
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">Product economy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Competitors</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Go-to-market strategy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Long-term strategy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Market economy</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Business Model</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Blurb</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Onepager</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">VC Pipeline</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-between md:min-h-[400px] min-h-[280px] bg-white/10 md:col-span-1 col-span-2">
-                    <div class="md:py-5 py-4 md:pl-4 pl-3 md:pr-8 pr-6">
-                        <h4 class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white">
-                            Fact-checked data, math, and models
-                        </h4>
-                        <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]">
-                            We’ll dive deeply into your product and market to find what’s really matters
-                        </p>
-                    </div>
-                    <div class="flex flex-col items-end justify-end pl-4">
-                        <img src="/sheet.png" class="aspect-[16/10] h-full md:max-h-[220px] max-h-[180px]"/>
-                    </div>
-                </div>
-                <Card title="Made by investors and entrepreneurs"
-                      description="Companies are made to make profit. That’s why we are speaking a language of numbers, problems, and solutions, and our pitch decks are made by those, who build companies and invest."/>
-                <div class="overflow-hidden md:min-h-[400px] min-h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative">
-                    <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
-                        <p class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]">
-                            Over 50+ projects for startups from allover the world
-                        </p>
-                        <p class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]">
-                            We worked with companies, and investors from APAC, EMEA, US, Europe, Canada, Russia, and
-                            Ukraine.
-                        </p>
-                    </div>
-                    <div class="flex md:flex-col md:mx-0 -mx-8 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-hidden md:max-h-none">
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0">E-commerce</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Architecture</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Artificial Intelligence</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Retail</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Automation</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Fashion</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Socials</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Manufactures</span>
-                        <span class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]">Logistics</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-between items-start py-6 px-4 md:min-h-[400px] min-h-[240px] bg-white/10 col-span-2">
-                    <img src="/peer.webp" class="md:w-15 md:h-15 w-10 h-10" alt="guy">
-                    <div>
-                        <div class="flex flex-row items-center space-x-2">
-                            <span class="bg-white rounded-full w-1 h-1"></span>
-                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
-                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
-                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
-                            <span class="bg-white/20 rounded-full w-1 h-1"></span>
-                        </div>
-                        <p class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white mt-3">
-                            Working with Gemms is interesting and always brings breakthroughs. However, its also hard
-                            because of their visionary and revolutionary approach. Nevertheless, they have always been
-                            right.
-                        </p>
-                        <p class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F] mt-2">
-                            Sergey, make.solar
-                        </p>
-                    </div>
-                </div>
-                <PricingCard client:visible className="col-span-2" initial={pricingItems}/>
-            </div>
+<Layout
+  title="GEMSS: Persuasive Pitch Deck Design Services"
+  description="We create pitch decks that cut to the chase, with a keen focus on data, math, marketing, and strategy. Our decks are made by investors, for investors, using the language of numbers that we all understand."
+>
+  <Navbar />
+  <main class="bg-black w-full pt-16">
+    <ImageSlideshow
+      generatedId="1"
+      slidesId="pitch-deck"
+      maxSlides={5}
+      className="block md:hidden col-span-2 mx-4"
+    />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:p-8 p-4 relative md:max-w-[1216px] md:mx-auto"
+    >
+      <div></div>
+      <div
+        class="lg:max-w-lg md:max-w-xs md:text-start text-center md:fixed static top-24 flex flex-col md:items-start items-center"
+      >
+        <p
+          class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase"
+        >
+          Pitch Decks Design Service
+        </p>
+        <h1
+          class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3"
+        >
+          Persuasive, data-based pitch decks that investors believe in
+        </h1>
+        <p
+          class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4"
+        >
+          We create pitch decks that cut to the chase, with a keen focus on
+          data, math, marketing, and strategy. Our decks are made by investors,
+          for investors, using the language of numbers that we all understand.
+        </p>
+        <a
+          href="#calculator"
+          class="border border-white/20 text-white px-4 md:h-[36px] h-[28px] flex flex-row items-center text-[12px] leading-[20px] rounded-[60px] md:mt-8 mt-5"
+        >
+          Check Pricing
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:gap-4 gap-1 w-full md:mt-0 mt-9">
+        <ImageSlideshow
+          generatedId="2"
+          slidesId="pitch-deck"
+          maxSlides={5}
+          className="md:block hidden col-span-2"
+        />
+        <div
+          class="overflow-hidden md:min-h-[400px] min-h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative"
+        >
+          <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
+            <p
+              class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]"
+            >
+              In-depth market and product discovery
+            </p>
+            <p
+              class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]"
+            >
+              We are conducting a deep dive into the product, customers, market
+              trends, and competitors, aiming to answer the questions that are
+              on the minds of investors.
+            </p>
+          </div>
+          <div
+            class="flex md:flex-col md:mx-0 -mx-16 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-x-auto overflow-hidden md:max-h-none"
+          >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0"
+              >Product economy</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Competitors</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Go-to-market strategy</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Long-term strategy</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Market economy</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Business Model</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Blurb</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Onepager</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >VC Pipeline</span
+            >
+          </div>
         </div>
-        <Footer mode="dark"/>
-    </main>
+        <div
+          class="flex flex-col justify-between md:min-h-[400px] min-h-[280px] bg-white/10 md:col-span-1 col-span-2"
+        >
+          <div class="md:py-5 py-4 md:pl-4 pl-3 md:pr-8 pr-6">
+            <h4
+              class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white"
+            >
+              Fact-checked data, math, and models
+            </h4>
+            <p
+              class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F]"
+            >
+              We’ll dive deeply into your product and market to find what’s
+              really matters
+            </p>
+          </div>
+          <div class="flex flex-col items-end justify-end pl-4">
+            <img
+              src="/sheet.png"
+              class="aspect-[16/10] h-full md:max-h-[220px] max-h-[180px]"
+            />
+          </div>
+        </div>
+        <Card
+          title="Made by investors and entrepreneurs"
+          description="Companies are made to make profit. That’s why we are speaking a language of numbers, problems, and solutions, and our pitch decks are made by those, who build companies and invest."
+        />
+        <div
+          class="overflow-hidden md:min-h-[400px] min-h-[300px] bg-white/10 flex flex-col justify-between gap-6 col-span-2 md:px-6 px-3 py-4 relative"
+        >
+          <div class="md:w-1/2 w-full grid grid-cols-2 gap-3 md:flex flex-col">
+            <p
+              class="text-white md:text-[20px] text-[16px] md:leading-[24px] leading-[20px]"
+            >
+              Over 50+ projects for startups from allover the world
+            </p>
+            <p
+              class="text-[#6F6F6F] md:text-[16px] text-[12px] md:leading-[22px] leading-[17px]"
+            >
+              We worked with companies, and investors from APAC, EMEA, US,
+              Europe, Canada, Russia, and Ukraine.
+            </p>
+          </div>
+          <div
+            class="flex md:flex-col md:mx-0 -mx-8 flex-row md:flex-nowrap flex-wrap md:items-start justify-start md:gap-2 gap-0.5 static md:absolute right-4 top-0 max-h-[55px] md:overflow-auto overflow-hidden md:max-h-none"
+          >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px] md:-mt-6 mt-0"
+              >E-commerce</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Architecture</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Artificial Intelligence</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Retail</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Automation</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Fashion</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Socials</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Manufactures</span
+            >
+            <span
+              class="bg-white/10 rounded-[60px] flex flex-row items-center text-[#1A1A1A] md:text-[12px] text-[10px] md:leading-[20px] leading-[16px] px-4 md:h-[40px] h-[26px]"
+              >Logistics</span
+            >
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-start py-6 px-4 md:min-h-[400px] min-h-[240px] bg-white/10 col-span-2"
+        >
+          <img src="/peer.webp" class="md:w-15 md:h-15 w-10 h-10" alt="guy" />
+          <div>
+            <div class="flex flex-row items-center space-x-2">
+              <span class="bg-white rounded-full w-1 h-1"></span>
+              <span class="bg-white/20 rounded-full w-1 h-1"></span>
+              <span class="bg-white/20 rounded-full w-1 h-1"></span>
+              <span class="bg-white/20 rounded-full w-1 h-1"></span>
+              <span class="bg-white/20 rounded-full w-1 h-1"></span>
+            </div>
+            <p
+              class="md:text-[20px] text-[16px] md:leading-[24px] leading-[20px] text-white mt-3"
+            >
+              Working with Gemms is interesting and always brings breakthroughs.
+              However, its also hard because of their visionary and
+              revolutionary approach. Nevertheless, they have always been right.
+            </p>
+            <p
+              class="md:text-[16px] text-[12px] md:leading-[22px] leading-[17px] text-[#6F6F6F] mt-2"
+            >
+              Sergey, make.solar
+            </p>
+          </div>
+        </div>
+        <PricingCard
+          client:visible
+          className="col-span-2"
+          initial={pricingItems}
+        />
+      </div>
+    </div>
+    <Footer mode="dark" />
+  </main>
 </Layout>
-

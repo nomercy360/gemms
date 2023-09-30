@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PricingCard from '../components/PricingCard.astro';
-import {Icon} from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PricingCard from "../components/PricingCard.astro";
+import { Icon } from "astro-icon/components";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import ContactField from "../components/ContactField";
@@ -9,151 +9,206 @@ import ImageSlideshow from "../components/ImageSlideshow.astro";
 import PriceDescription from "../components/PriceDescription.astro";
 ---
 
-<Layout title="Welcome to Gemss - Speed-first Growth Services for Startups"
-        description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business.">
-    <Navbar/>
-    <main class="bg-black w-full pt-16">
-        <div class="grid md:grid-cols-2 grid-cols-1 gap-8 items-start mb-10 md:max-w-[1216px] md:mx-auto">
-            <div class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4">
-                <div class="md:max-w-lg md:text-start text-center">
-                    <p class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase">
-                        Startup agency
-                    </p>
-                    <h1 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3">
-                        Speed-first growth services and out-staff subscription for startups
-                    </h1>
-                    <p class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4">
-                        Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and
-                        developers, with a huge experience in different fields. We’ve developed five services, that will
-                        rapidly change your your business.
-                    </p>
-                    <ContactField client:visible buttonText="Contact" placeholderText="E-mail, Telegram, etc."/>
-                </div>
-            </div>
-
-            <section id="cards" class="md:p-8 p-4 flex flex-col space-y-4">
-                <ImageSlideshow slidesId="preview"
-                                maxSlides={9}
-                                generatedId="1"
-                                className="aspect-[3/2]"/>
-                <PricingCard
-                        title="Catchy and fast-made logotypes and brands, that customers recognise"
-                        description="Recognisable brand and domain name, logo, and visuals, that people understands, love, and share"
-                        href="/brands"
-                        available="true"
-                >
-                    <PriceDescription
-                            price="from $900"
-                            description="from 3 days"/>
-                </PricingCard>
-                <PricingCard
-                        title="Data-first pitch decks, investors will understand"
-                        description="No-bullshit, data-first, fact-checked and beautiful pitch-deck written in the language of numbers"
-
-                        href="/pitch-deck"
-                        available="true"
-                >
-                    <PriceDescription
-                            price="from $2,500"
-                            description="Depending on service"/>
-                </PricingCard>
-                <PricingCard
-                        title="Facebook and Google settings and visuals that boost sales"
-                        description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
-                        href="/advertisign"
-                        available="true"
-                >
-                    <PriceDescription
-                            price="from $1,500"
-                            description="Depending on service"/>
-                </PricingCard>
-                <PricingCard
-                        title="Content that engage audience and increase sales"
-                        description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
-                        href="/content"
-                >
-                    <div></div>
-                </PricingCard>
-            </section>
+<Layout
+  title="Welcome to Gemss - Speed-first Growth Services for Startups"
+  description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business."
+>
+  <Navbar />
+  <main class="bg-black w-full pt-16">
+    <div
+      class="grid md:grid-cols-2 grid-cols-1 gap-8 items-start mb-10 md:max-w-[1216px] md:mx-auto"
+    >
+      <div
+        class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4"
+      >
+        <div class="md:max-w-lg md:text-start text-center">
+          <p
+            class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase"
+          >
+            Startup agency
+          </p>
+          <h1
+            class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3"
+          >
+            Speed-first growth services and out-staff subscription for startups
+          </h1>
+          <p
+            class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4"
+          >
+            Gemss is a collective of entrepreneurs, financial managers,
+            designers, marketers, and developers, with a huge experience in
+            different fields. We’ve developed five services, that will rapidly
+            change your your business.
+          </p>
+          <ContactField
+            client:visible
+            buttonText="Contact"
+            placeholderText="E-mail, Telegram, etc."
+          />
         </div>
-        <section id="subscription" class="bg-white">
-            <div class="md:py-10 py-5 md:px-8 px-4 grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-7 w-full flex-col justify-between md:max-w-[1216px] md:mx-auto">
-                <div class="flex flex-col md:max-w-lg">
-                    <div class="flex flex-row items-center justify-start">
-                        <img src="/ann.png" class="h-12 w-12 rounded-full" alt="Ann"/>
-                        <img src="/max.png" class="h-12 w-12 rounded-full -ml-3" alt="Max"/>
-                        <img src="/gavriil.png" class="h-12 w-12 rounded-full -ml-3 z-10" alt="Gavriil"/>
-                        <span class="bg-black w-12 h-12 rounded-full text-[15px] leading-[20px] flex items-center justify-center text-white -ml-3 border-[3px] border-white">
-                            +10
-                        </span>
-                    </div>
-                    <h2 class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4">
-                        Subscription-based design, coding, and product development
-                    </h2>
-                    <p class="md:text-[20px] text-[15px] leading-[21px] md:leading-[27px] text-[#6F6F6F] mt-4">
-                        Research, conceptualisation, design, and development for web, mobile, blockchain, and Telegram
-                        apps by designers, engineers, and product managers with more than 15 years of experience.
-                    </p>
-                    <div class="flex flex-col justify-between p-4 bg-black/5 md:mt-8 mt-7">
-                        <div class="flex md:flex-row flex-col md:justify-between justify-start md:gap-0 gap-5">
-                            <ul class="text-black md:text-[15px] text-[15px] leading-[20px] md:leading-[21px] space-y-2">
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="glass" class="w-5 h-5"/>
-                                    <span class="text-[#E34343]">Two spots left</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>Unlimited Requests</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>2-3 day turnaround</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>Designers, managers, and engineers</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>Managed via Telegram or Linear</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>Pause or cancel anytime</span>
-                                </li>
-                                <li class="flex flex-row items-center gap-2">
-                                    <Icon name="asterisk" class="w-5 h-5"/>
-                                    <span>Invite your team</span>
-                                </li>
-                            </ul>
-                            <div class="flex flex-col md:items-end items-start space-y-1 md:order-none order-first">
-                                <span class="text-[20px] leading-[24px]">$8450 / mo</span>
-                                <span class="text-[12px] leading-[16px]">Pay daily or weekly</span>
-                            </div>
-                        </div>
-                        <ContactField client:visible
-                                      placeholderText="E-mail, Telegram, etc."
-                                      buttonText="Let’s Talk"
-                                      btnClass="bg-black text-white"
-                                      formClass="bg-black/5"
-                                      inputClass="text-black"
-                        />
-                    </div>
-                </div>
-                <div class="flex flex-col w-full items-end justify-start h-fit md:order-none order-first md:pl-8 pl-0">
-                    <ImageSlideshow slidesId="product"
-                                    maxSlides={5}
-                                    generatedId="1"
-                                    className="aspect-[3/2] w-full"/>
-                </div>
+      </div>
+
+      <section id="cards" class="md:p-8 p-4 flex flex-col space-y-4">
+        <ImageSlideshow
+          slidesId="preview"
+          maxSlides={9}
+          generatedId="1"
+          className="aspect-[3/2]"
+        />
+        <PricingCard
+          title="Catchy and fast-made logotypes and brands, that customers recognise"
+          description="Recognisable brand and domain name, logo, and visuals, that people understands, love, and share"
+          href="/brands"
+          available
+        >
+          <PriceDescription price="from $900" description="from 3 days" />
+        </PricingCard>
+        <PricingCard
+          title="Data-first pitch decks, investors will understand"
+          description="No-bullshit, data-first, fact-checked and beautiful pitch-deck written in the language of numbers"
+          href="/pitch-deck"
+          available
+        >
+          <PriceDescription
+            price="from $2,500"
+            description="Depending on service"
+          />
+        </PricingCard>
+        <PricingCard
+          title="Facebook and Google settings and visuals that boost sales"
+          description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
+          href="/advertising"
+          available
+        >
+          <PriceDescription
+            price="from $1,500"
+            description="Depending on service"
+          />
+        </PricingCard>
+        <PricingCard
+          title="Content that engage audience and increase sales"
+          description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
+          href="/content"
+        >
+          <div></div>
+        </PricingCard>
+      </section>
+    </div>
+    <section id="subscription" class="bg-white">
+      <div
+        class="md:py-10 py-5 md:px-8 px-4 grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-7 w-full flex-col justify-between md:max-w-[1216px] md:mx-auto"
+      >
+        <div class="flex flex-col md:max-w-lg">
+          <div class="flex flex-row items-center justify-start">
+            <img src="/ann.png" class="h-12 w-12 rounded-full" alt="Ann" />
+            <img
+              src="/max.png"
+              class="h-12 w-12 rounded-full -ml-3"
+              alt="Max"
+            />
+            <img
+              src="/gavriil.png"
+              class="h-12 w-12 rounded-full -ml-3 z-10"
+              alt="Gavriil"
+            />
+            <span
+              class="bg-black w-12 h-12 rounded-full text-[15px] leading-[20px] flex items-center justify-center text-white -ml-3 border-[3px] border-white"
+            >
+              +10
+            </span>
+          </div>
+          <h2
+            class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4"
+          >
+            Subscription-based design, coding, and product development
+          </h2>
+          <p
+            class="md:text-[20px] text-[15px] leading-[21px] md:leading-[27px] text-[#6F6F6F] mt-4"
+          >
+            Research, conceptualisation, design, and development for web,
+            mobile, blockchain, and Telegram apps by designers, engineers, and
+            product managers with more than 15 years of experience.
+          </p>
+          <div
+            class="flex flex-col justify-between p-4 bg-black/5 md:mt-8 mt-7"
+          >
+            <div
+              class="flex md:flex-row flex-col md:justify-between justify-start md:gap-0 gap-5"
+            >
+              <ul
+                class="text-black md:text-[15px] text-[15px] leading-[20px] md:leading-[21px] space-y-2"
+              >
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="glass" class="w-5 h-5" />
+                  <span class="text-[#E34343]">Two spots left</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>Unlimited Requests</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>2-3 day turnaround</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>Designers, managers, and engineers</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>Managed via Telegram or Linear</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>Pause or cancel anytime</span>
+                </li>
+                <li class="flex flex-row items-center gap-2">
+                  <Icon name="asterisk" class="w-5 h-5" />
+                  <span>Invite your team</span>
+                </li>
+              </ul>
+              <div
+                class="flex flex-col md:items-end items-start space-y-1 md:order-none order-first"
+              >
+                <span class="text-[20px] leading-[24px]">$8450 / mo</span>
+                <span class="text-[12px] leading-[16px]"
+                  >Pay daily or weekly</span
+                >
+              </div>
             </div>
-            <Footer mode="light"/>
-        </section>
-    </main>
+            <ContactField
+              client:visible
+              placeholderText="E-mail, Telegram, etc."
+              buttonText="Let’s Talk"
+              btnClass="bg-black text-white"
+              formClass="bg-black/5"
+              inputClass="text-black"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col w-full items-end justify-start h-fit md:order-none order-first md:pl-8 pl-0"
+        >
+          <ImageSlideshow
+            slidesId="product"
+            maxSlides={5}
+            generatedId="1"
+            className="aspect-[3/2] w-full"
+          />
+        </div>
+      </div>
+      <Footer mode="light" />
+    </section>
+  </main>
 </Layout>
 
 <style>
-    .pink-card {
-        background: radial-gradient(60.55% 78.3% at 5.96% 28.17%, rgba(255, 153, 0, 0.20) 0%, rgba(202, 47, 227, 0.04) 100%), #F6F6F6;
-    }
+  .pink-card {
+    background: radial-gradient(
+        60.55% 78.3% at 5.96% 28.17%,
+        rgba(255, 153, 0, 0.2) 0%,
+        rgba(202, 47, 227, 0.04) 100%
+      ),
+      #f6f6f6;
+  }
 </style>

@@ -1,0 +1,104 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Welcome to Gemss - Speed-first Growth Services for Startups"
+  description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business."
+  theme="light"
+>
+  <Navbar />
+  <main class="text-white">
+    <section
+      class="bg-gemms-dark grid grid-cols-1 items-center justify-center pb-5"
+    >
+      <div
+        class="mx-4 flex aspect-video max-h-[400px] max-w-[600px] items-center justify-center rounded-[4px] bg-[#DEDEDE]"
+      >
+        <h1 class="text-pink-800">Video goes here</h1>
+      </div>
+      <div class="mt-5 space-y-2 px-8">
+        <h2 class="text-center text-2xl">
+          Design and engineering subscription for startups and founders
+        </h2>
+        <p class="text-center text-white/[.48]">
+          Hire a top-notch team of designers and engineers for a fixed monthly
+          payment and work with them one-on-one.
+        </p>
+      </div>
+      <div class="mx-5 mt-10">
+        <div class="flex flex-row justify-center gap-3">
+          <button
+            data-fires-confetti
+            class="rounded-full bg-white px-5 py-4 text-sm text-neutral-950"
+            id="book-an-intro-call-btn"
+          >
+            Book an intro call
+          </button>
+          <button
+            data-fires-confetti
+            class="rounded-full bg-[#1E232B] px-5 py-4 text-sm"
+            id="start-pricing-btn">Start $8450 / mo</button
+          >
+        </div>
+        <p class="mt-4 text-center text-xs opacity-40">
+          7-day trial period, money-back guaranteed
+        </p>
+      </div>
+    </section>
+    <section class="text-gemms-dark grid grid-cols-1 gap-3 bg-white px-4 py-5">
+      <ProductCard
+        img="product-1.webp"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <ProductCard
+        img="product-2.webp"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <div class="bg-gemms-dark flex flex-col justify-between rounded-[4px]">
+      </div>
+      <ProductCard
+        img="product-3.webp"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <ProductCard
+        img="product-4.webp"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <ProductCard
+        img="product-5.webp"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  p {
+    font-family: 'New Spirit', serif;
+  }
+</style>
+<script>
+  // DELETE LATER
+  // @ts-ignore
+  import confetti from 'canvas-confetti';
+
+  const buttons = document.querySelectorAll('[data-fires-confetti]');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => confetti());
+  });
+  // DELETE LATER
+</script>

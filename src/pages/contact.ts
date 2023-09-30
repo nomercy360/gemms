@@ -1,89 +1,98 @@
-import type {APIRoute} from "astro";
+import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({request, locals}) => {
-    const apiKey = import.meta.env.RESEND_API_KEY
+export const POST: APIRoute = async ({ request, locals }) => {
+  const apiKey = import.meta.env.RESEND_API_KEY;
 
-    const uuid = crypto.randomUUID()
+  const uuid = crypto.randomUUID();
 
-    const data = await request.json() as { contact: string }
+  const data = (await request.json()) as { contact: string };
 
-    if (!data.contact) {
-        return new Response(JSON.stringify({message: "Contact is required"}), {
-            status: 400,
-            headers: {'Content-Type': 'application/json'}
-        })
-    }
+  if (!data.contact) {
+    return new Response(JSON.stringify({ message: "Contact is required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-    const contactType = validateEmail(data.contact) ? 'email' : 'contact'
+  const contactType = validateEmail(data.contact) ? "email" : "contact";
 
-    if (contactType === 'email') {
-        const response = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`,
-                'X-Entity-Ref-ID': uuid,
-            },
-            body: JSON.stringify({
-                from: 'Hello <hello@gemss.xyz>',
-                to: [data.contact],
-                subject: 'Hello from Gemss',
-                html: EmailTemplate(),
-            }),
-        });
-
-        if (response.status !== 200) {
-            const msg = JSON.stringify({message: "Something went wrong"})
-            return new Response(msg, {status: 500, headers: {'Content-Type': 'application/json'}})
-        }
-    }
-
-    const message = `*New ${contactType} received*\n\n${data.contact}`;
-
-    const chatId = import.meta.env.TELEGRAM_CHAT_ID;
-    const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
-
-    // @ts-ignore
-    const runtime = locals.runtime;
-
-    runtime.waitUntil(sendTelegramMessage({botToken, chatId, message}));
-
-    return new Response(JSON.stringify({message: "OK"}), {status: 200, headers: {'Content-Type': 'application/json'}})
-}
-
-const validateEmail = (email: string) => {
-    return String(email)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-}
-
-export async function sendTelegramMessage({botToken, chatId, message}: {
-    botToken: string,
-    chatId: string,
-    message: string
-}) {
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: "Markdown",
-        })
+  if (contactType === "email") {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+        "X-Entity-Ref-ID": uuid,
+      },
+      body: JSON.stringify({
+        from: "Hello <hello@gemss.xyz>",
+        to: [data.contact],
+        subject: "Hello from Gemss",
+        html: EmailTemplate(),
+      }),
     });
 
-    return await response.json();
+    if (response.status !== 200) {
+      const msg = JSON.stringify({ message: "Something went wrong" });
+      return new Response(msg, {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+  }
+
+  const message = `*New ${contactType} received*\n\n${data.contact}`;
+
+  const chatId = import.meta.env.TELEGRAM_CHAT_ID;
+  const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
+
+  // @ts-ignore
+  const runtime = locals.runtime;
+
+  runtime.waitUntil(sendTelegramMessage({ botToken, chatId, message }));
+
+  return new Response(JSON.stringify({ message: "OK" }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+const validateEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    );
+};
+
+export async function sendTelegramMessage({
+  botToken,
+  chatId,
+  message,
+}: {
+  botToken: string;
+  chatId: string;
+  message: string;
+}) {
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: "Markdown",
+    }),
+  });
+
+  return await response.json();
 }
 
-
 const EmailTemplate = () => {
-    return `<!doctype html>
+  return `<!doctype html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -183,5 +192,5 @@ const EmailTemplate = () => {
 </div>
 </body>
 </html>
-`
-}
+`;
+};
