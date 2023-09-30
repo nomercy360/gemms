@@ -2,6 +2,7 @@
 import Navbar from '../../components/Navbar.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import Layout from '../../layouts/Layout.astro';
+import TestimonialCard from '../../components/TestimonialCard';
 ---
 
 <Layout
@@ -50,36 +51,29 @@ import Layout from '../../layouts/Layout.astro';
     </section>
     <section class="text-gemms-dark grid grid-cols-1 gap-3 bg-white px-4 py-5">
       <ProductCard
-        img="product-1.webp"
+        img="products/blocks.png"
         title="KULMAN"
         type="Branding, 2 Weeks"
-        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
       />
       <ProductCard
-        img="product-2.webp"
+        img="products/hulman.png"
         title="KULMAN"
         type="Branding, 2 Weeks"
-        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
       />
-      <div class="bg-gemms-dark flex flex-col justify-between rounded-[4px]">
-      </div>
+      <TestimonialCard client:load />
       <ProductCard
-        img="product-3.webp"
+        img="products/one_solar.png"
         title="KULMAN"
         type="Branding, 2 Weeks"
-        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
-      />
-      <ProductCard
-        img="product-4.webp"
-        title="KULMAN"
-        type="Branding, 2 Weeks"
-        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
       />
       <ProductCard
-        img="product-5.webp"
+        img="products/peatch.png"
         title="KULMAN"
         type="Branding, 2 Weeks"
-        description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
       />
     </section>
   </main>
