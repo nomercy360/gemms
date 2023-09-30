@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'gemms-dark': '#11161F',
       },
+      borderRadius: {
+        'gemms-medium': '4px',
+      },
     },
   },
   plugins: [],

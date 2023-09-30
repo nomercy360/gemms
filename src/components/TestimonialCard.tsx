@@ -33,7 +33,7 @@ const TestimonialCard = () => {
   };
 
   return (
-    <div class="bg-gemms-dark flex flex-col justify-between rounded-[4px] pb-8 pl-5 pr-6 pt-5">
+    <div class="bg-gemms-dark rounded-gemms-medium flex flex-col justify-between pb-8 pl-5 pr-6 pt-5">
       <div class="flex flex-row gap-1">
         <For each={testimonies}>
           {(person, idx) => {
@@ -43,7 +43,7 @@ const TestimonialCard = () => {
                 width={80}
                 height={120}
                 onClick={() => changeImage(idx())}
-                class={`max-h-[120px] max-w-[80px] cursor-pointer rounded-[4px] object-cover transition-all duration-500 ${
+                class={`rounded-gemms-medium max-h-[120px] max-w-[80px] cursor-pointer object-cover transition-all duration-500 ${
                   current() === idx() ? 'opacity-100' : 'opacity-40'
                 }`}
               />

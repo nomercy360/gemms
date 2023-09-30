@@ -16,7 +16,7 @@ import TestimonialCard from '../../components/TestimonialCard';
       class="bg-gemms-dark grid grid-cols-1 items-center justify-center pb-5"
     >
       <div
-        class="mx-4 flex aspect-video max-h-[400px] max-w-[600px] items-center justify-center rounded-[4px] bg-[#DEDEDE]"
+        class="rounded-gemms-medium mx-4 flex aspect-video max-h-[400px] max-w-[600px] items-center justify-center bg-[#DEDEDE]"
       >
         <h1 class="text-pink-800">Video goes here</h1>
       </div>
@@ -75,6 +75,36 @@ import TestimonialCard from '../../components/TestimonialCard';
         type="Branding, 2 Weeks"
         description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
       />
+      <form
+        id="contact-form"
+        class="rounded-gemms-medium bg-[#F3F3F4] px-5 pt-5"
+      >
+        <div class="space-y-1">
+          <p class="text-center text-xl">Be next on the list</p>
+          <p class="text-center text-sm">
+            No-bullshit, data-first, fact-checked and beautiful pitch-deck
+            written in the language of numbers
+          </p>
+        </div>
+        <div class="mt-10 flex flex-col gap-3">
+          <input class="px-3 py-[13px]" type="text" placeholder="Your name" />
+          <input
+            class="px-3 py-[13px]"
+            type="email"
+            placeholder="E-mail, telegram, IG"
+          />
+          <textarea
+            class="min-h-[132px] resize-none px-3 py-[13px]"
+            placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
+          ></textarea>
+          <input
+            class="w-fit self-center rounded-full bg-black px-4 py-[6px] text-white"
+            type="submit"
+            value="Send"
+            data-fires-confetti
+          />
+        </div>
+      </form>
     </section>
   </main>
 </Layout>
@@ -93,6 +123,14 @@ import TestimonialCard from '../../components/TestimonialCard';
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => confetti());
+  });
+
+  const form = document.querySelectorAll('#contact-form');
+
+  form.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+    });
   });
   // DELETE LATER
 </script>
