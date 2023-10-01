@@ -1,0 +1,113 @@
+---
+import { twMerge } from 'tailwind-merge';
+interface Props {
+  text?: string;
+  sender?: 'them' | 'us';
+}
+
+const { text, sender } = Astro.props;
+---
+
+<div class={twMerge('message', sender === 'us' ? 'us' : 'them', 'last')}>
+  {text}
+</div>
+
+<style>
+  .message {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: black;
+
+    max-width: fit-content;
+  }
+
+  .them {
+    align-self: flex-start;
+  }
+
+  .them.message {
+    position: relative;
+    margin-right: 25%;
+    background-color: #eee;
+
+    border: 0.75px solid #f3f3f4;
+  }
+
+  .them.message.last:before {
+    content: '';
+    z-index: 0;
+
+    position: absolute;
+    bottom: 0;
+    left: -7px;
+
+    height: 20px;
+    width: 20px;
+
+    background: #eee;
+    border-bottom-right-radius: 15px;
+  }
+  .them.message.last:after {
+    content: '';
+    z-index: 1;
+
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+
+    width: 10px;
+    height: 20px;
+
+    background: white;
+    border-bottom-right-radius: 10px;
+  }
+
+  .us {
+    align-self: flex-end;
+  }
+
+  .us.message {
+    position: relative;
+    margin-left: 25%;
+
+    color: white;
+    background: #37d15d;
+    border: 0.75px solid #37d15d;
+
+    background-attachment: fixed;
+  }
+
+  .us.message.last:before {
+    content: '';
+    z-index: 0;
+
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+
+    height: 20px;
+    width: 20px;
+
+    background: #37d15d;
+    background-attachment: fixed;
+    border-bottom-left-radius: 15px;
+  }
+
+  .us.message.last:after {
+    content: '';
+    z-index: 1;
+
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+
+    width: 10px;
+    height: 20px;
+
+    background: white;
+    border-bottom-left-radius: 10px;
+  }
+</style>

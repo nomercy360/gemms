@@ -1,0 +1,16 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+interface Props {
+  text?: string;
+  className?: string;
+}
+
+const { text = '', className = '' } = Astro.props;
+---
+
+<div
+  class={twMerge('rounded-full border border-[#DFE0E7] px-3 py-1', className)}
+>
+  <span class="text-xs text-[#AEAFB7]">{text}</span>
+</div>
