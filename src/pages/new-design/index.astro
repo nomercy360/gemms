@@ -1,0 +1,241 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import TestimonialCard from '../../components/TestimonialCard';
+import Pill from '../../components/Pill.astro';
+import TextBubble from '../../components/TextBubble.astro';
+---
+
+<Layout
+  title="Welcome to Gemss - Speed-first Growth Services for Startups"
+  description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business."
+  theme="light"
+>
+  <Navbar />
+  <main class="text-white">
+    <section
+      class="bg-gemms-dark grid grid-cols-1 items-center justify-center pb-5"
+    >
+      <div
+        class="rounded-gemms-medium mx-4 flex aspect-video max-h-[400px] max-w-[600px] items-center justify-center bg-[#DEDEDE]"
+      >
+        <h1 class="text-pink-800">Video goes here</h1>
+      </div>
+      <div class="mt-5 space-y-2 px-8">
+        <h2 class="text-center text-2xl">
+          Design and engineering subscription for startups and founders
+        </h2>
+        <p class="text-center text-white/[.48]">
+          Hire a top-notch team of designers and engineers for a fixed monthly
+          payment and work with them one-on-one.
+        </p>
+      </div>
+      <div class="mx-5 mt-10">
+        <div class="flex flex-row justify-center gap-3">
+          <button
+            data-fires-confetti
+            class="rounded-full bg-white px-5 py-4 text-sm text-neutral-950"
+            id="book-an-intro-call-btn"
+          >
+            Book an intro call
+          </button>
+          <button
+            data-fires-confetti
+            class="rounded-full bg-[#1E232B] px-5 py-4 text-sm"
+            id="start-pricing-btn">Start $8450 / mo</button
+          >
+        </div>
+        <p class="mt-4 text-center text-xs opacity-40">
+          7-day trial period, money-back guaranteed
+        </p>
+      </div>
+    </section>
+    <section class="text-gemms-dark grid grid-cols-1 gap-3 bg-white px-4 py-5">
+      <ProductCard
+        img="products/blocks.png"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <ProductCard
+        img="products/hulman.png"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <TestimonialCard client:load />
+      <ProductCard
+        img="products/one_solar.png"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <ProductCard
+        img="products/peatch.png"
+        title="KULMAN"
+        type="Branding, 2 Weeks"
+        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+      />
+      <form
+        id="contact-form"
+        class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5"
+      >
+        <div class="space-y-1">
+          <p class="text-center text-xl">Be next on the list</p>
+          <p class="text-center text-sm">
+            No-bullshit, data-first, fact-checked and beautiful pitch-deck
+            written in the language of numbers
+          </p>
+        </div>
+        <div class="mt-10 flex flex-col gap-3">
+          <input class="px-3 py-[13px]" type="text" placeholder="Your name" />
+          <input
+            class="px-3 py-[13px]"
+            type="email"
+            placeholder="E-mail, telegram, IG"
+          />
+          <textarea
+            class="min-h-[132px] resize-none px-3 py-[13px]"
+            placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
+          ></textarea>
+          <input
+            class="w-fit self-center rounded-full bg-black px-4 py-[6px] text-white"
+            type="submit"
+            value="Send"
+            data-fires-confetti
+          />
+        </div>
+      </form>
+    </section>
+    <section class="mt-10 flex flex-col items-center px-4">
+      <h1 class="text-gemms-dark max-w-[20ch] text-center text-2xl leading-7">
+        Great service free of corporate sluggishness and unnecessary meetings
+      </h1>
+      <div
+        class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1"
+      >
+        <Pill text="10-minutes brief" />
+        <Pill text="30-minutes intro call" />
+        <Pill text="7 days trial" />
+        <Pill text="2-3 day turnaround" />
+        <Pill text="Communicate via Telegram" />
+        <Pill text="Manage via Linear" />
+        <Pill text="Pause or cancel anytime" />
+      </div>
+    </section>
+    <section class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
+      <TextBubble text="Who are you?" sender="us" />
+      <TextBubble
+        text="We are a team of professionals that constantly strives to create valueable products, fast and efficiently."
+        sender="them"
+      />
+      <TextBubble text="What's with the price?" sender="us" />
+      <TextBubble
+        text="We understand your concerns, but it's still cheaper and faster than hiring your own team members."
+        sender="them"
+      />
+      <TextBubble text="How can I pay for your service?" sender="us" />
+      <TextBubble
+        text="You can pay by wire transfer, Paypal, crypto or Deel."
+        sender="them"
+      />
+      <TextBubble text="Who will own the final project?" sender="us" />
+      <TextBubble
+        text="You will! All of the intellectual rights for the project goes to you."
+        sender="them"
+      />
+      <TextBubble
+        text="What if I'm not satisfied with the result?"
+        sender="us"
+      />
+      <TextBubble
+        text="You will have a 7-days trial period. If you won't be satisfied, or won't want to go forward with the project, we will compensante the payment, excluding taxes and payment provider's comission. "
+        sender="them"
+      />
+    </section>
+    <section class="bg-gemms-dark pb-20 pt-8 text-white">
+      <div class="px-8">
+        <Pill className="border-white/20 w-fit mx-auto" text="2 SPOTS LEFT" />
+        <h2 class="mt-3 text-center">Discuss today, start work tomorrow</h2>
+        <h3 class="text-center text-white/[0.32]">
+          Talk with Nikita, the founder and product designer, to discuss the
+          opportunities, create a roadmap, and get free consultation.
+        </h3>
+        <div class="mt-8 flex flex-col gap-3">
+          <button
+            data-fires-confetti
+            class="rounded-full bg-white px-4 py-4 text-sm text-black"
+            >Book an intro call</button
+          >
+          <a
+            class="flex flex-row justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4"
+            href="https://tg.me/nickaxel"
+          >
+            <img
+              class="h-6 w-6 rounded-full object-cover"
+              src="people/bek.png"
+            />
+            <p class="text-sm">DM in Telegram</p>
+          </a>
+        </div>
+      </div>
+      <div class="mx-4 mt-[60px] grid grid-cols-2 gap-2">
+        <div
+          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
+        >
+          <img src="svg/dribbble.svg" width="24" height="24" />
+          <p>Dribbble</p>
+        </div>
+        <div
+          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
+        >
+          <img src="svg/dribbble.svg" width="24" height="24" />
+          <p>Instagram</p>
+        </div>
+        <div
+          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
+        >
+          <img src="svg/dribbble.svg" width="24" height="24" />
+          <p>X</p>
+        </div>
+        <div
+          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
+        >
+          <img src="svg/dribbble.svg" width="24" height="24" />
+          <p>Mail</p>
+        </div>
+      </div>
+
+      <a class="mx-auto my-10 block text-center text-sm text-white/20"
+        >Made by GAAS</a
+      >
+    </section>
+  </main>
+</Layout>
+
+<style>
+  p {
+    font-family: 'New Spirit', serif;
+  }
+</style>
+<script>
+  // DELETE LATER
+  // @ts-ignore
+  import confetti from 'canvas-confetti';
+
+  const buttons = document.querySelectorAll('[data-fires-confetti]');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => confetti());
+  });
+
+  const form = document.querySelectorAll('#contact-form');
+
+  form.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+    });
+  });
+  // DELETE LATER
+</script>

@@ -1,25 +1,39 @@
 {
   "name": "gemss",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro build && wrangler pages dev ./dist",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^7.0.1",
-    "@astrojs/solid-js": "^3.0.0",
+    "@astrojs/cloudflare": "^7.3.1",
+    "@astrojs/solid-js": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.0.7",
+    "astro": "^3.2.0",
     "astro-icon": "1.0.0-next.2",
-    "solid-js": "^1.4.3",
+    "canvas-confetti": "^1.6.1",
+    "solid-js": "^1.7.12",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "wrangler": "^3.6.0"
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "eslint-plugin-astro": "^0.29.0",
+    "postcss-html": "^1.5.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "stylelint": "^15.10.3",
+    "stylelint-config-html": "^1.1.0",
+    "tsm": "^2.3.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "wrangler": "^3.10.1"
   }
 }
