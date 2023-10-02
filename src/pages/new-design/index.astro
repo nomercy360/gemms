@@ -10,167 +10,200 @@ import TextBubble from '../../components/TextBubble.astro';
 <Layout
   title="Welcome to Gemss - Speed-first Growth Services for Startups"
   description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business."
-  theme="light"
+  theme="dark"
 >
   <Navbar />
   <main class="text-white">
     <section
-      class="bg-gemms-dark grid grid-cols-1 items-center justify-center pb-5"
+      class="bg-gemms-dark flex flex-col items-center justify-center gap-5 pb-5 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse"
     >
       <div
-        class="rounded-gemms-medium mx-4 flex aspect-video max-h-[400px] max-w-[600px] items-center justify-center bg-[#DEDEDE]"
+        class="mx-4 flex justify-center bg-transparent md:flex-1 md:self-start"
       >
-        <h1 class="text-pink-800">Video goes here</h1>
+        <video class="w-full max-w-[600px] px-1" autoplay loop preload="auto">
+          <source
+            src="showreel.webm"
+            class="rounded-[8px/4px]"
+            type="video/webm"
+          />
+        </video>
       </div>
-      <div class="mt-5 space-y-2 px-8">
-        <h2 class="text-center text-2xl">
-          Design and engineering subscription for startups and founders
-        </h2>
-        <p class="text-center text-white/[.48]">
-          Hire a top-notch team of designers and engineers for a fixed monthly
-          payment and work with them one-on-one.
-        </p>
-      </div>
-      <div class="mx-5 mt-10">
-        <div class="flex flex-row justify-center gap-3">
-          <button
-            data-fires-confetti
-            class="rounded-full bg-white px-5 py-4 text-sm text-neutral-950"
-            id="book-an-intro-call-btn"
+      <div class="px-8 md:flex-1">
+        <div class="space-y-2 md:space-y-3">
+          <h2
+            class="text-center text-2xl md:text-start md:text-[40px] md:leading-[48px]"
           >
-            Book an intro call
-          </button>
-          <button
-            data-fires-confetti
-            class="rounded-full bg-[#1E232B] px-5 py-4 text-sm"
-            id="start-pricing-btn">Start $8450 / mo</button
+            Design and engineering subscription for startups and founders
+          </h2>
+          <p
+            class="text-center text-white/[.48] md:text-start md:text-xl md:text-white"
           >
-        </div>
-        <p class="mt-4 text-center text-xs opacity-40">
-          7-day trial period, money-back guaranteed
-        </p>
-      </div>
-    </section>
-    <section class="text-gemms-dark grid grid-cols-1 gap-3 bg-white px-4 py-5">
-      <ProductCard
-        img="products/blocks.png"
-        title="KULMAN"
-        type="Branding, 2 Weeks"
-        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
-      />
-      <ProductCard
-        img="products/hulman.png"
-        title="KULMAN"
-        type="Branding, 2 Weeks"
-        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
-      />
-      <TestimonialCard client:load />
-      <ProductCard
-        img="products/one_solar.png"
-        title="KULMAN"
-        type="Branding, 2 Weeks"
-        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
-      />
-      <ProductCard
-        img="products/peatch.png"
-        title="KULMAN"
-        type="Branding, 2 Weeks"
-        description="Helped an solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
-      />
-      <form
-        id="contact-form"
-        class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5"
-      >
-        <div class="space-y-1">
-          <p class="text-center text-xl">Be next on the list</p>
-          <p class="text-center text-sm">
-            No-bullshit, data-first, fact-checked and beautiful pitch-deck
-            written in the language of numbers
+            Hire a top-notch team of designers and engineers for a fixed monthly
+            payment and work with them one-on-one.
           </p>
         </div>
-        <div class="mt-10 flex flex-col gap-3">
-          <input class="px-3 py-[13px]" type="text" placeholder="Your name" />
-          <input
-            class="px-3 py-[13px]"
-            type="email"
-            placeholder="E-mail, telegram, IG"
-          />
-          <textarea
-            class="min-h-[132px] resize-none px-3 py-[13px]"
-            placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
-          ></textarea>
-          <input
-            class="w-fit self-center rounded-full bg-black px-4 py-[6px] text-white"
-            type="submit"
-            value="Send"
-            data-fires-confetti
-          />
+        <div class="mx-5 mt-10 md:mx-0 md:mt-24">
+          <div class="flex flex-row justify-center gap-3 md:justify-start">
+            <button
+              data-fires-confetti
+              class="rounded-full bg-white px-5 py-4 text-sm text-neutral-950 md:font-medium"
+              id="book-an-intro-call-btn"
+            >
+              Book an intro call
+            </button>
+            <button
+              data-fires-confetti
+              class="rounded-full bg-[#1E232B] px-5 py-4 text-sm"
+              id="start-pricing-btn">Start $8450 / mo</button
+            >
+          </div>
+          <p class="mt-4 text-center text-xs opacity-40 md:text-start">
+            7-day trial period, money-back guaranteed
+          </p>
         </div>
-      </form>
-    </section>
-    <section class="mt-10 flex flex-col items-center px-4">
-      <h1 class="text-gemms-dark max-w-[20ch] text-center text-2xl leading-7">
-        Great service free of corporate sluggishness and unnecessary meetings
-      </h1>
-      <div
-        class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1"
-      >
-        <Pill text="10-minutes brief" />
-        <Pill text="30-minutes intro call" />
-        <Pill text="7 days trial" />
-        <Pill text="2-3 day turnaround" />
-        <Pill text="Communicate via Telegram" />
-        <Pill text="Manage via Linear" />
-        <Pill text="Pause or cancel anytime" />
       </div>
     </section>
-    <section class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
-      <TextBubble text="Who are you?" sender="us" />
-      <TextBubble
-        text="We are a team of professionals that constantly strives to create valueable products, fast and efficiently."
-        sender="them"
-      />
-      <TextBubble text="What's with the price?" sender="us" />
-      <TextBubble
-        text="We understand your concerns, but it's still cheaper and faster than hiring your own team members."
-        sender="them"
-      />
-      <TextBubble text="How can I pay for your service?" sender="us" />
-      <TextBubble
-        text="You can pay by wire transfer, Paypal, crypto or Deel."
-        sender="them"
-      />
-      <TextBubble text="Who will own the final project?" sender="us" />
-      <TextBubble
-        text="You will! All of the intellectual rights for the project goes to you."
-        sender="them"
-      />
-      <TextBubble
-        text="What if I'm not satisfied with the result?"
-        sender="us"
-      />
-      <TextBubble
-        text="You will have a 7-days trial period. If you won't be satisfied, or won't want to go forward with the project, we will compensante the payment, excluding taxes and payment provider's comission. "
-        sender="them"
-      />
-    </section>
-    <section class="bg-gemms-dark pb-20 pt-8 text-white">
-      <div class="px-8">
-        <Pill className="border-white/20 w-fit mx-auto" text="2 SPOTS LEFT" />
-        <h2 class="mt-3 text-center">Discuss today, start work tomorrow</h2>
-        <h3 class="text-center text-white/[0.32]">
+    <div class="px-auto bg-white">
+      <section
+        class="text-gemms-dark grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 md:mx-auto md:max-w-7xl md:grid-cols-2"
+      >
+        <ProductCard
+          img="products/peatch.png"
+          title="PEATCH"
+          type="Product, 3 months"
+          description="Conceptualised and developed pivot for a social network for creatives and professional."
+        />
+        <ProductCard
+          img="products/one_solar.png"
+          title="KULMAN"
+          type="Branding & Product, 3 Months"
+          description="Helped a solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        />
+        <TestimonialCard client:load />
+        <ProductCard
+          img="products/hulman.png"
+          title="KULMAN"
+          type="Branding, 2 Weeks"
+          description="A bold and playful logo and brand identity for a office & home furniture manufacturer"
+        />
+        <ProductCard
+          img="products/blocks.png"
+          title="CLAN"
+          type="Branding & Web, 1 Month"
+          description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        />
+        <form
+          id="contact-form"
+          class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5"
+        >
+          <div class="space-y-1">
+            <p class="text-center text-xl md:text-start md:font-medium">
+              Be next on the list
+            </p>
+            <p class="text-center text-sm md:text-start">
+              No-bullshit, data-first, fact-checked and beautiful pitch-deck
+              written in the language of numbers
+            </p>
+          </div>
+          <div class="mt-10 flex flex-col gap-3">
+            <input class="px-3 py-[13px]" type="text" placeholder="Your name" />
+            <input
+              class="px-3 py-[13px]"
+              type="email"
+              placeholder="E-mail, telegram, IG"
+            />
+            <textarea
+              class="min-h-[132px] resize-none px-3 py-[13px]"
+              placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
+            ></textarea>
+            <input
+              class="w-fit self-center rounded-full bg-black px-4 py-[6px] text-white"
+              type="submit"
+              value="Send"
+              data-fires-confetti
+            />
+          </div>
+        </form>
+        <div
+          class="mt-10 flex flex-col items-center bg-white px-4 md:items-start"
+        >
+          <h1
+            class="text-gemms-dark max-w-[20ch] text-center text-2xl leading-7 md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
+          >
+            Great service free of corporate sluggishness and unnecessary
+            meetings
+          </h1>
+          <div
+            class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:items-start md:justify-start md:gap-2"
+          >
+            <Pill text="10-minutes brief" />
+            <Pill text="30-minutes intro call" />
+            <Pill text="7 days trial" />
+            <Pill text="2-3 day turnaround" />
+            <Pill text="Communicate via Telegram" />
+            <Pill text="Manage via Linear" />
+            <Pill text="Pause or cancel anytime" />
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
+          <TextBubble text="Who are you?" sender="us" />
+          <TextBubble
+            text="We are a team of professionals that constantly strives to create valueable products, fast and efficiently."
+            sender="them"
+          />
+          <TextBubble text="What's with the price?" sender="us" />
+          <TextBubble
+            text="We understand your concerns, but it's still cheaper and faster than hiring your own team members."
+            sender="them"
+          />
+          <TextBubble text="How can I pay for your service?" sender="us" />
+          <TextBubble
+            text="You can pay by wire transfer, Paypal, crypto or Deel."
+            sender="them"
+          />
+          <TextBubble text="Who will own the final project?" sender="us" />
+          <TextBubble
+            text="You will! All of the intellectual rights for the project goes to you."
+            sender="them"
+          />
+          <TextBubble
+            text="What if I'm not satisfied with the result?"
+            sender="us"
+          />
+          <TextBubble
+            text="You will have a 7-days trial period. If you won't be satisfied, or won't want to go forward with the project, we will compensante the payment, excluding taxes and payment provider's comission. "
+            sender="them"
+          />
+        </div>
+      </section>
+    </div>
+    <section
+      class="bg-gemms-dark flex-row pt-8 text-white md:mx-auto md:flex md:max-w-7xl"
+    >
+      <div class="flex-1 px-8">
+        <Pill
+          className="border-white/20 w-fit mx-auto md:mx-[revert] text-white md:py-[6px] md:px-3 md:text-[10px]"
+          text="2 SPOTS LEFT"
+        />
+        <h2 class="mt-3 text-center md:mt-4 md:text-start md:text-5xl">
+          Discuss today, start work tomorrow
+        </h2>
+        <h3
+          class="text-center text-white/[0.32] md:mt-2 md:text-start md:text-xl"
+        >
           Talk with Nikita, the founder and product designer, to discuss the
           opportunities, create a roadmap, and get free consultation.
         </h3>
-        <div class="mt-8 flex flex-col gap-3">
+        <div class="mt-8 flex flex-col gap-3 md:flex-row">
           <button
             data-fires-confetti
-            class="rounded-full bg-white px-4 py-4 text-sm text-black"
-            >Book an intro call</button
+            class="rounded-full bg-white px-4 py-4 text-sm text-black md:px-3 md:py-2 md:text-base"
           >
+            Book an intro call
+          </button>
           <a
-            class="flex flex-row justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4"
-            href="https://tg.me/nickaxel"
+            class="flex flex-row items-center justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4 md:px-3 md:py-2 md:text-base"
+            href="https://t.me/nickaxel"
           >
             <img
               class="h-6 w-6 rounded-full object-cover"
@@ -180,38 +213,32 @@ import TextBubble from '../../components/TextBubble.astro';
           </a>
         </div>
       </div>
-      <div class="mx-4 mt-[60px] grid grid-cols-2 gap-2">
-        <div
-          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
-        >
+      <div class="mx-4 mt-[60px] grid flex-1 grid-cols-2 gap-2 md:mt-0">
+        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
           <img src="svg/dribbble.svg" width="24" height="24" />
-          <p>Dribbble</p>
+          <p class="mt-[68px]">Dribbble</p>
         </div>
-        <div
-          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
-        >
+        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
           <img src="svg/dribbble.svg" width="24" height="24" />
-          <p>Instagram</p>
+          <p class="mt-[68px]">Instagram</p>
         </div>
-        <div
-          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
-        >
+        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
           <img src="svg/dribbble.svg" width="24" height="24" />
-          <p>X</p>
+          <p class="mt-[68px]">X</p>
         </div>
-        <div
-          class="flex flex-col justify-between gap-[68px] bg-white/5 py-5 pl-4"
-        >
+        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
           <img src="svg/dribbble.svg" width="24" height="24" />
-          <p>Mail</p>
+          <p class="mt-[68px]">Mail</p>
         </div>
       </div>
-
-      <a class="mx-auto my-10 block text-center text-sm text-white/20"
-        >Made by GAAS</a
-      >
     </section>
   </main>
+  <footer class="mx-auto mb-28 mt-10 md:max-w-7xl">
+    <a
+      class="mxblock text-center text-sm text-white/20 md:mx-[revert] md:mb-10 md:ml-8 md:mt-0 md:text-start"
+      >Made by GAAS
+    </a>
+  </footer>
 </Layout>
 
 <style>

@@ -33,7 +33,7 @@ const TestimonialCard = () => {
   };
 
   return (
-    <div class="bg-gemms-dark rounded-gemms-medium flex flex-col justify-between pb-8 pl-5 pr-6 pt-5">
+    <div class="bg-gemms-dark rounded-gemms-medium flex max-w-[600px] flex-col justify-between pb-8 pl-5 pr-6 pt-5">
       <div class="flex flex-row gap-1">
         <For each={testimonies}>
           {(person, idx) => {
