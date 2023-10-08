@@ -34,6 +34,9 @@ dependencies:
     version: 3.3.3
 
 devDependencies:
+  '@types/canvas-confetti':
+    specifier: ^1.6.1
+    version: 1.6.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.3
     version: 6.7.3(@typescript-eslint/parser@6.7.3)(eslint@8.50.0)(typescript@5.2.2)
@@ -1503,6 +1506,10 @@ packages:
     dependencies:
       '@types/node': 20.8.0
     dev: false
+
+  /@types/canvas-confetti@1.6.1:
+    resolution: {integrity: sha512-wTSI/k/586KnzL8Inm0yXe/U9x0sO2tc4j/osIAZVsE+hyj2S/M+sdR5zDDLygEkohhlG948zNVBG5QiI4Z2mw==}
+    dev: true
 
   /@types/cheerio@0.22.32:
     resolution: {integrity: sha512-4RrpCp5ufWTLb6/1RCOjazRhUM6DTD79l763det29n8kLmPB7XeN46cxlUf2GsSF+0g6CbWT5nYl8C/Gs15bdg==}

@@ -9,18 +9,18 @@ interface Props {
 const { img, title, type, description } = Astro.props;
 ---
 
-<article class="flex max-w-[600px] flex-col gap-2">
+<article class="flex max-w-[600px] flex-col gap-2 text-sm leading-4">
   <img
-    class="rounded-gemms-medium aspect-auto max-h-[400px]"
+    class="aspect-auto max-h-[400px] rounded-gemms-medium"
     src={img}
     width="600"
     height="400"
   />
   <div class="flex justify-between">
-    <p class="text-gemms-dark">{title}</p>
+    <p class="uppercase text-gemms-dark">{title}</p>
     <p class="text-gemms-dark/[.32]">{type}</p>
   </div>
-  <p class="opacity-[.32]">
+  <p class="-tracking-[0.01em] opacity-[.32]">
     {description}
   </p>
 </article>

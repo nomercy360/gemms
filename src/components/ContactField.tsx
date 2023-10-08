@@ -1,6 +1,6 @@
-import { createSignal, Match, onCleanup, Switch } from "solid-js";
-import useContact from "../hooks/useContact.ts";
-import { twMerge } from "tailwind-merge";
+import { createSignal, Match, onCleanup, Switch } from 'solid-js';
+import useContact from '../hooks/useContact.ts';
+import { twMerge } from 'tailwind-merge';
 
 const ContactField = ({
   buttonText,
@@ -15,13 +15,13 @@ const ContactField = ({
   formClass?: string;
   btnClass?: string;
 }) => {
-  const { contact, setContact, sent, sendContact } = useContact();
+  const { setContact, sent, sendContact } = useContact();
 
   return (
     <form
       class={twMerge(
-        "flex flex-row items-center justify-between rounded-[52px] bg-[#121212] py-1.5 pr-2 pl-4 mt-8 w-full",
-        formClass,
+        'mt-8 flex w-full flex-row items-center justify-between rounded-[52px] bg-[#121212] py-1.5 pl-4 pr-2',
+        formClass
       )}
       onSubmit={(e) => {
         e.preventDefault();
@@ -39,13 +39,13 @@ const ContactField = ({
         maxlength="70"
         onInput={(e) => setContact(e.currentTarget.value)}
         class={twMerge(
-          "bg-transparent placeholder:text-[#A6A6A6] w-full text-white text-[15px] leading-[20px] focus:outline-none",
-          inputClass,
+          'w-full bg-transparent text-[15px] leading-[20px] text-white placeholder:text-[#A6A6A6] focus:outline-none',
+          inputClass
         )}
       />
       <Switch>
         <Match when={sent()}>
-          <div class="flex flex-row items-center justify-center gap-2 text-[#528F30] text-[15px] leading-[20px] rounded-[50px] focus:outline-none bg-[#7ED94B] px-3 h-[36px]">
+          <div class="flex h-[36px] flex-row items-center justify-center gap-2 rounded-[50px] bg-[#7ED94B] px-3 text-[15px] leading-[20px] text-[#528F30] focus:outline-none">
             Sent
             <CheckMark />
           </div>
@@ -53,8 +53,8 @@ const ContactField = ({
         <Match when={!sent()}>
           <button
             class={twMerge(
-              "whitespace-nowrap rounded-[50px] bg-white/5 text-white px-3 h-[36px] backdrop-blur-md",
-              btnClass,
+              'h-[36px] whitespace-nowrap rounded-[50px] bg-white/5 px-3 text-white backdrop-blur-md',
+              btnClass
             )}
             type="submit"
           >

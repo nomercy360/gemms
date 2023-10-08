@@ -33,6 +33,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
 
     if (response.status !== 200) {
+      console.log({response});
       const msg = JSON.stringify({ message: "Something went wrong" });
       return new Response(msg, {
         status: 500,
