@@ -1,7 +1,11 @@
 import { createSignal } from "solid-js";
+import confetti from 'canvas-confetti';
 
 const useContact = () => {
   const [contact, setContact] = createSignal("");
+  const [name, setName] = createSignal("");
+  const [text, setText] = createSignal("");
+
   const [sent, setSent] = createSignal(false);
 
   const sendContact = async () => {
@@ -10,7 +14,7 @@ const useContact = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ contact: contact() }),
+      body: JSON.stringify({ contact: contact(), name: name(), text: text() }),
     });
 
     if (response.status !== 200) {
@@ -18,12 +22,17 @@ const useContact = () => {
       return;
     } else {
       setSent(true);
+      confetti();
     }
   };
 
   return {
     contact,
     setContact,
+    name,
+    setName,
+    text,
+    setText,
     sent,
     sendContact,
   };

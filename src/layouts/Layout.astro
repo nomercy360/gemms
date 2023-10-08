@@ -62,6 +62,21 @@ import { ViewTransitions } from 'astro:transitions';
         src: url('/fonts/NewSpiritTRIAL-Light.woff2') format('woff2');
       }
 
+      @font-face {
+        font-display: swap;
+        font-family: 'Arizona Plus';
+        font-style: normal;
+        font-weight: 300;
+
+        src: url('/fonts/ArizonaPlus/ABCArizonaSansVariable.woff')
+          format('woff');
+
+        font-variation-settings:
+          'wght' 400,
+          'srff' 0,
+          'slnt' 0;
+      }
+
       h1,
       h2,
       h3,

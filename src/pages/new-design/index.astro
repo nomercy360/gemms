@@ -5,6 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import TestimonialCard from '../../components/TestimonialCard';
 import Pill from '../../components/Pill.astro';
 import TextBubble from '../../components/TextBubble.astro';
+import ContactForm from '../../components/ContactForm';
 ---
 
 <Layout
@@ -13,14 +14,25 @@ import TextBubble from '../../components/TextBubble.astro';
   theme="dark"
 >
   <Navbar />
-  <main class="text-white">
+  <main class="-mt-2 text-white md:mt-[revert]">
     <section
-      class="bg-gemms-dark flex flex-col items-center justify-center gap-5 pb-5 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse"
+      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark pb-6 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse"
     >
       <div
         class="mx-4 flex justify-center bg-transparent md:flex-1 md:self-start"
       >
-        <video class="w-full max-w-[600px] px-1" autoplay loop preload="auto">
+        <video
+          class="w-full max-w-[600px] rounded-gemms-medium"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source
+            src="showreel.mp4"
+            class="rounded-[8px/4px]"
+            type="video/mp4"
+          />
           <source
             src="showreel.webm"
             class="rounded-[8px/4px]"
@@ -28,32 +40,34 @@ import TextBubble from '../../components/TextBubble.astro';
           />
         </video>
       </div>
-      <div class="px-8 md:flex-1">
+      <div class="w-full md:mx-8 md:flex-1">
         <div class="space-y-2 md:space-y-3">
           <h2
-            class="text-center text-2xl md:text-start md:text-[40px] md:leading-[48px]"
+            class="mx-auto max-w-[300px] text-center text-2xl leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
           >
             Design and engineering subscription for startups and founders
           </h2>
           <p
-            class="text-center text-white/[.48] md:text-start md:text-xl md:text-white"
+            class="mx-auto max-w-[300px] text-center text-sm text-white/[.48] md:mx-[revert] md:max-w-[revert] md:text-start md:text-xl md:text-white"
           >
             Hire a top-notch team of designers and engineers for a fixed monthly
             payment and work with them one-on-one.
           </p>
         </div>
-        <div class="mx-5 mt-10 md:mx-0 md:mt-24">
-          <div class="flex flex-row justify-center gap-3 md:justify-start">
+        <div class="mx-10 mt-[37px] md:mx-0 md:mt-24">
+          <div
+            class="flex flex-row justify-center gap-3 text-sm md:justify-start md:text-base"
+          >
             <button
               data-fires-confetti
-              class="rounded-full bg-white px-5 py-4 text-sm text-neutral-950 md:font-medium"
+              class="whitespace-nowrap rounded-full bg-white px-6 py-4 text-neutral-950 md:font-medium"
               id="book-an-intro-call-btn"
             >
               Book an intro call
             </button>
             <button
               data-fires-confetti
-              class="rounded-full bg-[#1E232B] px-5 py-4 text-sm"
+              class="whitespace-nowrap rounded-full bg-white/5 px-6 py-4 md:font-medium"
               id="start-pricing-btn">Start $8450 / mo</button
             >
           </div>
@@ -63,9 +77,9 @@ import TextBubble from '../../components/TextBubble.astro';
         </div>
       </div>
     </section>
-    <div class="px-auto bg-white">
+    <div class="bg-white">
       <section
-        class="text-gemms-dark grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 md:mx-auto md:max-w-7xl md:grid-cols-2"
+        class="grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 text-gemms-dark md:mx-auto md:max-w-7xl md:grid-cols-2"
       >
         <ProductCard
           img="products/peatch.png"
@@ -92,43 +106,12 @@ import TextBubble from '../../components/TextBubble.astro';
           type="Branding & Web, 1 Month"
           description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
         />
-        <form
-          id="contact-form"
-          class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5"
-        >
-          <div class="space-y-1">
-            <p class="text-center text-xl md:text-start md:font-medium">
-              Be next on the list
-            </p>
-            <p class="text-center text-sm md:text-start">
-              No-bullshit, data-first, fact-checked and beautiful pitch-deck
-              written in the language of numbers
-            </p>
-          </div>
-          <div class="mt-10 flex flex-col gap-3">
-            <input class="px-3 py-[13px]" type="text" placeholder="Your name" />
-            <input
-              class="px-3 py-[13px]"
-              type="email"
-              placeholder="E-mail, telegram, IG"
-            />
-            <textarea
-              class="min-h-[132px] resize-none px-3 py-[13px]"
-              placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
-            ></textarea>
-            <input
-              class="w-fit self-center rounded-full bg-black px-4 py-[6px] text-white"
-              type="submit"
-              value="Send"
-              data-fires-confetti
-            />
-          </div>
-        </form>
+        <ContactForm client:load />
         <div
           class="mt-10 flex flex-col items-center bg-white px-4 md:items-start"
         >
           <h1
-            class="text-gemms-dark max-w-[20ch] text-center text-2xl leading-7 md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
+            class="max-w-[20ch] text-center text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
           >
             Great service free of corporate sluggishness and unnecessary
             meetings
@@ -178,91 +161,97 @@ import TextBubble from '../../components/TextBubble.astro';
       </section>
     </div>
     <section
-      class="bg-gemms-dark flex-row pt-8 text-white md:mx-auto md:flex md:max-w-7xl"
+      class="flex flex-col bg-gemms-dark pt-8 text-white md:mx-auto md:mb-8 md:max-w-7xl md:flex-row md:justify-between"
     >
-      <div class="flex-1 px-8">
-        <Pill
-          className="border-white/20 w-fit mx-auto md:mx-[revert] text-white md:py-[6px] md:px-3 md:text-[10px]"
-          text="2 SPOTS LEFT"
-        />
-        <h2 class="mt-3 text-center md:mt-4 md:text-start md:text-5xl">
-          Discuss today, start work tomorrow
-        </h2>
-        <h3
-          class="text-center text-white/[0.32] md:mt-2 md:text-start md:text-xl"
-        >
-          Talk with Nikita, the founder and product designer, to discuss the
-          opportunities, create a roadmap, and get free consultation.
-        </h3>
-        <div class="mt-8 flex flex-col gap-3 md:flex-row">
-          <button
-            data-fires-confetti
-            class="rounded-full bg-white px-4 py-4 text-sm text-black md:px-3 md:py-2 md:text-base"
+      <div class="flex flex-col justify-between">
+        <div class="w-full flex-1 px-8 md:max-w-[530px]">
+          <Pill
+            className="border-white/20 w-fit mx-auto block md:mx-[revert] text-white md:py-[6px] md:px-3 md:text-[10px]"
+            text="2 SPOTS LEFT"
+          />
+          <h2
+            class="mt-3 text-center text-2xl leading-7 md:mt-4 md:text-start md:text-5xl"
           >
-            Book an intro call
-          </button>
-          <a
-            class="flex flex-row items-center justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4 md:px-3 md:py-2 md:text-base"
-            href="https://t.me/nickaxel"
+            Discuss today, start work tomorrow
+          </h2>
+          <p
+            class="mt-2 text-center text-sm text-white/[0.32] md:text-start md:text-xl"
           >
-            <img
-              class="h-6 w-6 rounded-full object-cover"
-              src="people/bek.png"
-            />
-            <p class="text-sm">DM in Telegram</p>
-          </a>
+            Talk with Nikita, the founder and product designer, to discuss the
+            opportunities, create a roadmap, and get free consultation.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 md:flex-row">
+            <button
+              data-fires-confetti
+              class="rounded-full bg-white px-4 py-4 text-sm text-black md:p-4 md:text-base md:leading-5"
+            >
+              Book an intro call
+            </button>
+            <a
+              class="flex flex-row items-center justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4 md:p-4 md:text-base md:leading-5"
+              href="https://t.me/nickaxel"
+            >
+              <img
+                class="h-6 w-6 rounded-full object-cover"
+                src="people/bek.png"
+              />
+              <p class="text-sm">DM in Telegram</p>
+            </a>
+          </div>
         </div>
+        <footer class="hidden md:mt-8 md:block">
+          <a
+            class="block text-center text-sm text-white/20 md:mx-[revert] md:ml-8 md:text-start md:text-xl"
+            >Made by GAAS
+          </a>
+        </footer>
       </div>
-      <div class="mx-4 mt-[60px] grid flex-1 grid-cols-2 gap-2 md:mt-0">
-        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
+      <div
+        class="md:self-[revert] mx-4 mt-[60px] grid aspect-square max-w-[600px] flex-1 grid-cols-2 gap-2 self-center md:mt-0 md:min-w-[328px]"
+      >
+        <a
+          href="https://t.me/nickaxel"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
           <img src="svg/dribbble.svg" width="24" height="24" />
           <p class="mt-[68px]">Dribbble</p>
-        </div>
-        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
+        </a>
+        <a
+          href="https://t.me/nickaxel"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
           <img src="svg/dribbble.svg" width="24" height="24" />
           <p class="mt-[68px]">Instagram</p>
-        </div>
-        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
+        </a>
+        <a
+          href="https://t.me/nickaxel"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
           <img src="svg/dribbble.svg" width="24" height="24" />
           <p class="mt-[68px]">X</p>
-        </div>
-        <div class="flex flex-col justify-between bg-white/5 py-5 pl-4">
+        </a>
+        <a
+          href="https://t.me/nickaxel"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
           <img src="svg/dribbble.svg" width="24" height="24" />
           <p class="mt-[68px]">Mail</p>
-        </div>
+        </a>
       </div>
     </section>
   </main>
-  <footer class="mx-auto mb-28 mt-10 md:max-w-7xl">
+  <footer class="mx-auto mb-28 mt-10 md:mb-8 md:hidden md:max-w-7xl">
     <a
-      class="mxblock text-center text-sm text-white/20 md:mx-[revert] md:mb-10 md:ml-8 md:mt-0 md:text-start"
+      class="block text-center text-sm text-white/20 md:mx-[revert] md:mb-10 md:ml-8 md:mt-0 md:text-start md:text-xl"
       >Made by GAAS
     </a>
   </footer>
 </Layout>
 
 <style>
-  p {
-    font-family: 'New Spirit', serif;
+  p,
+  button,
+  span {
+    font-family: 'Arizona Plus', sans-serif;
   }
 </style>
-<script>
-  // DELETE LATER
-  // @ts-ignore
-  import confetti from 'canvas-confetti';
-
-  const buttons = document.querySelectorAll('[data-fires-confetti]');
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => confetti());
-  });
-
-  const form = document.querySelectorAll('#contact-form');
-
-  form.forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-    });
-  });
-  // DELETE LATER
-</script>
