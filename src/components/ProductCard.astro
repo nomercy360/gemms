@@ -1,18 +1,34 @@
 ---
+import Slideshow from './Slideshow.astro';
 interface Props {
-  img: string;
+  images: Array<string>;
+  start?: number;
+  delay?: number;
+
   title: string;
   type: string;
   description: string;
 }
 
-const { img, title, type, description } = Astro.props;
+const {
+  images,
+  start = 500,
+  delay = 1,
+  title,
+  type,
+  description,
+} = Astro.props;
 ---
 
 <article
-  class="flex max-w-[600px] flex-col gap-2 text-sm leading-4 md:gap-3 md:text-base md:leading-5"
+  class="relative flex min-h-fit max-w-[600px] flex-col gap-2 text-sm leading-4 md:gap-3 md:text-base md:leading-5"
 >
-  <img class="aspect-auto" src={img} width="600" height="400" />
+  <Slideshow
+    className="aspect-auto rounded-gemms-medium border border-gemms-dark/5"
+    images={images}
+    delay={delay}
+    start={start}
+  />
   <div class="space-y-2">
     <div class="flex justify-between">
       <p class="uppercase text-gemms-dark">{title}</p>

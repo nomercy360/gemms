@@ -13,7 +13,7 @@ const ContactForm = () => {
   return (
     <form
       id="contact-form"
-      class="w-full max-w-[600px] rounded-gemms-medium font-arizona md:px-2"
+      class="w-full max-w-[600px] rounded-gemms-medium font-arizona"
       onSubmit={onSubmit}
     >
       <div class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5">
@@ -56,7 +56,7 @@ const ContactForm = () => {
             }}
           ></textarea>
           <input
-            class="w-fit cursor-pointer self-center rounded-full bg-black px-4 py-[6px] text-white md:mt-1 md:self-start md:p-4 md:text-base"
+            class="w-fit cursor-pointer self-center rounded-full bg-black px-4 py-[6px] font-bold text-white md:mt-1 md:self-start md:p-4 md:text-base"
             type="submit"
             value="Send us a message"
             data-fires-confetti

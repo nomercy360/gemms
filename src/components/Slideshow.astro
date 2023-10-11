@@ -1,0 +1,91 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+interface Props {
+  className?: string;
+  images: Array<string>;
+  delay: number;
+  start: number;
+}
+
+const { className, images, delay = 1, start = 500 } = Astro.props;
+
+const cssDelay = `${delay}s`;
+---
+
+<div class="fading-slideshow">
+  {
+    images.map((src) => (
+      <img
+        width="600"
+        height="400"
+        class={twMerge(className)}
+        src={src}
+        alt={src.split('/')[0]}
+      />
+    ))
+  }
+</div>
+
+<style define:vars={{ cssDelay }}>
+  @keyframes fader {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fading-slideshow {
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* current slide */
+
+  .fading-slideshow > img:first-of-type {
+    position: static;
+    animation-name: fader;
+    animation-delay: var(--cssDelay);
+    animation-duration: 1s;
+    z-index: 20;
+  }
+
+  /* next slide to display */
+
+  .fading-slideshow > img:nth-of-type(2) {
+    position: absolute;
+    z-index: 10;
+  }
+
+  /* all other slides */
+
+  .fading-slideshow > img:nth-of-type(n + 3) {
+    display: none;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    // Original JavaScript code by Chirp Internet: www.chirpinternet.eu
+    // Please acknowledge use of this code by including this header.
+
+    // Puts current children to bottom at the end of animation
+    document.querySelectorAll('.fading-slideshow img').forEach((current) => {
+      current.addEventListener('animationend', (e) => {
+        const img = e.target as Element;
+
+        if (img && img.parentElement) {
+          img.parentElement.appendChild(img);
+        }
+      });
+    });
+  });
+</script>

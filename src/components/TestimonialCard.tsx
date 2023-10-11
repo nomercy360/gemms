@@ -31,31 +31,33 @@ const TestimonialCard = () => {
   };
 
   return (
-    <div class="font-arizona -mb-1 flex max-w-[600px] flex-col justify-between rounded-gemms-medium bg-gemms-dark pb-8 pl-5 pr-6 pt-5">
-      <div class="flex flex-row gap-1">
-        <For each={testimonies}>
-          {(person, idx) => {
-            return (
-              <img
-                src={person.photo}
-                width={80}
-                height={120}
-                onClick={() => changeImage(idx())}
-                class={`max-h-[120px] max-w-[80px] cursor-pointer rounded-gemms-medium object-cover transition-all duration-500 ${
-                  current() === idx() ? 'opacity-100' : 'opacity-40'
-                }`}
-              />
-            );
-          }}
-        </For>
-      </div>
-      <div class="mt-16 flex flex-col gap-1">
-        <p class="text-sm text-white/40 transition-all">
-          {testimonies[current()].name}
-        </p>
-        <p class="text-lg leading-6 -tracking-[-0.006em] text-white transition-all">
-          {testimonies[current()].testimony}
-        </p>
+    <div class="-mb-1 max-w-[600px] font-arizona">
+      <div class="flex h-full flex-col justify-between rounded-gemms-medium bg-gemms-dark pb-8 pl-5 pr-6 pt-5">
+        <div class="flex flex-row gap-1">
+          <For each={testimonies}>
+            {(person, idx) => {
+              return (
+                <img
+                  src={person.photo}
+                  width={80}
+                  height={120}
+                  onClick={() => changeImage(idx())}
+                  class={`max-h-[120px] max-w-[80px] cursor-pointer rounded-gemms-medium object-cover transition-all duration-500 ${
+                    current() === idx() ? 'opacity-100' : 'opacity-40'
+                  }`}
+                />
+              );
+            }}
+          </For>
+        </div>
+        <div class="mt-16 flex flex-col gap-1">
+          <p class="text-sm text-white/40 transition-all">
+            {testimonies[current()].name}
+          </p>
+          <p class="text-lg leading-6 -tracking-[-0.006em] text-white transition-all">
+            {testimonies[current()].testimony}
+          </p>
+        </div>
       </div>
     </div>
   );

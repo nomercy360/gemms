@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Radiance from './Radiance.astro';
 ---
 
 <script>
@@ -51,26 +50,28 @@ import Radiance from './Radiance.astro';
 </nav>
 
 <div
-  class="relative inset-0 left-0 top-0 block hidden h-screen w-full bg-black pb-10 pt-8 text-center"
+  class="relative inset-0 left-0 block hidden h-screen w-full bg-gemms-dark pb-10 pt-8 text-center"
   id="menu"
 >
   <div
-    class="relative mx-auto flex w-full max-w-[1216px] flex-col items-center justify-between"
+    class="relative mx-auto flex w-full flex-col items-center justify-between"
   >
-    <Radiance />
     <div
-      class="flex w-full flex-row items-center justify-center md:justify-between"
+      class="flex w-full flex-row items-center justify-center md:mx-auto md:max-w-[80rem] md:justify-between"
     >
-      <a class="z-10 mt-0 flex flex-row items-center space-x-2.5" href="/">
+      <a
+        class="z-10 mt-0 flex flex-row items-center space-x-2.5 rounded-full bg-[#1E232B] px-3 py-[6px] md:ml-8"
+        href="/"
+      >
         <img src="/gem.png" class="h-5 w-5" alt="gem" />
         <h3
-          class="text-[16px] uppercase leading-[16px] tracking-[1px] text-[#FFFDF5]"
+          class="text-[16px] font-semibold uppercase leading-[16px] tracking-[1px] text-[#FFFDF5]"
         >
           GEMSS
         </h3>
       </a>
       <button
-        class="close-button hidden h-[32px] w-[102px] flex-row items-center justify-center gap-2 whitespace-nowrap rounded-[50px] stroke-white pl-4 pr-3 text-white md:flex"
+        class="close-button hidden h-[32px] w-[102px] flex-row items-center justify-center gap-2 whitespace-nowrap rounded-[50px] stroke-white px-3 py-[6px] font-arizona text-white md:mr-4 md:flex"
       >
         Close
         <Icon name="back" class="h-3 w-4" />
@@ -80,38 +81,30 @@ import Radiance from './Radiance.astro';
       class="fixed bottom-10 flex flex-col space-y-7 md:bottom-1/2 md:translate-y-1/2 md:transform"
     >
       <div
-        class="animate-fade-slide flex flex-col items-center space-y-8 text-center"
+        class="animate-fade-slide heading mb-12 flex flex-col items-center gap-y-10 text-center text-2xl leading-7 text-white underline-offset-[5px] md:mb-[revert] md:gap-y-8 md:text-[40px] md:leading-[48px]"
       >
-        <a
-          class="heading cursor-pointer text-[28px] leading-[32px] text-white hover:underline md:text-[44px] md:leading-[48px]"
-          href="https://t.me/nickaxel"
-          target="_blank"
-        >
+        <a class="hover:underline" href="https://t.me/nickaxel" target="_blank">
           Telegram
         </a>
         <a
-          class="heading cursor-pointer text-[28px] leading-[32px] text-white hover:underline md:text-[44px] md:leading-[48px]"
+          class="hover:underline"
           href="https://instagram.com/gemsscollective"
           target="_blank"
         >
           Instagram
         </a>
         <a
-          class="heading cursor-pointer text-[28px] leading-[32px] text-white hover:underline md:text-[44px] md:leading-[48px]"
+          class="hover:underline"
           href="https://twitter.com/gemsscollective"
           target="_blank"
         >
           X (Twitter)
         </a>
-        <a
-          class="heading cursor-pointer text-[28px] leading-[32px] text-white hover:underline md:text-[44px] md:leading-[48px]"
-          href="mailto:thegaas.co"
-          target="_blank"
-        >
+        <a class="hover:underline" href="mailto:thegaas.co" target="_blank">
           Email
         </a>
         <a
-          class="flex flex-row items-center gap-1 text-center text-[12px] leading-[24px] text-white/50 hover:underline"
+          class="mt-10 flex flex-row items-center gap-1 text-center font-arizona text-[12px] leading-[24px] text-white/50 hover:underline md:mt-16 md:text-base"
           href="https://thegaas.co"
           target="_blank"
         >

@@ -6,6 +6,39 @@ import TestimonialCard from '../../components/TestimonialCard';
 import Pill from '../../components/Pill.astro';
 import TextBubble from '../../components/TextBubble.astro';
 import ContactForm from '../../components/ContactForm';
+
+const IMG_PATHS = {
+  bb: [
+    'showreel/bb/1.png',
+    'showreel/bb/2.png',
+    'showreel/bb/3.png',
+    'showreel/bb/4.png',
+  ],
+  kulman: [
+    'showreel/kulman/1.png',
+    'showreel/kulman/2.png',
+    'showreel/kulman/3.png',
+    'showreel/kulman/4.png',
+  ],
+  onesolar: [
+    'showreel/onesolar/1.png',
+    'showreel/onesolar/2.webp',
+    'showreel/onesolar/3.png',
+    'showreel/onesolar/4.png',
+  ],
+  peatch: [
+    'showreel/peatch/1.png',
+    'showreel/peatch/2.webp',
+    'showreel/peatch/3.png',
+    'showreel/peatch/4.png',
+  ],
+  pottekur: [
+    'showreel/pottekur/1.png',
+    'showreel/pottekur/2.png',
+    'showreel/pottekur/3.png',
+    'showreel/pottekur/4.png',
+  ],
+};
 ---
 
 <Layout
@@ -16,10 +49,10 @@ import ContactForm from '../../components/ContactForm';
   <Navbar />
   <main class="-mt-2 text-white md:mt-[revert]">
     <section
-      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse md:px-2"
+      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4"
     >
       <div
-        class="mx-4 flex justify-center bg-transparent md:flex-1 md:shrink-0 md:self-start"
+        class="mx-4 flex justify-center bg-transparent md:order-1 md:mx-[revert] md:self-start"
       >
         <video
           class="aspect-auto w-full max-w-[600px] rounded-gemms-medium"
@@ -42,10 +75,10 @@ import ContactForm from '../../components/ContactForm';
           />
         </video>
       </div>
-      <div class="w-full md:mx-8 md:flex-1">
+      <div class="w-full md:pl-4">
         <div class="space-y-2 md:space-y-3">
           <h2
-            class="mx-auto max-w-[300px] text-center text-2xl leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
+            class="mx-auto max-w-[300px] text-center text-2xl font-bold leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
           >
             Design and engineering subscription for startups and founders
           </h2>
@@ -62,18 +95,20 @@ import ContactForm from '../../components/ContactForm';
           >
             <button
               data-fires-confetti
-              class="whitespace-nowrap rounded-full bg-white px-6 py-4 text-neutral-950 md:font-medium"
+              class="whitespace-nowrap rounded-full bg-white p-4 text-neutral-950 md:text-base md:leading-5"
               id="book-an-intro-call-btn"
             >
               Book an intro call
             </button>
             <button
               data-fires-confetti
-              class="whitespace-nowrap rounded-full bg-white/5 px-6 py-4 md:font-medium"
+              class="whitespace-nowrap rounded-full bg-white/5 p-4 md:text-base md:leading-5"
               id="start-pricing-btn">Start $8450 / mo</button
             >
           </div>
-          <p class="mt-4 text-center text-xs opacity-40 md:text-start">
+          <p
+            class="mt-4 text-center text-xs opacity-40 md:text-start md:text-base"
+          >
             7-day trial period, money-back guaranteed
           </p>
         </div>
@@ -84,27 +119,46 @@ import ContactForm from '../../components/ContactForm';
         class="grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 text-gemms-dark md:mx-auto md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:gap-y-8"
       >
         <ProductCard
-          img="products/peatch.png"
+          images={IMG_PATHS.peatch}
           title="PEATCH"
+          delay={2}
           type="Product, 3 months"
           description="Conceptualised and developed pivot for a social network for creatives and professional."
         />
         <ProductCard
-          img="products/one_solar.png"
-          title="KULMAN"
+          images={IMG_PATHS.pottekur}
+          start={1000}
+          delay={2.5}
+          title="Pottekur"
           type="Branding & Product, 3 Months"
           description="Helped a solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
         />
         <TestimonialCard client:load />
         <ProductCard
-          img="products/hulman.png"
+          images={IMG_PATHS.kulman}
           title="KULMAN"
+          delay={3}
           type="Branding, 2 Weeks"
           description="A bold and playful logo and brand identity for a office & home furniture manufacturer"
         />
         <ProductCard
-          img="products/blocks.png"
-          title="CLAN"
+          images={IMG_PATHS.kulman}
+          title="KULMAN"
+          delay={2.5}
+          type="Branding, 2 Weeks"
+          description="A bold and playful logo and brand identity for a office & home furniture manufacturer"
+        />
+        <ProductCard
+          images={IMG_PATHS.bb}
+          title="Beaded Breakfast"
+          delay={3.5}
+          type="Branding & Web, 1 Month"
+          description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+        />
+        <ProductCard
+          images={IMG_PATHS.onesolar}
+          title="Beaded Breakfast"
+          delay={4.5}
           type="Branding & Web, 1 Month"
           description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
         />
@@ -200,10 +254,12 @@ import ContactForm from '../../components/ContactForm';
             Talk with Nikita, the founder and product designer, to discuss the
             opportunities, create a roadmap, and get free consultation.
           </p>
-          <div class="mt-8 flex flex-col gap-3 md:flex-row">
+          <div
+            class="mt-8 flex flex-col gap-3 font-arizona text-sm font-medium md:flex-row md:text-base"
+          >
             <button
               data-fires-confetti
-              class="rounded-full bg-white px-4 py-4 text-sm text-black md:p-4 md:text-base md:leading-5"
+              class="rounded-full bg-white px-4 py-4 text-sm font-bold text-black md:p-4 md:text-base md:leading-5"
             >
               Book an intro call
             </button>
@@ -215,7 +271,7 @@ import ContactForm from '../../components/ContactForm';
                 class="h-6 w-6 rounded-full object-cover"
                 src="people/bek.png"
               />
-              <p class="text-sm">DM in Telegram</p>
+              <p class="font-bold">DM in Telegram</p>
             </a>
           </div>
         </div>
@@ -274,5 +330,9 @@ import ContactForm from '../../components/ContactForm';
   span,
   footer {
     font-family: 'Arizona Plus', sans-serif;
+  }
+
+  button {
+    font-weight: 700;
   }
 </style>
