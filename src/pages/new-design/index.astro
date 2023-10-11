@@ -16,25 +16,27 @@ import ContactForm from '../../components/ContactForm';
   <Navbar />
   <main class="-mt-2 text-white md:mt-[revert]">
     <section
-      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark pb-6 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse"
+      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-24 md:flex md:max-w-7xl md:flex-row-reverse md:px-2"
     >
       <div
-        class="mx-4 flex justify-center bg-transparent md:flex-1 md:self-start"
+        class="mx-4 flex justify-center bg-transparent md:flex-1 md:shrink-0 md:self-start"
       >
         <video
-          class="w-full max-w-[600px] rounded-gemms-medium"
+          class="aspect-auto w-full max-w-[600px] rounded-gemms-medium"
           autoplay
+          width="600"
+          height="400"
           loop
           muted
           playsinline
         >
           <source
-            src="showreel.mp4"
+            src="new_showreel.mp4"
             class="rounded-[8px/4px]"
             type="video/mp4"
           />
           <source
-            src="showreel.webm"
+            src="new_showreel.webm"
             class="rounded-[8px/4px]"
             type="video/webm"
           />
@@ -79,7 +81,7 @@ import ContactForm from '../../components/ContactForm';
     </section>
     <div class="bg-white">
       <section
-        class="grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 text-gemms-dark md:mx-auto md:max-w-7xl md:grid-cols-2"
+        class="grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 text-gemms-dark md:mx-auto md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:gap-y-8"
       >
         <ProductCard
           img="products/peatch.png"
@@ -117,45 +119,63 @@ import ContactForm from '../../components/ContactForm';
             meetings
           </h1>
           <div
-            class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:items-start md:justify-start md:gap-2"
+            class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:max-w-[400px] md:items-start md:justify-start md:gap-2"
           >
-            <Pill text="10-minutes brief" />
-            <Pill text="30-minutes intro call" />
-            <Pill text="7 days trial" />
-            <Pill text="2-3 day turnaround" />
-            <Pill text="Communicate via Telegram" />
-            <Pill text="Manage via Linear" />
-            <Pill text="Pause or cancel anytime" />
+            <Pill className="md:text-base" text="10-minutes brief" />
+            <Pill className="md:text-base" text="30-minutes intro call" />
+            <Pill className="md:text-base" text="7 days trial" />
+            <Pill className="md:text-base" text="2-3 day turnaround" />
+            <Pill className="md:text-base" text="Communicate via Telegram" />
+            <Pill className="md:text-base" text="Manage via Linear" />
+            <Pill className="md:text-base" text="Pause or cancel anytime" />
           </div>
         </div>
         <div class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
-          <TextBubble text="Who are you?" sender="us" />
+          <TextBubble className="md:text-2xl" text="Who are you?" sender="us" />
           <TextBubble
             text="We are a team of professionals that constantly strives to create valueable products, fast and efficiently."
             sender="them"
+            className="md:text-2xl"
           />
-          <TextBubble text="What's with the price?" sender="us" />
+          <TextBubble
+            text="What's with the price?"
+            className="md:text-2xl"
+            sender="us"
+          />
           <TextBubble
             text="We understand your concerns, but it's still cheaper and faster than hiring your own team members."
             sender="them"
+            className="md:text-2xl"
           />
-          <TextBubble text="How can I pay for your service?" sender="us" />
+          <TextBubble
+            text="How can I pay for your service?"
+            className="md:text-2xl"
+            sender="us"
+          />
           <TextBubble
             text="You can pay by wire transfer, Paypal, crypto or Deel."
             sender="them"
+            className="md:text-2xl"
           />
-          <TextBubble text="Who will own the final project?" sender="us" />
+          <TextBubble
+            text="Who will own the final project?"
+            className="md:text-2xl"
+            sender="us"
+          />
           <TextBubble
             text="You will! All of the intellectual rights for the project goes to you."
             sender="them"
+            className="md:text-2xl"
           />
           <TextBubble
             text="What if I'm not satisfied with the result?"
             sender="us"
+            className="md:text-2xl"
           />
           <TextBubble
             text="You will have a 7-days trial period. If you won't be satisfied, or won't want to go forward with the project, we will compensante the payment, excluding taxes and payment provider's comission. "
             sender="them"
+            className="md:text-2xl"
           />
         </div>
       </section>
@@ -251,7 +271,8 @@ import ContactForm from '../../components/ContactForm';
 <style>
   p,
   button,
-  span {
+  span,
+  footer {
     font-family: 'Arizona Plus', sans-serif;
   }
 </style>

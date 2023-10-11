@@ -9,6 +9,9 @@ module.exports = {
       borderRadius: {
         'gemms-medium': '4px',
       },
+      fontFamily: {
+        arizona: '"Arizona Plus", sans-serif',
+      },
     },
   },
   plugins: [],

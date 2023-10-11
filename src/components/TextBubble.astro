@@ -3,12 +3,15 @@ import { twMerge } from 'tailwind-merge';
 interface Props {
   text?: string;
   sender?: 'them' | 'us';
+  className?: string;
 }
 
-const { text, sender } = Astro.props;
+const { text, sender, className } = Astro.props;
 ---
 
-<div class={twMerge('message', sender === 'us' ? 'us' : 'them', 'last')}>
+<div
+  class={twMerge('message', sender === 'us' ? 'us' : 'them', 'last', className)}
+>
   {text}
 </div>
 
@@ -22,6 +25,8 @@ const { text, sender } = Astro.props;
     color: black;
 
     max-width: fit-content;
+
+    font-family: 'Arizona Plus', sans-serif;
   }
 
   .them {
