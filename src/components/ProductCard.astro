@@ -1,26 +1,47 @@
 ---
+import Slideshow from './Slideshow.astro';
 interface Props {
-  img: string;
+  images: Array<string>;
+  start?: number;
+  delay?: number;
+
   title: string;
   type: string;
   description: string;
 }
 
-const { img, title, type, description } = Astro.props;
+const {
+  images,
+  start = 500,
+  delay = 1,
+  title,
+  type,
+  description,
+} = Astro.props;
 ---
 
-<article class="flex max-w-[600px] flex-col gap-2 text-sm leading-4">
-  <img
-    class="aspect-auto max-h-[400px] rounded-gemms-medium"
-    src={img}
-    width="600"
-    height="400"
+<article
+  class="relative flex min-h-fit max-w-[600px] flex-col gap-2 text-sm leading-4 md:gap-3 md:text-base md:leading-5"
+>
+  <Slideshow
+    className="aspect-auto rounded-gemms-medium border border-gemms-dark/5"
+    images={images}
+    delay={delay}
+    start={start}
   />
-  <div class="flex justify-between">
-    <p class="uppercase text-gemms-dark">{title}</p>
-    <p class="text-gemms-dark/[.32]">{type}</p>
+  <div class="space-y-2">
+    <div class="flex justify-between">
+      <p class="uppercase text-gemms-dark">{title}</p>
+      <p class="text-gemms-dark/[.32]">{type}</p>
+    </div>
+    <p class="-tracking-[0.01em] opacity-[.32]">
+      {description}
+    </p>
   </div>
-  <p class="-tracking-[0.01em] opacity-[.32]">
-    {description}
-  </p>
 </article>
+
+<style>
+  article {
+    font-family: 'Arizona Plus', sans-serif;
+  }
+</style>
