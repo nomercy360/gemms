@@ -19,11 +19,10 @@ const ContactForm = () => {
       <div class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5">
         <div class="space-y-1">
           <p class="text-center text-xl md:text-start md:text-2xl md:font-medium">
-            Be next on the list
+            Share your idea
           </p>
           <p class="text-center text-sm md:max-w-[49ch] md:text-start">
-            No-bullshit, data-first, fact-checked and beautiful pitch-deck
-            written in the language of numbers
+            We will contact you within the next 24 hours
           </p>
         </div>
         <div class="mt-10 flex flex-col gap-3 text-sm md:gap-4">

@@ -1,18 +1,12 @@
-import { createSignal, createEffect, from, For } from 'solid-js';
+import { createSignal, For } from 'solid-js';
 
 const TestimonialCard = () => {
   const testimonies = [
     {
-      name: 'Nikita A.',
-      photo: '/people/bek.png',
+      name: 'Sergey F',
+      photo: '/people/sergey_f.webp',
       testimony:
-        'Everything is under one payment. Hire a top-notch team of designers and engineers for a fixed monthly payment and work with them one-on-one.',
-    },
-    {
-      name: 'Max Powers',
-      photo: '/people/bek.png',
-      testimony:
-        'Gemms group is the prime example of professionalism, creativity and efficancy. You will have a hard time finding anyone better.',
+        'Working with Gemss is a great way to develop a vision for the future, bring about a revolution, and take the next step.',
     },
   ];
 
@@ -42,7 +36,7 @@ const TestimonialCard = () => {
                   width={80}
                   height={120}
                   onClick={() => changeImage(idx())}
-                  class={`max-h-[120px] max-w-[80px] cursor-pointer rounded-gemms-medium object-cover transition-all duration-500 ${
+                  class={`max-h-[120px] max-w-[80px] cursor-pointer rounded-gemms-medium object-cover grayscale transition-all duration-500 ${
                     current() === idx() ? 'opacity-100' : 'opacity-40'
                   }`}
                 />

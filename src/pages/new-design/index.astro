@@ -7,7 +7,14 @@ import Pill from '../../components/Pill.astro';
 import TextBubble from '../../components/TextBubble.astro';
 import ContactForm from '../../components/ContactForm';
 
+// TODO: Add OneSolar
 const IMG_PATHS = {
+  clan: [
+    'showreel/clan/1.webp',
+    'showreel/clan/2.webp',
+    'showreel/clan/3.webp',
+    'showreel/clan/4.webp',
+  ],
   bb: [
     'showreel/bb/1.webp',
     'showreel/bb/2.webp',
@@ -123,15 +130,15 @@ const IMG_PATHS = {
           title="PEATCH"
           delay={2}
           type="Product, 3 months"
-          description="Conceptualised and developed pivot for a social network for creatives and professional."
+          description="Conceptualized, developed, and pivoted a social network that rethinks the way we hire, collaborate, and showcase ourselves as professionals."
         />
         <ProductCard
-          images={IMG_PATHS.pottekur}
+          images={IMG_PATHS.onesolar}
           start={1000}
           delay={2.5}
-          title="Pottekur"
+          title="ONE SOLAR"
           type="Branding & Product, 3 Months"
-          description="Helped a solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+          description="Helped a solar e-commerce brand transform unappealing elements into an engaging user experience, achieve $3M in (ARR), and develop a strong brand and strategy."
         />
         <TestimonialCard client:load />
         <ProductCard
@@ -139,28 +146,28 @@ const IMG_PATHS = {
           title="KULMAN"
           delay={3}
           type="Branding, 2 Weeks"
-          description="A bold and playful logo and brand identity for a office & home furniture manufacturer"
+          description="A bold and playful logo and brand identity for an office and home furniture manufacturer."
         />
         <ProductCard
-          images={IMG_PATHS.kulman}
-          title="KULMAN"
+          images={IMG_PATHS.clan}
+          title="ABIE"
           delay={2.5}
           type="Branding, 2 Weeks"
-          description="A bold and playful logo and brand identity for a office & home furniture manufacturer"
+          description="A package design and brand identity for an natural bath accessories brand, drawing inspiration from the steam patterns on your mirror."
         />
         <ProductCard
           images={IMG_PATHS.bb}
           title="Beaded Breakfast"
           delay={3.5}
-          type="Branding & Web, 1 Month"
-          description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+          type="Branding & Web, 2 Months"
+          description="A playful e-commerce website, marketing, and brand identity for a beaded jewelry brand."
         />
         <ProductCard
-          images={IMG_PATHS.onesolar}
-          title="Beaded Breakfast"
+          images={IMG_PATHS.pottekur}
+          title="POTTEKUR"
           delay={4.5}
-          type="Branding & Web, 1 Month"
-          description="Helped an ugly solar e-commerce brand make their first steps, build $3M MRR and develop a strategy for a future growth, rebranding a positioning"
+          type="Branding, 2 Weeks"
+          description="Handcrafted logo and brand identity for a ceramic studio and kintsugi store."
         />
         <ContactForm client:load />
         <div
@@ -269,7 +276,7 @@ const IMG_PATHS = {
             >
               <img
                 class="h-6 w-6 rounded-full object-cover"
-                src="people/bek.png"
+                src="people/bek.webp"
               />
               <p>DM in Telegram</p>
             </a>
@@ -289,28 +296,28 @@ const IMG_PATHS = {
           href="https://t.me/nickaxel"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="svg/dribbble.svg" width="24" height="24" />
+          <img src="icons/dribbble.svg" width="24" height="24" />
           <p class="mt-[68px]">Dribbble</p>
         </a>
         <a
           href="https://t.me/nickaxel"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="svg/dribbble.svg" width="24" height="24" />
+          <img src="icons/ig.svg" width="24" height="24" />
           <p class="mt-[68px]">Instagram</p>
         </a>
         <a
           href="https://t.me/nickaxel"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="svg/dribbble.svg" width="24" height="24" />
+          <img src="icons/twitter.svg" width="20" height="20" />
           <p class="mt-[68px]">X</p>
         </a>
         <a
           href="https://dribbble.com/NikitaAxel"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="svg/dribbble.svg" width="24" height="24" />
+          <img src="icons/email.svg" width="24" height="24" />
           <p class="mt-[68px]">Mail</p>
         </a>
       </div>
