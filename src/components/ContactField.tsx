@@ -1,4 +1,4 @@
-import { createSignal, Match, onCleanup, Switch } from 'solid-js';
+import { Match, Switch } from 'solid-js';
 import useContact from '../hooks/useContact.ts';
 import { twMerge } from 'tailwind-merge';
 

@@ -1,11 +1,11 @@
 import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   const apiKey = import.meta.env.RESEND_API_KEY;
 
   const uuid = crypto.randomUUID();
 
-  const data = (await request.json()) as { contact: string };
+  const data = (await request.json()) as { contact: string, text: string };
 
   if (!data.contact) {
     return new Response(JSON.stringify({ message: "Contact is required" }), {
@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       body: JSON.stringify({
         from: "Hello <hello@gemss.xyz>",
         to: [data.contact],
-        subject: "Hello from Gemss",
+        subject: "Hello from Gemss!",
         html: EmailTemplate(),
       }),
     });
@@ -42,15 +42,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
   }
 
-  const message = `*New ${contactType} received*\n\n${data.contact}`;
+  const message = `*New ${contactType} received*\n\n${data.contact}, with the following message: 
+  ---
+  ${data.text}
+  ---
+  `;
 
   const chatId = import.meta.env.TELEGRAM_CHAT_ID;
   const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
 
-  // @ts-ignore
-  const runtime = locals.runtime;
 
-  runtime.waitUntil(sendTelegramMessage({ botToken, chatId, message }));
+  await sendTelegramMessage({ botToken, chatId, message });
 
   return new Response(JSON.stringify({ message: "OK" }), {
     status: 200,

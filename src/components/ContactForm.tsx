@@ -1,14 +1,54 @@
+import { createSignal } from 'solid-js';
 import useContact from '../hooks/useContact';
+import { twJoin } from 'tailwind-merge';
+import confetti from 'canvas-confetti';
 
 const ContactForm = () => {
-  const { contact, setContact, name, setName, sendContact, text, setText } =
-    useContact();
+  const {
+    contact,
+    setContact,
+    name,
+    setName,
+    sendContact,
+    text,
+    setText,
+    sent,
+    isValid,
+  } = useContact();
+
+  const [isLoading, setIsLoading] = createSignal(false);
 
   const onSubmit = (e: Event) => {
     e.preventDefault();
-
-    sendContact();
+    if (isValid) {
+      if (!sent()) {
+        setIsLoading(true);
+        sendContact().finally(() => {
+          setIsLoading(false);
+        });
+      } else {
+        confetti({
+          particleCount: 1000,
+          spread: 90,
+          origin: { y: 0, x: 0.5 },
+        });
+      }
+    }
   };
+
+  const buttonMessage = () => {
+    if (sent()) {
+      return "Thank you! We'll get in contact with you soon.";
+    }
+
+    if (isLoading()) {
+      return 'Sending...';
+    } else {
+      return 'Send us a message';
+    }
+  };
+
+  const isDisabled = isLoading() || sent();
 
   return (
     <form
@@ -38,7 +78,6 @@ const ContactForm = () => {
           />
           <input
             class="px-3 py-[13px] md:text-base"
-            type="email"
             name="email"
             placeholder="E-mail, Telegram, IG, or other socials"
             value={contact()}
@@ -55,9 +94,13 @@ const ContactForm = () => {
             }}
           ></textarea>
           <input
-            class="w-fit cursor-pointer self-center rounded-full bg-black px-4 py-[6px] font-bold text-white md:mt-1 md:self-start md:p-4 md:text-base"
+            class={twJoin(
+              'w-fit cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white md:mt-1 md:self-start md:p-4 md:text-base',
+              sent() ? 'bg-[#37d15d]' : 'bg-black'
+            )}
             type="submit"
-            value="Send us a message"
+            disabled={isDisabled}
+            value={buttonMessage()}
             data-fires-confetti
           />
         </div>

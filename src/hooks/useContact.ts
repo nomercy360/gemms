@@ -6,6 +6,8 @@ const useContact = () => {
   const [name, setName] = createSignal("");
   const [text, setText] = createSignal("");
 
+  const isValid = contact.length > 1 && name.length > 1 && text.length > 1;
+
   const [sent, setSent] = createSignal(false);
 
   const sendContact = async () => {
@@ -22,7 +24,11 @@ const useContact = () => {
       return;
     } else {
       setSent(true);
-      confetti();
+      confetti({
+        particleCount: 1000,
+        spread: 180,
+        origin: { y: 0, x: 0.5 }
+      });
     }
   };
 
@@ -35,6 +41,7 @@ const useContact = () => {
     setText,
     sent,
     sendContact,
+    isValid
   };
 };
 

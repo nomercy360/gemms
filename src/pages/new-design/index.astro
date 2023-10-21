@@ -101,14 +101,13 @@ const IMG_PATHS = {
             class="flex flex-row justify-center gap-3 text-sm md:justify-start md:text-base"
           >
             <button
-              data-fires-confetti
               class="whitespace-nowrap rounded-full bg-white p-4 text-neutral-950 md:text-base md:leading-5"
-              id="book-an-intro-call-btn"
+              data-books-call
             >
               Book an intro call
             </button>
             <button
-              data-fires-confetti
+              data-books-call
               class="whitespace-nowrap rounded-full bg-white/5 p-4 md:text-base md:leading-5"
               id="start-pricing-btn">Start $8450 / mo</button
             >
@@ -169,7 +168,7 @@ const IMG_PATHS = {
           type="Branding, 2 Weeks"
           description="Handcrafted logo and brand identity for a ceramic studio and kintsugi store."
         />
-        <ContactForm client:load />
+        <ContactForm data-contact-form client:load />
         <div
           class="mt-10 flex flex-col items-center bg-white px-4 md:items-start"
         >
@@ -265,7 +264,7 @@ const IMG_PATHS = {
             class="mt-8 flex flex-col gap-3 font-arizona text-sm font-medium md:flex-row md:text-base"
           >
             <button
-              data-fires-confetti
+              data-books-call
               class="rounded-full bg-white px-4 py-4 text-sm text-black md:p-4 md:text-base md:leading-5"
             >
               Book an intro call
@@ -300,14 +299,14 @@ const IMG_PATHS = {
           <p class="mt-[68px]">Dribbble</p>
         </a>
         <a
-          href="https://t.me/nickaxel"
+          href="https://instagram.com/gemsscollective"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
           <img src="icons/ig.svg" width="24" height="24" />
           <p class="mt-[68px]">Instagram</p>
         </a>
         <a
-          href="https://t.me/nickaxel"
+          href="https://twitter.com/gemsscollective"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
           <img src="icons/twitter.svg" width="20" height="20" />
@@ -343,3 +342,18 @@ const IMG_PATHS = {
     font-weight: 500;
   }
 </style>
+
+<script>
+  const ContactFormElement = document.querySelector('#contact-form');
+
+  const BookCallButtons = document.querySelectorAll('[data-books-call]');
+
+  BookCallButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      ContactFormElement?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    });
+  });
+</script>
