@@ -170,7 +170,7 @@ const EmailTemplate = () => {
     <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td valign="top">
-                <img src="https://gemss.xyz/icons/gem.png" alt="GEMSS" width="21" height="20">
+                <img src="https://gemss.xyz/gem.png" alt="GEMSS" width="21" height="20">
                 <p style="color: #ffffff; margin-top: 25px; max-width: 400px">
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
@@ -182,7 +182,6 @@ const EmailTemplate = () => {
         </tr>
         <tr>
             <td valign="bottom">
-                <img src="https://gemss.xyz/heart.png" alt="love" width="27" height="24">
                 <p style="margin-top: 16px;">
                     Sincerely, Nikita,
                     <br>
