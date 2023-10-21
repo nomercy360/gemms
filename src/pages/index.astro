@@ -1,214 +1,418 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PricingCard from "../components/PricingCard.astro";
-import { Icon } from "astro-icon/components";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
-import ContactField from "../components/ContactField";
-import ImageSlideshow from "../components/ImageSlideshow.astro";
-import PriceDescription from "../components/PriceDescription.astro";
+import { Icon } from 'astro-icon/components';
+
+import Navbar from '../components/Navbar.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Layout from '../layouts/Layout.astro';
+import TestimonialCard from '../components/TestimonialCard';
+import Pill from '../components/Pill.astro';
+import TextBubble from '../components/TextBubble.astro';
+import ContactForm from '../components/ContactForm';
+
+// TODO: Add OneSolar
+const IMG_PATHS = {
+  clan: [
+    'showreel/clan/1.webp',
+    'showreel/clan/2.webp',
+    'showreel/clan/3.webp',
+    'showreel/clan/4.webp',
+  ],
+  bb: [
+    'showreel/bb/1.webp',
+    'showreel/bb/2.webp',
+    'showreel/bb/3.webp',
+    'showreel/bb/4.webp',
+  ],
+  kulman: [
+    'showreel/kulman/1.webp',
+    'showreel/kulman/2.webp',
+    'showreel/kulman/3.webp',
+    'showreel/kulman/4.webp',
+  ],
+  onesolar: [
+    'showreel/onesolar/1.webp',
+    'showreel/onesolar/2.webp',
+    'showreel/onesolar/3.webp',
+    'showreel/onesolar/4.webp',
+  ],
+  peatch: [
+    'showreel/peatch/1.webp',
+    'showreel/peatch/2.webp',
+    'showreel/peatch/3.webp',
+    'showreel/peatch/4.webp',
+  ],
+  pottekur: [
+    'showreel/pottekur/1.webp',
+    'showreel/pottekur/2.webp',
+    'showreel/pottekur/3.webp',
+    'showreel/pottekur/4.webp',
+  ],
+};
 ---
 
 <Layout
-  title="Welcome to Gemss - Speed-first Growth Services for Startups"
-  description="Gemss is a collective of entrepreneurs, financial managers, designers, marketers, and developers, with a huge experience in different fields. We’ve developed five services, that will rapidly change your your business."
+  title="Design and engineering subscription for startups and founders"
+  description="Hire a top-notch team of designers and engineers for a fixed monthly payment and work with them hassle-free."
+  theme="dark"
 >
   <Navbar />
-  <main class="bg-black w-full pt-16">
-    <div
-      class="grid md:grid-cols-2 grid-cols-1 gap-8 items-start mb-10 md:max-w-[1216px] md:mx-auto"
+  <main class="-mt-2 text-white md:mt-[revert]">
+    <section
+      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4"
     >
       <div
-        class="flex md:flex-row flex-col justify-between items-center md:p-8 md:gap-4 gap-0 p-4"
+        class="mx-4 flex justify-center bg-transparent md:order-1 md:mx-[revert] md:self-start"
       >
-        <div class="md:max-w-lg md:text-start text-center">
-          <p
-            class="text-[#7A7A7A] md:text-[12px] text-[10px] font-medium leading-[16px] tracking-[1px] uppercase"
-          >
-            Startup agency
-          </p>
-          <h1
-            class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-white mt-3"
-          >
-            Speed-first growth services and out-staff subscription for startups
-          </h1>
-          <p
-            class="text-[#6F6F6F] md:text-[20px] text-[15px] md:leading-[27px] leading-[21px] mt-4"
-          >
-            Gemss is a collective of entrepreneurs, financial managers,
-            designers, marketers, and developers, with a huge experience in
-            different fields. We’ve developed five services, that will rapidly
-            change your your business.
-          </p>
-          <ContactField
-            client:visible
-            buttonText="Contact"
-            placeholderText="E-mail, Telegram, etc."
+        <video
+          class="aspect-auto w-full max-w-[600px] rounded-gemms-medium"
+          autoplay
+          width="600"
+          height="400"
+          loop
+          muted
+          playsinline
+        >
+          <source
+            src="showreel/main.mp4"
+            class="rounded-[8px/4px]"
+            type="video/mp4"
           />
-        </div>
+          <source
+            src="showreel/main.webm"
+            class="rounded-[8px/4px]"
+            type="video/webm"
+          />
+        </video>
       </div>
-
-      <section id="cards" class="md:p-8 p-4 flex flex-col space-y-4">
-        <ImageSlideshow
-          slidesId="preview"
-          maxSlides={9}
-          generatedId="1"
-          className="aspect-[3/2]"
-        />
-        <PricingCard
-          title="Catchy and fast-made logotypes and brands, that customers recognise"
-          description="Recognisable brand and domain name, logo, and visuals, that people understands, love, and share"
-          href="/brands"
-          available
-        >
-          <PriceDescription price="from $900" description="from 3 days" />
-        </PricingCard>
-        <PricingCard
-          title="Data-first pitch decks, investors will understand"
-          description="No-bullshit, data-first, fact-checked and beautiful pitch-deck written in the language of numbers"
-          href="/pitch-deck"
-          available
-        >
-          <PriceDescription
-            price="from $2,500"
-            description="Depending on service"
-          />
-        </PricingCard>
-        <PricingCard
-          title="Facebook and Google settings and visuals that boost sales"
-          description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
-          href="/advertising"
-          available
-        >
-          <PriceDescription
-            price="from $1,500"
-            description="Depending on service"
-          />
-        </PricingCard>
-        <PricingCard
-          title="Content that engage audience and increase sales"
-          description="Better data transition, meaningful key-messages, beautiful visuals, and high conversion"
-          href="/content"
-        >
-          <div></div>
-        </PricingCard>
-      </section>
-    </div>
-    <section id="subscription" class="bg-white">
-      <div
-        class="md:py-10 py-5 md:px-8 px-4 grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-7 w-full flex-col justify-between md:max-w-[1216px] md:mx-auto"
-      >
-        <div class="flex flex-col md:max-w-lg">
-          <div class="flex flex-row items-center justify-start">
-            <img src="/ann.png" class="h-12 w-12 rounded-full" alt="Ann" />
-            <img
-              src="/max.png"
-              class="h-12 w-12 rounded-full -ml-3"
-              alt="Max"
-            />
-            <img
-              src="/gavriil.png"
-              class="h-12 w-12 rounded-full -ml-3 z-10"
-              alt="Gavriil"
-            />
-            <span
-              class="bg-black w-12 h-12 rounded-full text-[15px] leading-[20px] flex items-center justify-center text-white -ml-3 border-[3px] border-white"
-            >
-              +10
-            </span>
-          </div>
+      <div class="w-full md:pl-4">
+        <div class="space-y-2 md:space-y-3">
           <h2
-            class="md:text-[44px] text-[28px] md:leading-[48px] leading-[32px] text-black mt-4"
+            class="mx-auto max-w-[300px] text-center text-2xl font-light leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
           >
-            Subscription-based design, coding, and product development
+            Design and engineering subscription for startups and founders
           </h2>
           <p
-            class="md:text-[20px] text-[15px] leading-[21px] md:leading-[27px] text-[#6F6F6F] mt-4"
+            class="mx-auto max-w-[300px] text-center text-sm text-white/[.48] md:mx-[revert] md:max-w-[revert] md:text-start md:text-xl md:text-white"
           >
-            Research, conceptualisation, design, and development for web,
-            mobile, blockchain, and Telegram apps by designers, engineers, and
-            product managers with more than 15 years of experience.
+            Hire a top-notch team of designers and engineers for a fixed monthly
+            payment and work with them hassle-free.
           </p>
-          <div
-            class="flex flex-col justify-between p-4 bg-black/5 md:mt-8 mt-7"
-          >
-            <div
-              class="flex md:flex-row flex-col md:justify-between justify-start md:gap-0 gap-5"
-            >
-              <ul
-                class="text-black md:text-[15px] text-[15px] leading-[20px] md:leading-[21px] space-y-2"
-              >
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="glass" class="w-5 h-5" />
-                  <span class="text-[#E34343]">Two spots left</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>Unlimited Requests</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>2-3 day turnaround</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>Designers, managers, and engineers</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>Managed via Telegram or Linear</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>Pause or cancel anytime</span>
-                </li>
-                <li class="flex flex-row items-center gap-2">
-                  <Icon name="asterisk" class="w-5 h-5" />
-                  <span>Invite your team</span>
-                </li>
-              </ul>
-              <div
-                class="flex flex-col md:items-end items-start space-y-1 md:order-none order-first"
-              >
-                <span class="text-[20px] leading-[24px]">$8450 / mo</span>
-                <span class="text-[12px] leading-[16px]"
-                  >Pay daily or weekly</span
-                >
-              </div>
-            </div>
-            <ContactField
-              client:visible
-              placeholderText="E-mail, Telegram, etc."
-              buttonText="Let’s Talk"
-              btnClass="bg-black text-white"
-              formClass="bg-black/5"
-              inputClass="text-black"
-            />
-          </div>
         </div>
-        <div
-          class="flex flex-col w-full items-end justify-start h-fit md:order-none order-first md:pl-8 pl-0"
-        >
-          <ImageSlideshow
-            slidesId="product"
-            maxSlides={5}
-            generatedId="1"
-            className="aspect-[3/2] w-full"
-          />
+        <div class="mx-10 mt-[37px] md:mx-0 md:mt-24">
+          <div
+            class="flex flex-row justify-center gap-3 text-sm md:justify-start md:text-base"
+          >
+            <button
+              class="whitespace-nowrap rounded-full bg-white p-4 text-neutral-950 md:text-base md:leading-5"
+              data-books-call
+            >
+              Book an intro call
+            </button>
+            <button
+              data-books-call
+              class="whitespace-nowrap rounded-full bg-white/5 p-4 md:text-base md:leading-5"
+              id="start-pricing-btn">Start $8450 / mo</button
+            >
+          </div>
+          <p
+            class="mt-4 text-center text-xs opacity-40 md:text-start md:text-base"
+          >
+            7-day trial period, money-back guaranteed
+          </p>
         </div>
       </div>
-      <Footer mode="light" />
+    </section>
+    <div class="bg-white">
+      <section
+        class="grid grid-cols-1 justify-items-center gap-3 bg-white px-4 py-5 text-gemms-dark md:mx-auto md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:gap-y-8"
+      >
+        <ProductCard
+          images={IMG_PATHS.peatch}
+          title="PEATCH"
+          delay={2}
+          type="Product, 3 months"
+          description="Conceptualized, developed, and pivoted a social network that rethinks the way we hire, collaborate, and showcase ourselves as professionals."
+        />
+        <ProductCard
+          images={IMG_PATHS.onesolar}
+          delay={2.5}
+          title="ONE SOLAR"
+          type="Branding & Product, 3 Months"
+          description="Helped a solar e-commerce brand transform unappealing elements into an engaging user experience, achieve $3M in (ARR), and develop a strong brand and strategy."
+        />
+        <TestimonialCard client:load />
+        <ProductCard
+          images={IMG_PATHS.kulman}
+          title="KULMAN"
+          delay={3}
+          type="Branding, 2 Weeks"
+          description="A bold and playful logo and brand identity for an office and home furniture manufacturer."
+        />
+        <ProductCard
+          images={IMG_PATHS.clan}
+          title="ABIE"
+          delay={2.5}
+          type="Branding, 2 Weeks"
+          description="A package design and brand identity for an natural bath accessories brand, drawing inspiration from the steam patterns on your mirror."
+        />
+        <ProductCard
+          images={IMG_PATHS.bb}
+          title="Beaded Breakfast"
+          delay={3.5}
+          type="Branding & Web, 2 Months"
+          description="A playful e-commerce website, marketing, and brand identity for a beaded jewelry brand."
+        />
+        <ProductCard
+          images={IMG_PATHS.pottekur}
+          title="POTTEKUR"
+          delay={4.5}
+          type="Branding, 2 Weeks"
+          description="Handcrafted logo and brand identity for a ceramic studio and kintsugi store."
+        />
+        <ContactForm data-contact-form client:load />
+        <div class="mt-10 flex flex-col items-center bg-white md:items-start">
+          <h1
+            class="text-center text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
+          >
+            Great service free of corporate sluggishness and unnecessary
+            meetings
+          </h1>
+          <div
+            class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:max-w-[400px] md:items-start md:justify-start md:gap-2"
+          >
+            <Pill className="md:text-base" text="10-minutes brief" />
+            <Pill className="md:text-base" text="30-minutes intro call" />
+            <Pill className="md:text-base" text="7 days trial" />
+            <Pill className="md:text-base" text="2-3 day turnaround" />
+            <Pill className="md:text-base" text="Communicate via Telegram" />
+            <Pill className="md:text-base" text="Manage via Linear" />
+            <Pill className="md:text-base" text="Pause or cancel anytime" />
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
+          <TextBubble
+            className="md:text-2xl"
+            text="How do we communicate?"
+            sender="us"
+          />
+          <TextBubble
+            text="Our goal is to minimise communication as much as possible. Typically, the process involves you submitting your request and us sending the results. However, if a call is necessary, we will arrange it."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="How do I request?"
+            className="md:text-2xl"
+            sender="us"
+          />
+          <TextBubble
+            text="There are no rules. You can send us a Notion link, Figma file, Google Docs, wireframes PNGs, or even a Loom video. Essentially, anything that can be linked to or shared in Trello is fair game."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="How many requests can I submit?"
+            className="md:text-2xl"
+            sender="us"
+          />
+          <TextBubble
+            text="You can submit as many requests as you wish each month, and we will go through them one at a time, prioritising them based on the order of your requests and the priority you assign to each task."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="How quickly can I receive my results?"
+            className="md:text-2xl"
+            sender="us"
+          />
+          <TextBubble
+            text="On average, most requests are completed in just two days or less. However, more complex requests can take longer."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="What if I don’t need a full month of work?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="That's fine. You can pause your subscription and return when you have additional requests. We’ll continue at no extra charge."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="How can I pay for your service?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="You can pay by wire transfer, PayPal, cryptocurrency, or Deel."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="How are you handling the legal side?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="We'll send you the contract. All of the intellectual rights belong to you."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="Is there any work you don’t cover?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="We do not cover 3D modeling, document design (medical forms, etc.), complex packaging, or extensive print design (magazines, books, etc.)."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="What if I don’t like the results?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="No worries. We'll keep revising any designs until they are exactly what you're looking for."
+            sender="them"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="Are there any refunds if I don't like the service?"
+            sender="us"
+            className="md:text-2xl"
+          />
+          <TextBubble
+            text="Due to the high-quality nature of the work, there will be no refunds issued."
+            sender="them"
+            className="md:text-2xl"
+          />
+        </div>
+      </section>
+    </div>
+    <section
+      class="flex flex-col bg-gemms-dark pt-8 text-white md:mx-auto md:mb-8 md:max-w-7xl md:flex-row md:justify-between"
+    >
+      <div class="flex flex-col justify-between">
+        <div class="w-full flex-1 px-8 md:max-w-[530px]">
+          <Pill
+            className="border-white/20 w-fit mx-auto block md:mx-[revert] text-white md:py-[6px] md:px-3 md:text-[10px]"
+            text="2 SPOTS LEFT"
+          />
+          <h2
+            class="mt-3 text-center text-2xl leading-7 md:mt-4 md:text-start md:text-5xl"
+          >
+            Discuss today, start work tomorrow
+          </h2>
+          <p
+            class="mt-2 text-center text-sm text-white/[0.32] md:text-start md:text-xl"
+          >
+            Talk with Nikita, the founder and product designer, to discuss the
+            opportunities, create a roadmap, and get free consultation.
+          </p>
+          <div
+            class="mt-8 flex flex-col gap-3 font-arizona text-sm font-medium md:flex-row md:text-base"
+          >
+            <button
+              data-books-call
+              class="rounded-full bg-white px-4 py-4 text-sm text-black md:p-4 md:text-base md:leading-5"
+            >
+              Book an intro call
+            </button>
+            <a
+              class="flex flex-row items-center justify-center gap-[10px] rounded-full bg-white/5 px-4 py-4 md:p-4 md:text-base md:leading-5"
+              href="https://t.me/nickaxel"
+            >
+              <img
+                class="h-6 w-6 rounded-full object-cover"
+                src="people/bek.webp"
+              />
+              <p>DM in Telegram</p>
+            </a>
+          </div>
+        </div>
+        <footer class="hidden md:mt-8 md:block">
+          <a
+            href="https://thegaas.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-center text-sm text-white/20 md:mx-[revert] md:ml-8 md:text-start md:text-xl"
+            >Made by GAAS
+          </a>
+        </footer>
+      </div>
+      <div
+        class="md:self-[revert] mx-4 mt-[60px] grid aspect-square max-w-[400px] flex-1 grid-cols-2 gap-2 self-center md:mt-0 md:min-w-[328px]"
+      >
+        <a
+          href="https://t.me/nickaxel"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
+          <Icon name="dribbble" class="h-6 w-6" />
+          <p class="mt-[68px]">Dribbble</p>
+        </a>
+        <a
+          href="https://instagram.com/gemsscollective"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
+          <Icon name="ig" class="h-6 w-6" />
+          <p class="mt-[68px]">Instagram</p>
+        </a>
+        <a
+          href="https://twitter.com/gemsscollective"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
+          <Icon name="twitter" class="h-6 w-6" />
+          <p class="mt-[68px]">X</p>
+        </a>
+        <a
+          href="mailto:gemssco@proton.me"
+          class="flex flex-col justify-between bg-white/5 py-5 pl-4"
+        >
+          <Icon name="email" class="h-6 w-6" />
+          <p class="mt-[68px]">Mail</p>
+        </a>
+      </div>
     </section>
   </main>
+  <footer class="mx-auto mb-28 mt-10 md:mb-8 md:hidden md:max-w-7xl">
+    <a
+      class="block text-center text-sm text-white/20 md:mx-[revert] md:mb-10 md:ml-8 md:mt-0 md:text-start md:text-xl"
+      href="https://thegaas.co"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Made by GAAS
+    </a>
+  </footer>
 </Layout>
 
 <style>
-  .pink-card {
-    background: radial-gradient(
-        60.55% 78.3% at 5.96% 28.17%,
-        rgba(255, 153, 0, 0.2) 0%,
-        rgba(202, 47, 227, 0.04) 100%
-      ),
-      #f6f6f6;
+  p,
+  button,
+  span,
+  footer {
+    font-family: 'Arizona Plus', sans-serif;
+  }
+
+  button {
+    font-weight: 500;
   }
 </style>
+
+<script>
+  const ContactFormElement = document.querySelector('#contact-form');
+
+  const BookCallButtons = document.querySelectorAll('[data-books-call]');
+
+  BookCallButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      ContactFormElement?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    });
+  });
+</script>

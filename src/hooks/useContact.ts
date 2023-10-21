@@ -18,11 +18,14 @@ const useContact = () => {
     });
 
     if (response.status !== 200) {
-      console.error(response);
       return;
     } else {
       setSent(true);
-      confetti();
+      confetti({
+        particleCount: 1000,
+        spread: 180,
+        origin: { y: 0, x: 0.5 }
+      });
     }
   };
 

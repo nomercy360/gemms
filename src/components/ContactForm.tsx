@@ -1,13 +1,61 @@
+import { createSignal } from 'solid-js';
 import useContact from '../hooks/useContact';
+import { twJoin } from 'tailwind-merge';
+import confetti from 'canvas-confetti';
 
 const ContactForm = () => {
-  const { contact, setContact, name, setName, sendContact, text, setText } =
-    useContact();
+  const {
+    contact,
+    setContact,
+    name,
+    setName,
+    sendContact,
+    text,
+    setText,
+    sent,
+  } = useContact();
+
+  const [isLoading, setIsLoading] = createSignal(false);
 
   const onSubmit = (e: Event) => {
     e.preventDefault();
+    if (!sent()) {
+      setIsLoading(true);
+      sendContact().finally(() => {
+        setIsLoading(false);
+      });
+    }
 
-    sendContact();
+    if (sent()) {
+      confetti({
+        particleCount: 1000,
+        spread: 90,
+        origin: { y: 0, x: 0.5 },
+      });
+    }
+  };
+
+  console.log(text());
+
+  const isDisabled = () => {
+    return (
+      isLoading() ||
+      name().length < 2 ||
+      contact().length < 2 ||
+      text().length < 2
+    );
+  };
+
+  const buttonMessage = () => {
+    if (sent()) {
+      return "Thank you! We'll get in contact with you soon.";
+    }
+
+    if (isLoading()) {
+      return 'Sending...';
+    } else {
+      return 'Send us a message';
+    }
   };
 
   return (
@@ -19,11 +67,10 @@ const ContactForm = () => {
       <div class="rounded-gemms-medium bg-[#F3F3F4] px-5 py-5">
         <div class="space-y-1">
           <p class="text-center text-xl md:text-start md:text-2xl md:font-medium">
-            Be next on the list
+            Share your idea
           </p>
-          <p class="text-center text-sm md:max-w-[49ch] md:text-start">
-            No-bullshit, data-first, fact-checked and beautiful pitch-deck
-            written in the language of numbers
+          <p class="text-center text-sm opacity-30 md:max-w-[49ch] md:text-start md:text-base">
+            We will contact you within the next 24 hours
           </p>
         </div>
         <div class="mt-10 flex flex-col gap-3 text-sm md:gap-4">
@@ -33,6 +80,7 @@ const ContactForm = () => {
             name="name"
             placeholder="Your name"
             value={name()}
+            required
             onChange={(e) => {
               setName(e.target.value);
             }}
@@ -41,8 +89,9 @@ const ContactForm = () => {
             class="px-3 py-[13px] md:text-base"
             type="email"
             name="email"
-            placeholder="E-mail, Telegram, IG, or other socials"
+            placeholder="E-mail"
             value={contact()}
+            required
             onChange={(e) => {
               setContact(e.target.value);
             }}
@@ -51,14 +100,20 @@ const ContactForm = () => {
             class="min-h-[132px] resize-none px-3 py-[13px] md:text-base"
             placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
             value={text()}
+            maxLength={1000}
+            required
             onChange={(e) => {
               setText(e.target.value);
             }}
           ></textarea>
           <input
-            class="w-fit cursor-pointer self-center rounded-full bg-black px-4 py-[6px] font-bold text-white md:mt-1 md:self-start md:p-4 md:text-base"
+            class={twJoin(
+              'w-fit cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white transition-opacity disabled:opacity-75 md:mt-1 md:self-start md:p-4 md:text-base',
+              sent() ? 'bg-[#37d15d]' : 'bg-black'
+            )}
             type="submit"
-            value="Send us a message"
+            disabled={isDisabled()}
+            value={buttonMessage()}
             data-fires-confetti
           />
         </div>
