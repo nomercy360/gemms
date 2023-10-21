@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 import Navbar from '../components/Navbar.astro';
 import ProductCard from '../components/ProductCard.astro';
 import Layout from '../layouts/Layout.astro';
@@ -168,11 +170,9 @@ const IMG_PATHS = {
           description="Handcrafted logo and brand identity for a ceramic studio and kintsugi store."
         />
         <ContactForm data-contact-form client:load />
-        <div
-          class="mt-10 flex flex-col items-center bg-white px-4 md:items-start"
-        >
+        <div class="mt-10 flex flex-col items-center bg-white md:items-start">
           <h1
-            class="max-w-[20ch] text-center text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
+            class="text-center text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
           >
             Great service free of corporate sluggishness and unnecessary
             meetings
@@ -297,28 +297,28 @@ const IMG_PATHS = {
           href="https://t.me/nickaxel"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="icons/dribbble.svg" width="24" height="24" />
+          <Icon name="dribbble" class="h-6 w-6" />
           <p class="mt-[68px]">Dribbble</p>
         </a>
         <a
           href="https://instagram.com/gemsscollective"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="icons/ig.svg" width="24" height="24" />
+          <Icon name="ig" class="h-6 w-6" />
           <p class="mt-[68px]">Instagram</p>
         </a>
         <a
           href="https://twitter.com/gemsscollective"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="icons/twitter.svg" width="20" height="20" />
+          <Icon name="twitter" class="h-6 w-6" />
           <p class="mt-[68px]">X</p>
         </a>
         <a
           href="mailto:gemssco@proton.me"
           class="flex flex-col justify-between bg-white/5 py-5 pl-4"
         >
-          <img src="icons/email.svg" width="24" height="24" />
+          <Icon name="email" class="h-6 w-6" />
           <p class="mt-[68px]">Mail</p>
         </a>
       </div>
