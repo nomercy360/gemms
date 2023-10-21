@@ -46,13 +46,16 @@ import { ViewTransitions } from 'astro:transitions';
       src=`https://statsy.observer/${import.meta.env.PUBLIC_STATSY_SCRIPT}.js`
       defer></script>
     <ViewTransitions />
-  </head>
-  <body class={theme === 'dark' ? 'bg-gemms-dark' : 'bg-white'}>
-    <slot />
     <style is:global>
+      html,
       body {
-        font-family: Inter, sans-serif;
+        font-family: 'New Spirit', sans-serif;
         position: relative;
+
+        font-variation-settings:
+          'wght' 400,
+          'SRFF' 0,
+          'slnt' 0;
       }
 
       @font-face {
@@ -64,6 +67,11 @@ import { ViewTransitions } from 'astro:transitions';
             format('woff2-variations');
         font-weight: 100;
         font-display: swap;
+
+        font-variation-settings:
+          'wght' 400,
+          'SRFF' 0,
+          'slnt' 0;
       }
 
       @font-face {
@@ -76,6 +84,11 @@ import { ViewTransitions } from 'astro:transitions';
         font-weight: normal;
         font-style: normal;
         font-display: swap;
+
+        font-variation-settings:
+          'wght' 400,
+          'SRFF' 0,
+          'slnt' 0;
       }
 
       @font-face {
@@ -85,7 +98,7 @@ import { ViewTransitions } from 'astro:transitions';
         src:
           url('/fonts/ArizonaPlus/ABCArizonaPlusVariable.woff2')
             format('woff2 supports variations'),
-          url('/fonts/ArizonaPlus/ABCArizonaPlusVariable.woff')
+          url('/fonts/ArizonaPlus/ABCArizonaPlusVariable.woff2')
             format('woff-variations');
 
         font-weight: 300;
@@ -117,5 +130,8 @@ import { ViewTransitions } from 'astro:transitions';
         -moz-osx-font-smoothing: grayscale;
       }
     </style>
+  </head>
+  <body class={theme === 'dark' ? 'bg-gemms-dark' : 'bg-white'}>
+    <slot />
   </body>
 </html>
