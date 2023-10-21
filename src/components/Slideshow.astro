@@ -12,18 +12,20 @@ const { className, images, delay = 1 } = Astro.props;
 const cssDelay = `${delay}s`;
 ---
 
-<div class="fading-slideshow">
-  {
-    images.map((src) => (
-      <img
-        width="600"
-        height="400"
-        class={twMerge(className)}
-        src={src}
-        alt={src.split('/')[0]}
-      />
-    ))
-  }
+<div>
+  <div class="fading-slideshow">
+    {
+      images.map((src) => (
+        <img
+          width="600"
+          height="400"
+          class={twMerge(className)}
+          src={src}
+          alt={src.split('/')[0]}
+        />
+      ))
+    }
+  </div>
 </div>
 
 <style define:vars={{ cssDelay }}>

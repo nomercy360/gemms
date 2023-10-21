@@ -35,6 +35,17 @@ const ContactForm = () => {
     }
   };
 
+  console.log(text());
+
+  const isDisabled = () => {
+    return (
+      isLoading() ||
+      name().length < 2 ||
+      contact().length < 2 ||
+      text().length < 2
+    );
+  };
+
   const buttonMessage = () => {
     if (sent()) {
       return "Thank you! We'll get in contact with you soon.";
@@ -47,8 +58,6 @@ const ContactForm = () => {
     }
   };
 
-  const isDisabled = isLoading() || sent();
-
   return (
     <form
       id="contact-form"
@@ -60,7 +69,7 @@ const ContactForm = () => {
           <p class="text-center text-xl md:text-start md:text-2xl md:font-medium">
             Share your idea
           </p>
-          <p class="text-center text-sm md:max-w-[49ch] md:text-start">
+          <p class="text-center text-sm opacity-30 md:max-w-[49ch] md:text-start md:text-base">
             We will contact you within the next 24 hours
           </p>
         </div>
@@ -99,11 +108,11 @@ const ContactForm = () => {
           ></textarea>
           <input
             class={twJoin(
-              'w-fit cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white md:mt-1 md:self-start md:p-4 md:text-base',
+              'w-fit cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white transition-opacity disabled:opacity-75 md:mt-1 md:self-start md:p-4 md:text-base',
               sent() ? 'bg-[#37d15d]' : 'bg-black'
             )}
             type="submit"
-            disabled={isDisabled}
+            disabled={isDisabled()}
             value={buttonMessage()}
             data-fires-confetti
           />

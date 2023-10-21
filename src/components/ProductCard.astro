@@ -16,11 +16,9 @@ const { images, delay = 1, title, type, description } = Astro.props;
 <article
   class="relative flex min-h-fit max-w-[600px] flex-col gap-2 text-sm leading-4 md:gap-3 md:text-base md:leading-5"
 >
-  <Slideshow
-    className="aspect-auto rounded-gemms-medium border border-gemms-dark/5"
-    images={images}
-    delay={delay}
-  />
+  <div class="overflow-hidden rounded-gemms-medium border border-gemms-dark/5">
+    <Slideshow className="aspect-auto" images={images} delay={delay} />
+  </div>
   <div class="space-y-2">
     <div class="flex justify-between">
       <p class="uppercase text-gemms-dark">{title}</p>
