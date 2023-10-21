@@ -5,10 +5,9 @@ interface Props {
   className?: string;
   images: Array<string>;
   delay: number;
-  start: number;
 }
 
-const { className, images, delay = 1, start = 500 } = Astro.props;
+const { className, images, delay = 1 } = Astro.props;
 
 const cssDelay = `${delay}s`;
 ---

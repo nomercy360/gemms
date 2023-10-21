@@ -13,26 +13,25 @@ const ContactForm = () => {
     text,
     setText,
     sent,
-    isValid,
   } = useContact();
 
   const [isLoading, setIsLoading] = createSignal(false);
 
   const onSubmit = (e: Event) => {
     e.preventDefault();
-    if (isValid) {
-      if (!sent()) {
-        setIsLoading(true);
-        sendContact().finally(() => {
-          setIsLoading(false);
-        });
-      } else {
-        confetti({
-          particleCount: 1000,
-          spread: 90,
-          origin: { y: 0, x: 0.5 },
-        });
-      }
+    if (!sent()) {
+      setIsLoading(true);
+      sendContact().finally(() => {
+        setIsLoading(false);
+      });
+    }
+
+    if (sent()) {
+      confetti({
+        particleCount: 1000,
+        spread: 90,
+        origin: { y: 0, x: 0.5 },
+      });
     }
   };
 
@@ -72,15 +71,18 @@ const ContactForm = () => {
             name="name"
             placeholder="Your name"
             value={name()}
+            required
             onChange={(e) => {
               setName(e.target.value);
             }}
           />
           <input
             class="px-3 py-[13px] md:text-base"
+            type="email"
             name="email"
-            placeholder="E-mail, Telegram, IG, or other socials"
+            placeholder="E-mail"
             value={contact()}
+            required
             onChange={(e) => {
               setContact(e.target.value);
             }}
@@ -89,6 +91,8 @@ const ContactForm = () => {
             class="min-h-[132px] resize-none px-3 py-[13px] md:text-base"
             placeholder="Share your vision. Tell us what you have now, and what you want to achieve."
             value={text()}
+            maxLength={1000}
+            required
             onChange={(e) => {
               setText(e.target.value);
             }}

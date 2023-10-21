@@ -6,8 +6,6 @@ const useContact = () => {
   const [name, setName] = createSignal("");
   const [text, setText] = createSignal("");
 
-  const isValid = contact.length > 1 && name.length > 1 && text.length > 1;
-
   const [sent, setSent] = createSignal(false);
 
   const sendContact = async () => {
@@ -20,7 +18,6 @@ const useContact = () => {
     });
 
     if (response.status !== 200) {
-      console.error(response);
       return;
     } else {
       setSent(true);
@@ -41,7 +38,6 @@ const useContact = () => {
     setText,
     sent,
     sendContact,
-    isValid
   };
 };
 

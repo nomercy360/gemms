@@ -33,7 +33,6 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     if (response.status !== 200) {
-      console.log({response});
       const msg = JSON.stringify({ message: "Something went wrong" });
       return new Response(msg, {
         status: 500,
@@ -171,7 +170,7 @@ const EmailTemplate = () => {
     <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td valign="top">
-                <img src="https://gemss.xyz/gem.png" alt="GEMSS" width="21" height="20">
+                <img src="https://gemss.xyz/icons/gem.png" alt="GEMSS" width="21" height="20">
                 <p style="color: #ffffff; margin-top: 25px; max-width: 400px">
                     Thank you for leaving your message to Gemms. We will contact you on the next business day. If it’s
                     urgent,
