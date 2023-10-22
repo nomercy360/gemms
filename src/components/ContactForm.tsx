@@ -108,8 +108,8 @@ const ContactForm = () => {
           ></textarea>
           <input
             class={twJoin(
-              'w-fit cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white transition-opacity disabled:opacity-75 md:mt-1 md:self-start md:p-4 md:text-base',
-              sent() ? 'bg-[#37d15d]' : 'bg-black'
+              'w-fit h-[50px] bg-[#11161F] cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white mt-1 mb-1 md:self-start md:p-4 md:text-base',
+              sent() ? 'bg-[#11161F]' : 'bg-black'
             )}
             type="submit"
             disabled={isDisabled()}

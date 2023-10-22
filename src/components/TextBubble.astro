@@ -10,7 +10,7 @@ const { text, sender, className } = Astro.props;
 ---
 
 <div
-  class={twMerge('message', sender === 'us' ? 'us' : 'them', 'last', className)}
+  class={twMerge('message', sender === 'us' ? 'us' : 'them', 'last', 'md:text-2xl text-base md:leading-8 leading-5')}
 >
   {text}
 </div>
