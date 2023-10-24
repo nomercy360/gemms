@@ -58,7 +58,7 @@ const IMG_PATHS = {
   <Navbar />
   <main class="-mt-2 text-white md:mt-[revert]">
     <section
-      class="flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto mt-20 md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4"
+      class="mt-20 flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4"
     >
       <div
         class="mx-4 flex justify-center bg-transparent md:order-1 md:mx-[revert] md:self-start"
@@ -103,7 +103,7 @@ const IMG_PATHS = {
             class="flex flex-row justify-center gap-3 text-sm md:justify-start md:text-base"
           >
             <a
-              class="whitespace-nowrap rounded-full bg-white p-4 text-neutral-950 md:text-base md:leading-5"
+              class="whitespace-nowrap rounded-full bg-white p-4 text-center font-arizona text-neutral-950 md:text-base md:leading-5"
               href="https://cal.com/nikitaaxel/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -182,36 +182,25 @@ const IMG_PATHS = {
           <div
             class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:max-w-[400px] md:items-start md:justify-start md:gap-2"
           >
-            <Pill className="md:text-base" text="10-minutes brief" />
             <Pill className="md:text-base" text="30-minutes intro call" />
-            <Pill className="md:text-base" text="7 days trial" />
             <Pill className="md:text-base" text="2-3 day turnaround" />
-            <Pill className="md:text-base" text="Communicate via Telegram" />
-            <Pill className="md:text-base" text="Manage via Linear" />
+            <Pill className="md:text-base" text="Managed via trello" />
+            <Pill className="md:text-base" text="Minimum communication" />
             <Pill className="md:text-base" text="Pause or cancel anytime" />
           </div>
         </div>
         <div class="mt-8 flex flex-col gap-y-5 px-5 pb-20">
-          <TextBubble
-            text="How do we communicate?"
-            sender="us"
-          />
+          <TextBubble text="How do we communicate?" sender="us" />
           <TextBubble
             text="Our goal is to minimise communication as much as possible. Typically, the process involves you submitting your request and us sending the results. However, if a call is necessary, we will arrange it."
             sender="them"
           />
-          <TextBubble
-            text="How do I request?"
-            sender="us"
-          />
+          <TextBubble text="How do I request?" sender="us" />
           <TextBubble
             text="There are no rules. You can send us a Notion link, Figma file, Google Docs, wireframes PNGs, or even a Loom video. Essentially, anything that can be linked to or shared in Trello is fair game."
             sender="them"
           />
-          <TextBubble
-            text="How many requests can I submit?"
-            sender="us"
-          />
+          <TextBubble text="How many requests can I submit?" sender="us" />
           <TextBubble
             text="You can submit as many requests as you wish each month, and we will go through them one at a time, prioritising them based on the order of your requests and the priority you assign to each task."
             sender="them"
@@ -232,34 +221,22 @@ const IMG_PATHS = {
             text="That's fine. You can pause your subscription and return when you have additional requests. We’ll continue at no extra charge."
             sender="them"
           />
-          <TextBubble
-            text="How can I pay for your service?"
-            sender="us"
-          />
+          <TextBubble text="How can I pay for your service?" sender="us" />
           <TextBubble
             text="You can pay by wire transfer, PayPal, cryptocurrency, or Deel."
             sender="them"
           />
-          <TextBubble
-            text="How are you handling the legal side?"
-            sender="us"
-          />
+          <TextBubble text="How are you handling the legal side?" sender="us" />
           <TextBubble
             text="We'll send you the contract. All of the intellectual rights belong to you."
             sender="them"
           />
-          <TextBubble
-            text="Is there any work you don’t cover?"
-            sender="us"
-          />
+          <TextBubble text="Is there any work you don’t cover?" sender="us" />
           <TextBubble
             text="We do not cover 3D modeling, document design (medical forms, etc.), complex packaging, or extensive print design (magazines, books, etc.)."
             sender="them"
           />
-          <TextBubble
-            text="What if I don’t like the results?"
-            sender="us"
-          />
+          <TextBubble text="What if I don’t like the results?" sender="us" />
           <TextBubble
             text="No worries. We'll keep revising any designs until they are exactly what you're looking for."
             sender="them"
@@ -299,7 +276,7 @@ const IMG_PATHS = {
             class="mt-8 flex flex-col gap-3 font-arizona text-sm font-medium md:flex-row md:text-base"
           >
             <a
-              class="rounded-full bg-white px-4 py-4 text-sm text-black md:p-4 md:text-base md:leading-5"
+              class="rounded-full bg-white px-4 py-4 text-center text-sm text-black md:p-4 md:text-base md:leading-5"
               href="https://cal.com/nikitaaxel/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -329,7 +306,7 @@ const IMG_PATHS = {
         </footer>
       </div>
       <div
-        class="md:self-[revert] mx-4 mt-[60px] grid aspect-square md:px-0 px-4 min-w-full max-w-[400px] flex-1 grid-cols-2 gap-2 self-center md:mt-0 md:min-w-[328px]"
+        class="md:self-[revert] mx-4 mt-[60px] grid aspect-square min-w-full max-w-[400px] flex-1 grid-cols-2 gap-2 self-center px-4 md:mt-0 md:min-w-[328px] md:px-0"
       >
         <a
           href="https://t.me/nickaxel"
