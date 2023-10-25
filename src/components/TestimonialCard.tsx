@@ -16,7 +16,7 @@ const TestimonialCard = () => {
     setCurrent(current() + 1 === testimonies.length ? 0 : current() + 1);
   };
 
-  let timer = setInterval(tick, 500000);
+  let timer = setInterval(tick, 5000);
 
   const changeImage = (id: number) => {
     clearInterval(timer);

@@ -1,5 +1,4 @@
 import { createSignal } from "solid-js";
-import confetti from 'canvas-confetti';
 
 const useContact = () => {
   const [contact, setContact] = createSignal("");
@@ -21,11 +20,6 @@ const useContact = () => {
       return;
     } else {
       setSent(true);
-      confetti({
-        particleCount: 1000,
-        spread: 180,
-        origin: { y: 0, x: 0.5 }
-      });
     }
   };
 

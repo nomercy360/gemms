@@ -1,7 +1,6 @@
 import { createSignal } from 'solid-js';
 import useContact from '../hooks/useContact';
 import { twJoin } from 'tailwind-merge';
-import confetti from 'canvas-confetti';
 
 const ContactForm = () => {
   const {
@@ -23,14 +22,6 @@ const ContactForm = () => {
       setIsLoading(true);
       sendContact().finally(() => {
         setIsLoading(false);
-      });
-    }
-
-    if (sent()) {
-      confetti({
-        particleCount: 1000,
-        spread: 90,
-        origin: { y: 0, x: 0.5 },
       });
     }
   };
@@ -108,13 +99,12 @@ const ContactForm = () => {
           ></textarea>
           <input
             class={twJoin(
-              'w-fit h-[50px] bg-[#11161F] cursor-pointer self-center rounded-full px-4 py-[6px] font-bold text-white mt-1 mb-1 md:self-start md:p-4 md:text-base',
+              'mb-1 mt-1 h-[50px] w-fit cursor-pointer self-center rounded-full bg-[#11161F] px-4 py-[6px] font-bold text-white md:self-start md:p-4 md:text-base md:leading-4',
               sent() ? 'bg-[#11161F]' : 'bg-black'
             )}
             type="submit"
             disabled={isDisabled()}
             value={buttonMessage()}
-            data-fires-confetti
           />
         </div>
       </div>
