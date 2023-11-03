@@ -48,17 +48,17 @@ const IMG_PATHS = {
     'showreel/pottekur/4.webp',
   ],
 };
+
+const TITLE = 'One subscription for design, engineering and marketing';
+const DESCRIPTION =
+  'We help startups and founders handle growth and product development task fast and hassle-free';
 ---
 
-<Layout
-  title="Design and engineering subscription for startups and founders"
-  description="Hire a top-notch team of designers and engineers for a fixed monthly payment and work with them hassle-free."
-  theme="dark"
->
+<Layout title={TITLE} description={DESCRIPTION} theme="dark">
   <Navbar />
   <main class="-mt-2 text-white md:mt-[revert]">
     <section
-      class="mt-20 flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4"
+      class="mt-20 flex flex-col items-center justify-center gap-5 bg-gemms-dark px-4 py-5 pb-6 md:mx-auto md:mt-20 md:grid md:max-w-7xl md:grid-cols-2 md:gap-x-5 md:px-4 md:pb-[60px]"
     >
       <div
         class="mx-4 flex justify-center bg-transparent md:order-1 md:mx-[revert] md:self-start"
@@ -86,16 +86,20 @@ const IMG_PATHS = {
       </div>
       <div class="w-full md:pl-4">
         <div class="space-y-2 md:space-y-3">
+          <Pill
+            className="border-white/20 uppercase md:tracking-[1px] w-fit mx-auto block md:mx-[revert] text-white md:py-[6px] md:px-3 md:text-[10px] md:leading-[20px]"
+            text="2 spots left"
+          />
           <h2
-            class="mx-auto max-w-[300px] text-center text-2xl font-light leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
+            class="mx-auto max-w-[300px] text-center font-arizona text-2xl font-light leading-7 md:mx-[revert] md:max-w-[revert] md:text-start md:text-[40px] md:leading-[48px]"
           >
-            Design and engineering subscription for startups and founders
+            One subscription <br /> for design, engineering <br /> and marketing
           </h2>
           <p
-            class="mx-auto max-w-[300px] text-center text-sm text-white/[.48] md:mx-[revert] md:max-w-[revert] md:text-start md:text-xl md:text-white"
+            class="mx-auto max-w-[300px] text-center text-sm text-white/[.48] md:mx-[revert] md:max-w-[revert] md:text-start md:text-xl md:text-white/50"
           >
-            Hire a top-notch team of designers and engineers for a fixed monthly
-            payment and work with them hassle-free.
+            We help startups and founders handle growth and <br /> product
+            development task fast and hassle-free
           </p>
         </div>
         <div class="mx-10 mt-[37px] md:mx-0 md:mt-24">
@@ -113,14 +117,9 @@ const IMG_PATHS = {
             <button
               data-books-call
               class="whitespace-nowrap rounded-full bg-white/5 p-4 md:text-base md:leading-5"
-              id="start-pricing-btn">Start $8450 / mo</button
+              id="start-pricing-btn">Leave a request</button
             >
           </div>
-          <p
-            class="mt-4 text-center text-xs opacity-40 md:text-start md:text-base"
-          >
-            2-3 days turnaround, unlimited revisions
-          </p>
         </div>
       </div>
     </section>
@@ -171,21 +170,26 @@ const IMG_PATHS = {
           type="Branding, 2 Weeks"
           description="Handcrafted logo and brand identity for a ceramic studio and kintsugi store."
         />
-        <ContactForm data-contact-form client:load />
+        <ContactForm data-contact-form client:load>
+          <Pill
+            className="mx-auto block w-fit border-white/20 uppercase text-white md:mx-[revert] md:px-3 md:py-[6px] md:text-[10px] md:leading-[20px] md:tracking-[1px]"
+            text="2 spots left"
+          />
+        </ContactForm>
         <div class="mt-10 flex flex-col items-center bg-white md:items-start">
           <h1
-            class="text-center text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
+            class="text-center font-arizona text-2xl leading-7 text-gemms-dark md:text-start md:text-3xl xl:text-[44px] xl:leading-[52px]"
           >
-            Great service free of corporate sluggishness and unnecessary
-            meetings
+            We work without unnecessary meetings and are free from corporate
+            sluggishness
           </h1>
           <div
             class="mt-5 flex w-full max-w-[300px] flex-wrap items-center justify-center gap-1 md:max-w-[400px] md:items-start md:justify-start md:gap-2"
           >
+            <Pill className="md:text-base" text="Minimum communication" />
             <Pill className="md:text-base" text="30-minutes intro call" />
             <Pill className="md:text-base" text="2-3 day turnaround" />
             <Pill className="md:text-base" text="Managed via trello" />
-            <Pill className="md:text-base" text="Minimum communication" />
             <Pill className="md:text-base" text="Pause or cancel anytime" />
           </div>
         </div>
@@ -262,7 +266,7 @@ const IMG_PATHS = {
             text="2 SPOTS LEFT"
           />
           <h2
-            class="mt-3 text-center text-2xl leading-7 md:mt-4 md:text-start md:text-5xl"
+            class="mt-3 text-center font-arizona text-2xl leading-7 md:mt-4 md:text-start md:text-5xl"
           >
             Discuss today, start work tomorrow
           </h2>
@@ -276,7 +280,7 @@ const IMG_PATHS = {
             class="mt-8 flex flex-col gap-3 font-arizona text-sm font-medium md:flex-row md:text-base"
           >
             <a
-              class="rounded-full bg-white px-4 py-4 text-center text-sm text-black md:p-4 md:text-base md:leading-5"
+              class="rounded-full bg-white px-4 py-4 text-center text-sm text-black md:p-4 md:text-base"
               href="https://cal.com/nikitaaxel/30min"
               target="_blank"
               rel="noopener noreferrer"
